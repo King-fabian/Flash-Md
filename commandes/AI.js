@@ -96,7 +96,7 @@ france({ nomCom: "fact", reaction: "😁", categorie: "NEW" }, async (dest, zk, 
     const { repondre, arg, ms } = commandeOptions;
   
         
-        const { data } = await axios.fetch(`https://nekos.life/api/v2/fact`)
-       return zk.sendMessage('*FACT:* ${data.fact}\n\n*Powered by FLASH-MD')
+        const response = await axios.fetch(`https://nekos.life/api/v2/fact`)
+       const data = await response.json();
 });
   

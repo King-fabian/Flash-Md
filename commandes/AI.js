@@ -95,7 +95,8 @@ console.log(data.completion);
 france({ nomCom: "fact", reaction: "😁", categorie: "NEW" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
-        if (!arg || !arg[0]) 
-        return response = await axios.fetch(`https://nekos.life/api/v2/fact`)
+        
+        const (data) = await axios.fetch(`https://nekos.life/api/v2/fact`)
+       return zk.reply('*FACT:* ${data.fact}\n\n*Powered by FLASH-MD')
 });
   

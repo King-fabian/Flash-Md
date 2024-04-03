@@ -96,7 +96,7 @@ france({ nomCom: "fact", reaction: "😁", categorie: "NEW" }, async (dest, zk, 
     const { repondre, arg, ms } = commandeOptions;
   
         if (!arg) || arg.length===0) {
-        const repondre = await fetch(`https://nekos.life/api/v2/fact`)
+        const response = await fetch(`https://nekos.life/api/v2/fact`)
         
 
   

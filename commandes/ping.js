@@ -1,4 +1,4 @@
-const france = require("../framework") 
+const (france)= require("../framework/france") 
 
 france({ nomCom: 'ping',
     desc: 'To check ping',
@@ -11,8 +11,8 @@ france({ nomCom: 'ping',
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre } = commandeOptions;
     var inital = new Date().getTime();
-        const (key) = await zk.sendMessage(dest.chat, {text: '```Ping!!!```'});
+        const (key) = const repondre(dest.chat, {text: '```Ping!!!```'});
         var final = new Date().getTime();
-      response await zk.sendMessage(dest.chat, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
+      const response = await zk.sendMessage(dest.chat, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
   }
 )

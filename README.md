@@ -1,6 +1,5 @@
 <h1 align="center"> FLASH-MD </h1>
 <p align="center"> 
-<p align="center">  
     <img alt="Guru" width="700" height="300" src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg">
 <p align="center">
 <a href="https://github.com/Guru322"><img title="Author" src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram"></a>

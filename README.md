@@ -20,6 +20,8 @@
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%Ffranceking1%FFlash-Md?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffranceking1%2FFlash-Md.svg?type=shield"/></a>
 </p>
 
+***
+
 #### SETUP
 
 1. Fork the repo

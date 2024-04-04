@@ -5,14 +5,14 @@
     <img alt="FLASH-MD" width="700" height="300" src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg">
 <p align="center">
 
-<a href="https://github.com/franceking1/Flash-Md"><img title="Author" src="https://img.shields.io/badge/FLASHMD-black?style=for-the-badge&logo=github"></a> <p align="center" >
+<a href="https://github.com/franceking1/Flash-Md"><img title="Author" src="https://img.shields.io/badge/FLASHMD-black?style=for-the-badge&logo=github"></a> <t align="center" >
     
 
 ***
 
 #### SETUP
 
-***1.`STAR 🌟 This Repo`And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
+***1.`FIRST STAR 🌟 This Repo`And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
 
 ***2.`Get Session` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair)***
 

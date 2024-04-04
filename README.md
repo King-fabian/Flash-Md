@@ -2,7 +2,7 @@
 <div align="center">
  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=2000&color=1BAFBAFF&center=true&width=1000&height=150&lines=THANKS FOR CHOOSING +FLASH-MD;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+FRANCE+KING;RELAESED+22.2.2024" alt="Typing SVG" /></a>
   </p>
-<img src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg" width="700" height="300"/>
+<img src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg" height="300"/>
 
 <p align="center">  
   <a href="https://wa.me/254757835036">

@@ -1,4 +1,5 @@
-
+<h1 align="center"> 𝐓𝐇𝐄 𝐅𝐋𝐀𝐒𝐇 𝐌𝐔𝐋𝐓𝐈 𝐃𝐄𝐕𝐈𝐂𝐄  </h1>
+<p align="center"> 
 <p align="center">  
   <a href="https://youtu.be/WcA7GZuaN0A">
     <img alt="Guru" height="300" src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg">
@@ -7,8 +8,6 @@
 </p>
 <p align="center">
 <a href="https://github.com/Guru322"><img title="Author" src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram"></a>
-  <h1 align="center"> 𝐓𝐇𝐄 𝐅𝐋𝐀𝐒𝐇 𝐌𝐔𝐋𝐓𝐈 𝐃𝐄𝐕𝐈𝐂𝐄  </h1>
-<p align="center">
 <a href="https://github.com/Guru322?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social"></a>
 <a href="https://github.com/Guru322/GURU-BOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social"></a>
 <a href="https://github.com/Guru322/GURU-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social"></a>

@@ -92,24 +92,6 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
    
 
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_large)
-po.
-- Now head towards Lunch Dev Environment
-- Now select the forked GURU BOT repository.
-- Now go to <b>Variables</b> and add variable listed below.
-   - DATABASE_URL, SESSION_ID, REMOVEBG_KEY, PREFIX
-- Then Click Lunch and wait for deplyment to complete.
-- and you're good to go.
-
-.
-
-## CREDITS 
-<div><button id="boton" type="button">Baileys - By WhiskeySockets & adiwajshing</button></div>
-<a href="https://github.com/WhiskeySockets/Baileys"><img src="https://github.com/WhiskeySockets.png" width="150" height="150" alt="adiwajshing"/></a>
-
-<div><button id="boton" type="button">Base  - By FG98F</button></div>
-<a href="https://github.com/FG98F"><img src="https://github.com/FG98F.png" width="150" height="150" alt="adiwajshing"/></a>
-
 
 
 ## `Main Dev` 

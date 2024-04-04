@@ -54,6 +54,6 @@
 
 ### CONTRIBUTORS
 **Thanks To**
-- [Fortunatus Mokaya](https://github.com/Fortunatusmokaya) For several Cmds Addition.
-- [Gifted Tech](https://github.com/giftedtechnexus) For Genaral Help and Session 
-- [Suhail](https://github.com/SuhailTechInfo) For Code encryption 
+- [***Fortunatus Mokaya***](https://github.com/Fortunatusmokaya) For several Cmds Addition.
+- [***Gifted Tech***](https://github.com/giftedtechnexus) For Genaral Help and Session Generation
+- [***Suhail Ser***](https://github.com/SuhailTechInfo) For Code encryption 

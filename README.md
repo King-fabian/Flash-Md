@@ -15,14 +15,9 @@
 
 #### SETUP
 
-***1.Click [`FORK`](https://github.com/franceking1/Flash-Md/fork) and `Star ⭐ Repository` for Courage.***
+***1.`STAR 🌟 This Repo`And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
 
 ***2.`Get Session` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair) Then Copy it***
-
-
-3. Get Session ID (Server 2) (use this if server 1 Doesn't work)
-    <br>
-<a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 #### DEPLOY TO HEROKU

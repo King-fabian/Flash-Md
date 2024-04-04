@@ -5,7 +5,7 @@
     <img alt="FLASH-MD" width="700" height="300" src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg">
 <p align="center">
 
-<a href="https://github.com/franceking1/Flash-Md"><img title="Author" src="https://img.shields.io/badge/FLASHMD-black?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/franceking1/Flash-Md"><img title="Author" src="https://img.shields.io/badge/FLASHMD-black?style=for-the-badge&logo=github"></a> <p align="center" >
     
 
 ***

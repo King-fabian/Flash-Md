@@ -58,15 +58,6 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 <p align="center"><a href="https://youtu.be/yfdzckCcbPk?si=doxesZtn87BepUBw"> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 
-3. Now Deploy
-    <br>
-<p align="center"><a href="https://guru-bot-deploy.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
-
-#### DEPLOY TO KOYEB
-
-1. if you don't have a koyeb account. Create an account.
-   <br>
-   <p align="center"><a href="https://app.koyeb.com/auth/signup"> <img src="https://img.shields.io/badge/Koyeb account-blue?style=for-the-badge&logo=koyeb" width="220" height="38.45"/></a></p>
 
 2. Now deploy
    <br>
@@ -616,11 +607,6 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
 <h2 align="center">  NOTICE
 </h2>
    
-## 
-- Not For Sale
-- If A plugin's code is obfuscated , You don't have permission to edit it in any form 
-- Don't Forget to Give Credits If you are using or Reuploading My Plugins/files
-- Have A Good Day Ahead
 
 
 

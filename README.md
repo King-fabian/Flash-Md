@@ -44,6 +44,7 @@
 
 ### LICENSE 
 -The FLASH-MD is released under the [MIT License](https://opensource.org/licenses/MIT).
+
 -Enjoy the diverse features of the Flash-Md  to enhance your conversations and make your WhatsApp experience more interesting!
 
 ### DEVELOPER:
@@ -53,6 +54,6 @@
 
 ### CONTRIBUTORS
 **Thanks To**
--[Fortunatus Mokaya](https://github.com/Fortunatusmokaya) For several Cmds Addition.
--[Gifted Tech](https://github.com/giftedtechnexus) For Genaral Help and Session 
--[Suhail](https://github.com/SuhailTechInfo) For Code encryption 
+- [Fortunatus Mokaya](https://github.com/Fortunatusmokaya) For several Cmds Addition.
+- [Gifted Tech](https://github.com/giftedtechnexus) For Genaral Help and Session 
+- [Suhail](https://github.com/SuhailTechInfo) For Code encryption 

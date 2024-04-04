@@ -27,7 +27,7 @@ KEEP USING FLASH-MD
 
 #### SETUP
 
-1. `STAR 🌟 and` Fork the Repo 
+1. **`STAR 🌟 and Fork the Repo`**
     <br>
 <a href='https://github.com/franceking1/Flash-Md/fork' target="_blank"><img alt='FORK REPO' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 

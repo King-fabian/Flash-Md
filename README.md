@@ -54,3 +54,8 @@ Enjoy the diverse features of the Flash-Md  to enhance your conversations and ma
 - [**Instagram**](https://instagram.com/france.king1)
 - [**WhatsApp**](https://wa.me/254757835036)
 
+### CONTRIBUTORS
+**Thanks To**
+<a href="https://github.com/Fortunatusmokaya"> 
+<a href="https://github.com/giftedtechnexus">
+<a href="https://github.com/SuhailTechInfo">

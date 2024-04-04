@@ -49,8 +49,8 @@
 
 ### DEVELOPER:
 **GET In Touch with The Owner**
-- [**Instagram**](https://instagram.com/france.king1)
-- [**WhatsApp**](https://wa.me/254757835036)
+- [**On Instagram**](https://instagram.com/france.king1)
+- [**Via WhatsApp**](https://wa.me/254757835036)
 
 ### CONTRIBUTORS
 **Thanks To**

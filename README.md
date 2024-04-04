@@ -15,15 +15,9 @@
 
 #### SETUP
 
-1. **`STAR 🌟 AND Fork The Repo`**
-    <br>
-<a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='FORK REPO ' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+***1.Click [`FORK`](https://github.com/franceking1/Flash-Md/fork) and `Star ⭐ Repository` for Courage.***
 
-
-
-2. Get Session ID (Server 1)
-    <br>
-<a href='https://session.guruapi.tech' target="_blank"><img alt='PAIRING CODE' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+***2.`Get Session` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair) Then Copy it***
 
 
 3. Get Session ID (Server 2) (use this if server 1 Doesn't work)

@@ -4,17 +4,38 @@
   </p>
 <img src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg" width="700" height="300"/>
 
- ### SET-UP
-**📌DEPLOY ON HEROKU**
+#### SETUP
 
-***1.Click [`FORK`](https://github.com/franceking1/Flash-Md/fork) and `Star ⭐ Repository` for Courage.***
+1. Fork the repo
+    <br>
+<a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-***2.`Get Session` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair) Then Copy it***
 
-**3.If you don't have an account on [Heroku](https://signup.heroku.com/), [create an account now](https://signup.heroku.com/).**
-  
-***4.Now [DEPLOY](https://flash-deploy.vercel.app).***
 
+2. Get Session ID (Server 1)
+    <br>
+<a href='https://session.guruapi.tech' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+
+
+3. Get Session ID (Server 2) (use this if server 1 Doesn't work)
+    <br>
+<a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+
+
+#### DEPLOY TO HEROKU
+
+1. If You don't have an account in Heroku. Create a account.
+    <br>
+<p align="center"><a href="https://signup.heroku.com"> <img src="https://img.shields.io/badge/heroku%20Account-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+
+2. Watch the following video tutorial, for assistance.
+    <br>
+<p align="center"><a href="https://youtu.be/yfdzckCcbPk?si=doxesZtn87BepUBw"> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+
+
+3. Now Deploy
+    <br>
+<p align="center"><a href="https://guru-bot-deploy.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 ### CONTRIBUTIONS 
 

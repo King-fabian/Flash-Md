@@ -12,9 +12,7 @@
 <a href="https://github.com/franceking1/Flash-Md/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/franceking1/Flash-Md?&style=social"></a>
 <a href="https://github.com/franceking1/Flash-Md/network/members"><img title="Fork" src="https://img.shields.io/github/forks/franceking1/Flash-Md?style=social"></a>
 <a href="https://github.com/franceking1/Flash-Md/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/franceking1/Flash-Md?label=Watching&style=social"></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield"/></a>
-</p>
-
+  
 ***
 
 #### SETUP

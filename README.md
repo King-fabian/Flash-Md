@@ -10,9 +10,6 @@
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield"/></a>
 </p>
 
-####  
-GURU-BOT- Simple Multi Device whatsapp bot.
-
 ***
 
 #### SETUP
@@ -54,10 +51,6 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 <a href="https://github.com/Amrit9304"><img src="https://github.com/Amrit9304.png" width="200" height="200" alt="Amrit"/></a>
 <a href="https://github.com/Ghost7798"><img src="https://github.com/Ghost7798.png" width="200" height="200" alt="Ghost7798"/></a>
 <a href="https://github.com/Kai0071"><img src="https://github.com/Kai0071.png" width="200" height="200" alt="Kai"/></a>
-
-<h2 align="center">  Reminder
-</h2>
-   
 
 ## License
 

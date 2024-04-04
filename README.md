@@ -40,14 +40,11 @@
 
 
 ### CONTRIBUTIONS 
-
-Contributions to Flash-Md are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
+-Contributions to Flash-Md are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
 ### LICENSE 
-
-The FLASH-MD is released under the [MIT License](https://opensource.org/licenses/MIT).
-
-Enjoy the diverse features of the Flash-Md  to enhance your conversations and make your WhatsApp experience more interesting!
+-The FLASH-MD is released under the [MIT License](https://opensource.org/licenses/MIT).
+-Enjoy the diverse features of the Flash-Md  to enhance your conversations and make your WhatsApp experience more interesting!
 
 ### DEVELOPER:
 
@@ -56,6 +53,6 @@ Enjoy the diverse features of the Flash-Md  to enhance your conversations and ma
 
 ### CONTRIBUTORS
 **Thanks To**
-<a href="https://github.com/Fortunatusmokaya"> 
-<a href="https://github.com/giftedtechnexus">
-<a href="https://github.com/SuhailTechInfo">
+-[Fortunatus Mokaya](https://github.com/Fortunatusmokaya) For several Cmds Addition.
+-[Gifted Tech](https://github.com/giftedtechnexus) For Genaral Help and Session 
+-[Suhail](https://github.com/SuhailTechInfo) For Code encryption 

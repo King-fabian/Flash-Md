@@ -15,15 +15,15 @@
 
 #### SETUP
 
-1. Fork the repo
+1. **`STAR 🌟 AND Fork The Repo`**
     <br>
-<a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='FORK REPO ' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 
 2. Get Session ID (Server 1)
     <br>
-<a href='https://session.guruapi.tech' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://session.guruapi.tech' target="_blank"><img alt='PAIRING CODE' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 3. Get Session ID (Server 2) (use this if server 1 Doesn't work)

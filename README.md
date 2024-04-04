@@ -5,7 +5,7 @@
 <img src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg" width="700" height="300"/>
 
 <p align="center">  
-  <a href="https://youtu.be/WcA7GZuaN0A">
+  <a href="https://wa.me/254757835036">
     <h1 align="center">FLASH-MD</h1>
   </a>
 </p>

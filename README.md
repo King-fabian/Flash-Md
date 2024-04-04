@@ -51,9 +51,13 @@ KEEP USING FLASH-MD
     <br>
 <p align="center"><a href="https://guru-bot-deploy.vercel.app"> <img src="https://img.shields.io/badge/DEPLOY%20HEROKU-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
+***
+
 ### CONTRIBUTIONS 
 
 Contributions to Flash-Md are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
+
+***
 
 ### LICENSE 
 
@@ -61,6 +65,7 @@ The FLASH-MD is released under the [MIT License](https://opensource.org/licenses
 
 Enjoy the diverse features of the Flash-Md  to enhance your conversations and make your WhatsApp experience more interesting!
 
+***
 ### DEVELOPER:
 
 - [**Instagram**](https://instagram.com/france.king1)

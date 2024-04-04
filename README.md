@@ -38,21 +38,19 @@
 
 
 
-## `Main Dev` 
-<a href="https://github.com/Guru322"><img src="https://github.com/Guru322.png" width="250" height="250" alt="Guru322"/></a>
-  
-`GURU-BOT - By Guru322`
 
-### CONTRIBUTORS
-<a href="https://github.com/IndraTensei"><img src="https://github.com/IndraTensei.png" width="200" height="200" alt="Ash"/></a>
-<a href="https://github.com/Amrit9304"><img src="https://github.com/Amrit9304.png" width="200" height="200" alt="Amrit"/></a>
-<a href="https://github.com/Ghost7798"><img src="https://github.com/Ghost7798.png" width="200" height="200" alt="Ghost7798"/></a>
-<a href="https://github.com/Kai0071"><img src="https://github.com/Kai0071.png" width="200" height="200" alt="Kai"/></a>
+### CONTRIBUTIONS 
 
-## License
+Contributions to Flash-Md are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
+### LICENSE 
 
-## `Main Dev` 
-<a href="https://github.com/Guru322"><img src="https://github.com/Guru322.png" width="250" height="250" alt="Guru322"/></a>
-  
+The FLASH-MD is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+Enjoy the diverse features of the Flash-Md  to enhance your conversations and make your WhatsApp experience more interesting!
+
+### DEVELOPER:
+
+- [**Instagram**](https://instagram.com/france.king1)
+- [**WhatsApp**](https://wa.me/254757835036)
 

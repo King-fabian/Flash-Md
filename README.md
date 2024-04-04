@@ -9,7 +9,7 @@
 <p/>
 <p align="center">
 <a href="https://github.com/franceking1?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/franceking1?label=Followers&style=social"></a>
-<a href="https://github.com/franceking1/Flash-Md/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/franceking1/Flash-Md?&style=social"></a>
+<a href="https://github.com/franceking1/Flash-Md/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/franceking1/Flash-Md?&style=social"></a>
 <a href="https://github.com/franceking1/Flash-Md/network/members"><img title="Fork" src="https://img.shields.io/github/forks/franceking1/Flash-Md?style=social"></a>
 <a href="https://github.com/franceking1/Flash-Md/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/franceking1/Flash-Md?label=Watching&style=social"></a>
   
@@ -19,7 +19,7 @@
 
 ***1.`FIRST STAR 🌟 This Repo`And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
 
-***2.`Get Session` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair)***
+***2.`Get Session ID` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair)***
 
 -Copy The Session ID to paste it in Heroku
 

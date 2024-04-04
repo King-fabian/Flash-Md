@@ -24,7 +24,7 @@
 
 ***2.`Get Session ID` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair)***
 
--Copy The Session ID to paste it in Heroku
+***-Copy The Session ID to paste it in Heroku***
 
 
 #### DEPLOY TO HEROKU 

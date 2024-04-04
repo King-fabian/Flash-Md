@@ -1,8 +1,8 @@
-<h1 align="center"> 𝐓𝐇𝐄 𝐅𝐋𝐀𝐒𝐇 𝐌𝐔𝐋𝐓𝐈 𝐃𝐄𝐕𝐈𝐂𝐄  </h1>
+<h1 align="center"> FLASH-MD  </h1>
 <p align="center"> 
 <p align="center">  
     <img alt="Guru" width="700" height="300" src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg">
-    <h1 align="center">GURU-BOT 2.O</h1>
+    <h1 align="center"> 𝐓𝐇𝐄 𝐅𝐋𝐀𝐒𝐇 𝐌𝐔𝐋𝐓𝐈 𝐃𝐄𝐕𝐈𝐂𝐄 </h1>
   </a>
 </p>
 <p align="center">

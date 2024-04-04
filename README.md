@@ -33,7 +33,7 @@ KEEP USING FLASH-MD
 
 
 
-2. Get Session ID USING 
+2. **`Get Session ID`** 
     <br>
 <a href='https://flash-md-pair-85cef2fd8430.herokuapp.com/pair' target="_blank"><img alt='PAIRING CODE' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
     <br>

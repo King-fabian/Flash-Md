@@ -15,6 +15,7 @@
 2. Get Session ID USING 
     <br>
 <a href='https://session.guruapi.tech' target="_blank"><img alt='PAIRING CODE' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+
     <br>
 <a href='https://flash-md-qr.onrender.com' target="_blank"><img alt='SCANNING QR CODE' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 

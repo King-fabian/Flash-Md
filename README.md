@@ -6,7 +6,6 @@
 
 <p align="center">  
   <a href="https://youtu.be/WcA7GZuaN0A">
-    <img alt="Guru" height="300" src="https://telegra.ph/file/3f985014b51b3cf335bfe.jpg">
     <h1 align="center">FLASH-MD</h1>
   </a>
 </p>

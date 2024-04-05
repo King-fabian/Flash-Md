@@ -20,7 +20,7 @@
 
 #### SETUP
 
-***1.`FIRST STAR 🌟 This Repo for courage` And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
+***1.`STAR 🌟 This Repo For Courage` And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
 
 ***2.`Get Session ID` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair)***
 

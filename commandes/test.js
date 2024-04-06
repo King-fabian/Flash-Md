@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { france } = require("../framework/france");
-france({ nomCom: "repo", alias: "sc", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "repo", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
 
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';
@@ -26,7 +26,7 @@ const gitdata = `FLASH - MD
 ✨ *Stars:* ${repoInfo.stars}
 🧧 *Forks:* ${repoInfo.forks}
 📅 *Release Date:* ${releaseDate}
-🕐 *Last Update:* ${repoInfo.lastUpdate}
+🕐 *Last Update:* ${lastUpdateDate}
 👨‍💻 *Owner:* *France King*`;
 
 

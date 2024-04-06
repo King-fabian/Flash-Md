@@ -20,7 +20,7 @@
 
 #### SETUP
 
-***1.`First STAR🌟This ` And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
+***1.`First Star 🌟 This ` And Then[`FORK`](https://github.com/franceking1/Flash-Md/fork)It***
 
 ***2.`Get Session ID` by [`SCANING QR`](https://flash-md-qr.onrender.com) Or [`PAIRING CODE`](https://flash-md-pair-85cef2fd8430.herokuapp.com/pair)***
 

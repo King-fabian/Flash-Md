@@ -81,9 +81,9 @@ if (!arg || arg.length === 0) return repondre("provide a term");
         try{
             let { data } = await axios.get(`http://api.urbandictionary.com/v0/define?term=${ques}`)
             var textt = `
-            Word: ${ques}
-            Definition: ${data.list[0].definition.replace(/\[/g, "").replace(/\]/g, "")}
-            Example: ${data.list[0].example.replace(/\[/g, "").replace(/\]/g, "")}`
+ Word: ${ques}
+ Definition: ${data.list[0].definition.replace(/\[/g, "").replace(/\]/g, "")}
+ Example: ${data.list[0].example.replace(/\[/g, "").replace(/\]/g, "")}`
             return repondre(textt)
                     } catch {
                         return repondre(`No result for ${ques}`)

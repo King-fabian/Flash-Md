@@ -1,4 +1,4 @@
-cost {france} = require("../framework/france") 
+cost france = require("../framework") 
 
 france({ nomCom: 'ping',
     desc: 'To check ping',
@@ -8,11 +8,11 @@ france({ nomCom: 'ping',
 
        
   },
-  async (dest, zk, commandeOptions) => {
-    const { ms, arg, repondre } = commandeOptions;
+  async(Void, citel) => {
     var inital = new Date().getTime();
-        const (key) = const repondre(dest, {text: '```Ping!!!```'});
+        const { key } = await Void.sendMessage(citel.chat, {text: '```ᴘɪɴɢ ᴋɪɴɢ-ᴍᴅ..```'});
         var final = new Date().getTime();
-      const response = await zk.sendMessage(dest, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
-  }
-)
+       // await Secktor.sleep(1000)
+       return await Void.sendMessage(citel.chat, {text: '_𝙆𝙞𝙣𝙜 𝙥𝙤𝙣𝙜_\n *' + (final - inital) + ' ms* ', edit: key});
+    }
+);

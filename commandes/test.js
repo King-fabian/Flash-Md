@@ -19,7 +19,7 @@ const img = 'https://telegra.ph/file/f1f2303ff4e39b0a3b6b3.jpg';
                 owner: data.owner.login
             };
 const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
-            const lastUpdate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
+            const lastUpdateDate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
 
 const gitdata = `FLASH - MD
 *Repository:* ${data.html_url}

@@ -1,4 +1,4 @@
-cost france = require("../framework") 
+const france = require("../framework") 
 
 france({ nomCom: 'ping',
     desc: 'To check ping',

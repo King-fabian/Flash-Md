@@ -15,7 +15,7 @@ const img = 'https://telegra.ph/file/f1f2303ff4e39b0a3b6b3.jpg';
             const repoInfo = {
                 stars: data.stargazers_count,
                 forks: data.forks_count,
-                lastUpdate: data.updated_at,
+                lastUpdate: data.updated_on,
                 owner: data.owner.login
             };
 const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');

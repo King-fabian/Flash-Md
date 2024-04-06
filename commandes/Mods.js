@@ -16,7 +16,132 @@ const sleep =  (ms) =>{
   } ;
 
 
-france({ nomCom: "privacy", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+
+
+france({ nomCom: "lastseen", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+
+const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
+
+if (!superUser) {
+      repondre('Only Owners can use this command'); return;
+    }
+if (!arg[0]) {
+      repondre("Provide a setting to be updated. Example:\nlastseen all");
+      return;
+    }
+  
+    let priv = arg.join(' ');
+
+const availablepriv = ['all', 'contacts', 'contact_blacklist', 'none'];
+
+        if (!availablepriv.includes(priv)) return repondre(`Choose a setting from this list: ${availablepriv.join('/')}`);
+
+await zk.updateLastSeenPrivacy(priv)
+        await repondre(`Last seen privacy settings updated to *${priv}*`);
+
+})
+
+
+
+france({ nomCom: "online", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+
+const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
+
+if (!superUser) {
+      repondre('Only Owners can use this command'); return;
+    }
+if (!arg[0]) {
+      repondre("Provide a setting to be updated. Example:\nonline all");
+      return;
+    }
+  
+    let priva = arg.join(' ');
+
+const availablepriva = ['all', 'match_last_seen'];
+
+        if (!availablepriva.includes(priva)) return repondre(`Choose a setting from this list: ${availablepriva.join('/')}`);
+
+await zk.updateOnlinePrivacy(priva)
+        await repondre(`Online privacy settings updated to *${priva}*`);
+
+})
+
+france({ nomCom: "mydp", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+
+const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
+
+if (!superUser) {
+      repondre('Only Owners can use this command'); return;
+    }
+if (!arg[0]) {
+      repondre("Provide a setting to be updated. Example:\nmydp all");
+      return;
+    }
+  
+    let privac = arg.join(' ');
+
+const availableprivac = ['all', 'contacts', 'contact_blacklist', 'none'];
+        if (!availableprivac.includes(privac)) return repondre(`Choose a setting from this list: ${availableprivac.join('/')}`);
+
+await zk.updateProfilePicturePrivacy(privac)
+        await repondre(`Your profile picture privacy settings updated to *${privac}*`);
+
+})
+
+
+
+france({ nomCom: "mystatus", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+
+const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
+
+if (!superUser) {
+      repondre('Only Owners can use this command'); return;
+    }
+if (!arg[0]) {
+      repondre("Provide a setting to be updated. Example:\nmystatus all");
+      return;
+    }
+  
+    let privacy = arg.join(' ');
+
+const availableprivacy = ['all', 'contacts', 'contact_blacklist', 'none'];
+        if (!availableprivacy.includes(privacy)) return repondre(`Choose a setting from this list: ${availableprivacy.join('/')}`);
+
+await zk.updateStatusPrivacy(privacy)
+        await repondre(`Your status privacy settings updated to *${privacy}*`);
+
+})
+
+
+france({ nomCom: "groupadd", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+
+const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
+
+if (!superUser) {
+      repondre('Only Owners can use this command'); return;
+    }
+if (!arg[0]) {
+      repondre("Provide a setting to be updated. Example:\ngroupadd all");
+      return;
+    }
+  
+    let privacq = arg.join(' ');
+
+const availableprivacq = ['all', 'contacts', 'contact_blacklist', 'none'];
+        if (!availableprivacq.includes(privacq)) return repondre(`Choose a setting from this list: ${availableprivacq.join('/')}`);
+
+await zk.updateGroupsAddPrivacy(privacq)
+        await repondre(`Your group add privacy settings updated to *${privacq}*`);
+
+})
+
+
+
+
+
+
+
+france({ nomCom: "privacy", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -34,13 +159,13 @@ const {
                 calladd
         } = await zk.fetchPrivacySettings(true);
 
-const msgg = `*WhatsApp Privacy Settings*
+const msgg = `*Privacy settings*
 
-*Name :* ${zk.user.name}
-*Online :* ${online}
+*Name:* ${zk.user.name}
+*Online:* ${online}
 *Profile :* ${profile}
 *Last Seen :* ${last}
-*Read Receipt :* ${readreceipts}
+*Read receipt :* ${readreceipts}
 *Group Add :* ${groupadd}
 *Call Add :* ${calladd}`;
 
@@ -54,7 +179,7 @@ await zk.sendMessage(dest, { image: { url: avatar}, caption: msgg}, { quoted: ms
 });
 
 
-france({ nomCom: "fullpp", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "fullpp", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
 const { ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -87,7 +212,7 @@ var {
                     })
 fs.unlinkSync(medis)
                    
-                    repondre("Bot Profile Picture Updated")
+                    repondre("Your Profile Picture Updated")
                 })
 
   
@@ -238,7 +363,7 @@ france({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) =
 
   
 
-france({ nomCom: "block", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "block", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -262,7 +387,7 @@ france({ nomCom: "block", categorie: "Mods" }, async (dest, zk, commandeOptions)
 
   });
 
-france({ nomCom: "unblock", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "unblock", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 

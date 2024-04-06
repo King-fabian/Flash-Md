@@ -11,8 +11,8 @@ france({ nomCom: 'ping',
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre } = commandeOptions;
     var inital = new Date().getTime();
-        const (key) = const repondre(dest.chat, {text: '```Ping!!!```'});
+        const (key) = const repondre(dest, {text: '```Ping!!!```'});
         var final = new Date().getTime();
-      const response = await zk.sendMessage(dest.chat, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
+      const response = await zk.sendMessage(dest, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
   }
 )

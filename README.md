@@ -27,8 +27,7 @@
 *-Copy The Session ID to paste it in Heroku*
 
 #### DEPLOY TO HEROKU 
-
-**1. If You Don't Have An Account On Heroku**
+**-1. If You Don't Have An Account On Heroku**
     <br>
 <p align="center"><a href="https://signup.heroku.com">
  <img src="https://img.shields.io/badge/Create%20Account%20Now-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>

@@ -12,9 +12,7 @@ france({ nomCom: 'quote', categorie: 'Fun' }, async (dest, zk, commandeOptions) 
       fetch('https://animechan.xyz/api/random')
         .then((response) => response.json())
         .then(async (quote) => {
-          repondre(`╔══════════════════════════╗
-║   FLASH-MD              ║
-╚══════════════════════════╝
+          repondre(`*FLASH-MD Quotes*
 
 🎬 Anime: ${quote.anime}
 👤 Character: ${quote.character}
@@ -32,9 +30,7 @@ Powered by *France King*`);
       fetch('https://animechan.xyz/api/random/character?name=' + query)
         .then((response) => response.json())
         .then(async (quote) => {
-          repondre(`╔══════════════════════════╗
-║   FLASH-MD               ║
-╚══════════════════════════╝
+          repondre(`FLASH-MD
 
 🎬 Anime: ${quote.anime}
 👤 Character: ${quote.character}

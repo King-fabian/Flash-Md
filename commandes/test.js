@@ -26,7 +26,7 @@ const gitdata = `FLASH - MD
 ✨ *Stars:* ${repoInfo.stars}
 🧧 *Forks:* ${repoInfo.forks}
 📅 *Release Date:* ${releaseDate}
-🕐 *Last Update:* ${repoInfo.lastUpdateDate}
+🕐 *Last Update:* ${repoInfo.lastUpdate}
 👨‍💻 *Owner:* *France King*`;
 
 

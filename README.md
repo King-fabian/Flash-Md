@@ -1,4 +1,4 @@
-<h1 align="center"> FLASH-MD </h1>
+<h1 align="center"> 𝐓𝐇𝐄 𝐅𝐋𝐀𝐒𝐇 𝐌𝐔𝐋𝐓𝐈 𝐃𝐄𝐕𝐈𝐂𝐄  </h1>
 <p align="center">  
 
 ***
@@ -18,7 +18,7 @@
   
 ***
 
-#### SETUP
+#### 𝐒𝐄𝐓𝐔𝐏  
 
 ***1.`First STAR 🌟 This Repo ` And Then [`FORK`](https://github.com/franceking1/Flash-Md/fork) It***
 
@@ -28,7 +28,7 @@
 
 ***
 
-#### **DEPLOY TO HEROKU**
+#### 𝐃𝐄𝐏𝐋𝐎𝐘 𝐓𝐎 𝐇𝐄𝐑𝐎𝐊𝐔 
 **1. If You Don't Have An Account On Heroku**
     <br>
 <p align="center"><a href="https://signup.heroku.com">

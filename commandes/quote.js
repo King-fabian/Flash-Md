@@ -1,6 +1,6 @@
 const { france } = require('../framework/france');
 
-france({ nomCom: 'quote', categorie: 'Fun' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: 'quote', categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, verifGroupe, arg } = commandeOptions;
   if (!verifGroupe) {
     repondre('Commande réservée au groupe uniquement');

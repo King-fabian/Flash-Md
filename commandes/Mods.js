@@ -179,7 +179,7 @@ await zk.sendMessage(dest, { image: { url: avatar}, caption: msgg}, { quoted: ms
 });
 
 
-france({ nomCom: "fullpp", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "fullpp", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
 const { ms, repondre, superUser, msgRepondu } = commandeOptions;
 

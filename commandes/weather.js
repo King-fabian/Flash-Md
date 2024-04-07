@@ -33,19 +33,19 @@ if (!question) return repondre("Give me location...");
 
 await repondre(`❄️ Weather in ${cityName}
 
-🌡️ Temperature: ${temperature}°C
-📝 Description: ${description}
-❄️ Humidity: ${humidity}%
-🌀 Wind Speed: ${windSpeed} m/s
-🌧️ Rain Volume (last hour): ${rainVolume} mm
-☁️ Cloudiness: ${cloudiness}%
-🌄 Sunrise: ${sunrise.toLocaleTimeString()}
-🌅 Sunset: ${sunset.toLocaleTimeString()}
-  Latitude: ${data.coord.lat}
-  Longitude: ${data.coord.lon}
+🌡️ *Temperature:* ${temperature}°C
+📝 *Description:* ${description}
+❄️ *Humidity:* ${humidity}%
+🌀 *Wind Speed:* ${windSpeed} m/s
+🌧️ *Rain Volume (last hour):* ${rainVolume} mm
+☁️ *Cloudiness:* ${cloudiness}%
+🌄 *Sunrise:* ${sunrise.toLocaleTimeString()}
+🌅 *Sunset:* ${sunset.toLocaleTimeString()}
+🌫️ *Latitude:* ${data.coord.lat}
+  *Longitude:* ${data.coord.lon}
 
-Country: ${data.sys.country}
-Continent:${data.sys.continent}
+🗺 *Country:* ${data.sys.country}
+🌎 *Continent:* ${data.sys.continent}
 
 
 *°Powered by FLASH-MD*`);

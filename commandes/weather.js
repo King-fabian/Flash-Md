@@ -42,10 +42,9 @@ await repondre(`❄️ Weather in ${cityName}
 🌄 *Sunrise:* ${sunrise.toLocaleTimeString()}
 🌅 *Sunset:* ${sunset.toLocaleTimeString()}
 🌫️ *Latitude:* ${data.coord.lat}
-  *Longitude:* ${data.coord.lon}
+🌪️ *Longitude:* ${data.coord.lon}
 
 🗺 *Country:* ${data.sys.country}
-🌎 *Continent:* ${data.sys.continent}
 
 
 *°Powered by FLASH-MD*`);

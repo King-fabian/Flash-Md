@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const { france } = require("../framework/zokou");
 const axios = require ("axios")
 

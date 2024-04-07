@@ -1,6 +1,6 @@
 const axios = require('axios');
 const fs = require('fs');
-const {zokou} = require('../framework/france');
+const {france} = require('../framework/france');
 const { writeFile } = require('fs/promises')
 
 france({ nomCom: "weather",

@@ -862,9 +862,9 @@ ${metadata.desc}
 
      
     ❒Creator: *France King*
-    ❒Prefix : [ ${prefixe} 
+    ❒Prefix :${prefixe} 
     ❒Mode :${md}
-    ❒Created on : *22.2.2024*
+    ❒Created on : *22/2/2024*
     ❒Total Commands : ${evt.cm.length}︎
 
     

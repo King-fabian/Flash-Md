@@ -14,7 +14,7 @@ const axios = require ("axios")
  } catch (error) {
         reply(`*_I Didn't get any results, Provide valid user name!_*`);
 
-   const gitdata = `ㅤㅤ*[ GITHUB USER INFO ]
+   const gitdata = `*[ GITHUB USER INFO ]
 
 🚩 Id : ${gitdata.id}
 🔖 Nickname : ${gitdata.name}

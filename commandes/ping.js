@@ -1,5 +1,7 @@
-const {france} = require("../framework/france");
-const speed = require(performance-now);
+const { France } = require("../framework/france");
+const speed = require("performance-now");
+const moment = require("moment-timezone");
+const { default: axios } = require("axios");
 
 france({ nomCom: 'ping',
     desc: 'To check ping',
@@ -21,9 +23,7 @@ await zk.sendMessage(dest, {
         type: 14,
         editedMessage: {
           conversation: `Pong! Latency: ${latency} ms` 
-        }
-      }
-    }, {})
-
-  })
+        
+        
+        })
 

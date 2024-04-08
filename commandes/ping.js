@@ -1,4 +1,5 @@
-const france = require("../framework") 
+const {france} = require("../framework/france");
+const speed = require(performance-now);
 
 france({ nomCom: 'ping',
     desc: 'To check ping',
@@ -7,12 +8,22 @@ france({ nomCom: 'ping',
     fromMe: 'true', 
 
        
-  },
-  async(Void, citel) => {
-    var inital = new Date().getTime();
-        const { key } = await Void.sendMessage(citel.chat, {text: '```ᴘɪɴɢ ᴋɪɴɢ-ᴍᴅ..```'});
-        var final = new Date().getTime();
-       // await Secktor.sleep(1000)
-       return await Void.sendMessage(citel.chat, {text: '_𝙆𝙞𝙣𝙜 𝙥𝙤𝙣𝙜_\n *' + (final - inital) + ' ms* ', edit: key});
-    }
-);
+    },
+  async (dest, zk, commandeOptions) => {
+    const { ms, arg, repondre } = commandeOptions;
+      let timestamp = speed() 
+      let latency = (speed() - timestamp).toFixed(4)
+    
+
+await zk.sendMessage(dest, {
+      protocolMessage: {
+        key: pingMsg.key,
+        type: 14,
+        editedMessage: {
+          conversation: `Pong! Latency: ${latency} ms` 
+        }
+      }
+    }, {})
+
+  })
+

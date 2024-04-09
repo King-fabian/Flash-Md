@@ -575,7 +575,7 @@ france({
     return;
   }
   const _0x25e750 = _0x2adb87.join(" ");
-  mumaker.ephoto('https://en.ephoto360.com/create-thor-logo-style-text-effects-online-for-free-796.html', _0x25e750).then(_0x465666 => {
+  mumaker.ephoto("https://en.ephoto360.com/create-thor-logo-style-text-effects-online-for-free-796.html", _0x25e750).then(_0x465666 => {
     _0x5c27bb.sendMessage(_0x3fc490, {
       'image': {
         'url': _0x465666.image

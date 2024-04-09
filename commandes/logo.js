@@ -953,7 +953,7 @@ france({
     return;
   }
   const _0x3aa090 = _0x2732d9.join(" ");
-  mumaker.textpro('https://textpro.me/natural-leaves-text-effect-931.html', _0x3aa090).then(_0xe21133 => {
+  mumaker.ephoto("https://en.ephoto360.com/green-brush-text-effect-typography-maker-online-153.html", _0x3aa090).then(_0xe21133 => {
     _0x47f7a8.sendMessage(_0x3ba2a5, {
       'image': {
         'url': _0xe21133.image

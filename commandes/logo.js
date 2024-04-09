@@ -891,11 +891,11 @@ france({
     repondre: _0x346c17
   } = _0xfaf6e1;
   if (!_0x1ae38a[0x0]) {
-    _0x346c17("Example of using command:\n " + _0x389552 + "scifi My text");
+    _0x346c17("Example of using command:\n " + _0x389552 + "scifi France King");
     return;
   }
   const _0x35d3b8 = _0x1ae38a.join(" ");
-  mumaker.textpro("https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html", _0x35d3b8).then(_0x3b491f => {
+  mumaker.ephoto("https://en.ephoto360.com/create-a-awesome-logo-sci-fi-effects-492.html", _0x35d3b8).then(_0x3b491f => {
     _0x2c5269.sendMessage(_0x29a36a, {
       'image': {
         'url': _0x3b491f.image

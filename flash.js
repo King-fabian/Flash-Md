@@ -187,11 +187,11 @@ setTimeout(() => {
             }
 
             var etat =conf.ETAT;
-            if(etat==online)
+            if(etat== online)
             {await zk.sendPresenceUpdate("available",origineMessage);}
-            else if(etat==typing)
+            else if(etat== typing)
             {await zk.sendPresenceUpdate("composing",origineMessage);}
-            else if(etat==recording)
+            else if(etat== recording)
             {
             await zk.sendPresenceUpdate("recording",origineMessage);
             }
@@ -682,6 +682,8 @@ zk.ev.on('group-participants.update', async (group) => {
 ◇*GROUP DESCRIPTION*◇
 
 ${metadata.desc}
+
+
 🐐Powered by France King`;
 
             zk.sendMessage(group.id, { image: { url: ppgroup }, caption: msg, mentions: membres });
@@ -852,8 +854,7 @@ ${metadata.desc}
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
                 let cmsg = `
-               
-╔══◇『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』
+╔══◇『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』◇
 ║◇ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠 
 ║◇ Prefix : [ ${prefixe} ]
 ║◇ Mode :${md}

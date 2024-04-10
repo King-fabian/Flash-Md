@@ -45,7 +45,7 @@ const response = await fetch('https://nekos.life/api/v2/fact');
 
 const data = await response.json();
 
-repondre(`◆━━━━━━✦QUOTE✦━━━━━━◆  
+repondre(`◆━━━━━━✦FACT✦━━━━━━◆  
 *◇* ${data.fact}
 
 

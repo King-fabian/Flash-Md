@@ -63,7 +63,7 @@ const flashhh= `
 ╔════◇
 ║ *Quote:* ${data.quote.body}
 ║ *Author:* ${data.quote.author}
-║    
+║ *_Powered by:_* France King
 ╚════════════╝ `;
 repondre(flashhh);
 

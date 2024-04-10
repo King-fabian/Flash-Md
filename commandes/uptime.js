@@ -28,7 +28,7 @@ france({ nomCom: 'uptime',
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre } = commandeOptions;
 
-                 await repondre(`_Uptime of FLASH-MD_: ${runtime(process.uptime())}`) 
+                 await repondre(`*_Uptime of FLASH-MD_:* ${runtime(process.uptime())}`) 
 
    
 
@@ -74,11 +74,11 @@ france({ nomCom: 'ping',
   },
 
 async (dest, zk, commandeOptions) => {
-    const { ms, arg, repondre, dreadedspeed} = commandeOptions;
+    const { ms, arg, repondre, flashspeed} = commandeOptions;
 
 
 
-await repondre(`${dreadedspeed.toFixed(4)} ms`);
+await repondre(`${flashspeed.toFixed(14)} ms`);
 
 }
 );

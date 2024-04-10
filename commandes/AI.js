@@ -92,7 +92,7 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "lyrics2", reaction: "🐐🔵", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "lyrics2", reaction: "🐐🔵", categorie: "Search" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     
@@ -102,7 +102,7 @@ france({ nomCom: "lyrics2", reaction: "🐐🔵", categorie: "IA" }, async (dest
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const fabian = arg.join(' ');
-     const response = await fetch(`https://some-random-api.com/lyrics?title=${fabian}`);
+     const response = fetch(`https://some-random-api.com/lyrics?title=${fabian}`);
 const data = await response.json();
 
 await repondre(data.result);

@@ -60,19 +60,17 @@ france({ nomCom: "quotes",
 const response = await fetch('https://favqs.com/api/qotd');
 const data = await response.json();
 const flashhh= `
-╔══◇
-║◇ *QUOTE:* ${data.quote.body}\n
-║◇ *AUTHOR:* ${data.quote.author}
-║ 
-║◇ _Powered by:_ *France King*
-║
-╚══════════════════════════>
+◆━━━━━━✦QUOTE✦━━━━━━◆ 
+◇ _${data.quote.body}_\n
+◇ *AUTHOR:* ${data.quote.author}
+
+◇ _Powered by:_ *France King*
 
 
 
 ╔═════◇
 ║◇ *KEEP USING FLASH-MD*
-╚══════════════════════> `;
+╚════════════════════> `;
 repondre(flashhh);
 
 })

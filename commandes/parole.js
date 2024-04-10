@@ -45,7 +45,17 @@ const response = await fetch('https://nekos.life/api/v2/fact');
 
 const data = await response.json();
 
-repondre(`Fact: ${data.fact}\n\n*Powered by FLASH-MD*`);
+repondre(`◆━━━━━━✦QUOTE✦━━━━━━◆  
+*◇* ${data.fact}
+
+
+*◇* Powered by *France King*
+
+
+
+╔═════◇
+║◇ *KEEP USING FLASH-MD*
+╚════════════════════>  `);
 
 
 })

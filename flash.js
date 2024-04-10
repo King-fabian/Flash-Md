@@ -842,7 +842,7 @@ setTimeout(() => {
           console.log("chargement des commandes terminé ✅");
           await _0x37e887();
           if (conf.DP.toLowerCase() === "yes") {
-            let _0x4b5e14 = "\n*『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is CONNECTED』*\n\n     \n║❒Creator: *France King*\n║❒Prefix : [ " + prefixe + " ]\n║❒Mode :" + _0x3d16d3 + "\n║❒Created on : *22.2.2024*\n║❒Total Commands : " + evt.cm.length + "︎\n\n    \n║❒ _Join *FLASH-MD* Channel for Updates_\nhttps://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P\n\n║❒ *JOIN OUR WhatsApp Gʀᴏᴜᴘ*\nhttps://chat.whatsapp.com/CtBGmUkwXiA6kGYAyU5MaX\n\n║❒ *FOLLOW THE DEVELOPER* 🪄 \nhttps://instagram.com/france.king1 \n\n\n              *𝐅𝐋𝐀𝐒𝐇-𝐌𝐃*";
+            let _0x4b5e14 = "\n*『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is CONNECTED』*\n\n     \n║❒Creator: *France King*\n║❒Prefix : [ " + prefixe + " ]\n║❒Mode :" + _0x3d16d3 + "\n║❒Created on : *22.2.2024*\n║❒Total Commands : " + evt.cm.length + "︎\n\n     \n║❒ _Join *FLASH-MD* Channel for Updates_\nhttps://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P\n\n║❒ *JOIN OUR WhatsApp Gʀᴏᴜᴘ*\nhttps://chat.whatsapp.com/CtBGmUkwXiA6kGYAyU5MaX\n\n║❒ *FOLLOW THE DEVELOPER* 🪄 \nhttps://instagram.com/france.king1 \n\n\n              *𝐅𝐋𝐀𝐒𝐇-𝐌𝐃*";
             await _0x236875.sendMessage(_0x236875.user.id, {
               'text': _0x4b5e14
             });

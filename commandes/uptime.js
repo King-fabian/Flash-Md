@@ -2,7 +2,7 @@ const { france } = require("../framework/france");
 const moment = require("moment-timezone");
 const { getBuffer } = require("../framework/dl/Function");
 const { default: axios } = require('axios');
-const flashspeed = latency
+
 const runtime = function (seconds) { 
  seconds = Number(seconds); 
  var d = Math.floor(seconds / (3600 * 24)); 
@@ -28,7 +28,7 @@ france({ nomCom: 'uptime',
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre } = commandeOptions;
 
-                 await repondre(`*_Uptime of FLASH-MD : ${runtime(process.uptime())}_*`) 
+                 await repondre(`*_Uptime of FLASH-MD: ${runtime(process.uptime())}_*`) 
 
    
 

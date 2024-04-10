@@ -78,10 +78,7 @@ async (dest, zk, commandeOptions) => {
 
 
 
-await repondre(`Checking Flash-Md speed`);
-await zk.sendMessage(dest, {
-      protocolMessage: {
-        key: Dreaded.key,
-        type: 14,
-        editedMessage: {
-          conversation: (`${flashspeed.toFixed(4)}ms`);
+await repondre(`${flashspeed.toFixed(4)} ms`);
+
+}
+);

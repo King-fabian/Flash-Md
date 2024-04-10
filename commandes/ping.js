@@ -1,4 +1,4 @@
-const { France } = require("../framework/france");
+const { france } = require("../framework/france");
 const speed = require("performance-now");
 const moment = require("moment-timezone");
 const { default: axios } = require("axios");

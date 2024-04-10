@@ -92,21 +92,3 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "lyrics2", reaction: "🐐🔵", categorie: "Search" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-  
-    
-      if (!arg || arg.length === 0) {
-        return repondre(`Please insert a song name. Eg lyrics rap god`);
-      }
-  
-      // Regrouper les arguments en une seule chaîne séparée par "-"
-      const fabian = arg.join(' ');
-     const response = fetch(`https://some-random-api.com/lyrics?title=${fabian}`);
-const data = await response.json();
-
-await repondre(data.result);
-console.log(data.completion); 
-
-
-  });

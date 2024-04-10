@@ -28,7 +28,7 @@ france({ nomCom: 'uptime',
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre } = commandeOptions;
 
-                 await repondre(`*_Uptime of FLASH-MD: ${runtime(process.uptime())}_*`) 
+                 await repondre(`*_Uptime of FLASH-MD:\n ${runtime(process.uptime())}_*`) 
 
    
 

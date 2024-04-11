@@ -21,12 +21,13 @@ const img = 'https://telegra.ph/file/f1f2303ff4e39b0a3b6b3.jpg';
 const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
             const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
-const gitdata = `FLASH - MD
+const gitdata = `Hello 👋 
+This is *FLASH-MD* The Following is it's *REPO*\n
 *Repository:* ${data.html_url}
 ✨ *Stars:* ${repoInfo.stars}
 🧧 *Forks:* ${repoInfo.forks}
 📅 *Release Date:* ${releaseDate}
-🕐 *Last Update:* ${lastUpdateDate}
+🕐 *Last Update:* ${lastUpdate_at}
 👨‍💻 *Owner:* *France King*`;
 
 
@@ -39,9 +40,8 @@ console.log("Could not fetch data")
 
 
 });
-france({ nomCom: "test", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
 
-   let z = 'Hello This is  *FLASH-MD* \n\n ' + "The Following is *FLASH-MD Repo.*";
+   /*let z = 'Hello This is  *FLASH-MD* \n\n ' + "The Following is *FLASH-MD Repo.*";
     let d = './Sprinter';
     let varmess = z + d;
     var img = 'https://telegra.ph/file/f1f2303ff4e39b0a3b6b3.jpg';

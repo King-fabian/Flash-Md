@@ -9,11 +9,12 @@ const { default: axios } = require('axios');
 france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,ms,arg}=commandeOptions;
-  
+
+} try
     if(!arg || !arg[0])
     {return repondre("yes I'm listening to you.")}
     //var quest = arg.join(' ');
-  try{
+ 
     
     
 const message = await traduire(arg.join(' '),{ to : 'en'});

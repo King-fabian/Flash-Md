@@ -48,7 +48,7 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
   france({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
- 
+  } try 
       if (!arg || arg.length === 0) {
         return repondre(`Please enter the necessary information to generate the image.`);
       }

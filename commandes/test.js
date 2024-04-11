@@ -24,12 +24,12 @@ const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
 const gitdata = `Hello 👋 
 This is *FLASH-MD.*\n The Following is it's *REPO*
 
-[💙] *REPOSITORY:* ${data.html_url}
-[✨] *STARS:* ${repoInfo.stars}
-[🧧] *FORKS:* ${repoInfo.forks}
-[📅] *RELEASE DATE:* ${releaseDate}
-[🕐] *UPDATE ON:* ${repoInfo.lastUpdate}
-[👨‍💻] *OWNER:* *France King*`;
+🗼 *REPOSITORY:* ${data.html_url}
+✨ *STARS:* ${repoInfo.stars}
+🧧 *FORKS:* ${repoInfo.forks}
+📅 *RELEASE DATE:* ${releaseDate}
+🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
+👨‍💻 *OWNER:* *France King*`;
 
 
 await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });

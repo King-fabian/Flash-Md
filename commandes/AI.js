@@ -9,12 +9,11 @@ const { default: axios } = require('axios');
 france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,ms,arg}=commandeOptions;
-
-} try
+  
     if(!arg || !arg[0])
     {return repondre("yes I'm listening to you.")}
     //var quest = arg.join(' ');
- 
+  try{
     
     
 const message = await traduire(arg.join(' '),{ to : 'en'});
@@ -48,8 +47,8 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
 
   france({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
-    
-try {
+  
+    try {
       if (!arg || arg.length === 0) {
         return repondre(`Please enter the necessary information to generate the image.`);
       }
@@ -93,3 +92,5 @@ console.log(data.completion);
 
   });
 
+
+  

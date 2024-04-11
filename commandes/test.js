@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { france } = require("../framework/france");
-const moment = require("moment-timezone");
 france({ nomCom: "repo", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
 
 
@@ -11,7 +10,7 @@ const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
 
     const response = await fetch(githubRepo); 
         const data = await response.json(); 
-   const time = moment.tz.setDefault('Africa/Nairobi');
+ 
         if (data) {
             const repoInfo = {
                 stars: data.stargazers_count,
@@ -25,12 +24,12 @@ const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
 const gitdata = `Hello 👋 
 This is *FLASH-MD.*\n The Following is it's *REPO*
 
-*Repository:* ${data.html_url}
-✨ *Stars:* ${repoInfo.stars}
-🧧 *Forks:* ${repoInfo.forks}
-📅 *Release Date:* ${releaseDate}
-🕐 *Last Update:* ${repoInfo.lastUpdate}
-👨‍💻 *Owner:* *France King*`;
+[💙] *REPOSITORY:* ${data.html_url}
+[✨] *STARS:* ${repoInfo.stars}
+[🧧] *FORKS:* ${repoInfo.forks}
+[📅] *RELEASE DATE:* ${releaseDate}
+[🕐] *UPDATE ON:* ${repoInfo.lastUpdate}
+[👨‍💻] *OWNER:* *France King*`;
 
 
 await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });

@@ -2,6 +2,7 @@ const { france } = require("../framework/france");
 const moment = require("moment-timezone");
 const { getBuffer } = require("../framework/dl/Function");
 const { default: axios } = require('axios');
+const speed = require(performance-now);
 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 

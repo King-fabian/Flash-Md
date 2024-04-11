@@ -11,7 +11,7 @@ const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
 
     const response = await fetch(githubRepo); 
         const data = await response.json(); 
-
+   const time = moment.tz.setDefault('Africa/Nairobi');
         if (data) {
             const repoInfo = {
                 stars: data.stargazers_count,

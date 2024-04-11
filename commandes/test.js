@@ -5,7 +5,7 @@ france({ nomCom: "repo", reaction: "😌", nomFichier: __filename }, async (dest
 
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';
-const img = 'https://telegra.ph/file/f1f2303ff4e39b0a3b6b3.jpg';
+const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
 
 
     const response = await fetch(githubRepo); 

@@ -58,7 +58,7 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
       const image = arg.join(' ');
       const response = await fetch(`https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`);
         
-      const data = await response.json()
+      const data = response.data
       let caption = '*powered by FLASH-MD*';
       
       if (data.status && data.owner && data.data) {

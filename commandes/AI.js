@@ -48,17 +48,17 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
 
   france({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
-  
-    try {
+    
+try {
       if (!arg || arg.length === 0) {
         return repondre(`Please enter the necessary information to generate the image.`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const image = arg.join(' ');
-      const response = await fetch(`https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`);
-        
-      const data = response.data
+      const response = await axios.get(`https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`);
+      
+      const data = response.data;
       let caption = '*powered by FLASH-MD*';
       
       if (data.status && data.owner && data.data) {

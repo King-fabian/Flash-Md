@@ -49,9 +49,9 @@ repondre(`◆━━━━━━✦FACT✦━━━━━━◆
 *◇* ${data.fact}
 
 
+
+
 *◇* Powered by *France King*
-
-
 
 ╔═════◇
 ║◇ *KEEP USING FLASH-MD*
@@ -72,10 +72,13 @@ const data = await response.json();
 const flashhh= `
 ◆━━━━━━✦QUOTE✦━━━━━━◆ 
 ◇ _${data.quote.body}_\n
+
 ◇ *AUTHOR:* ${data.quote.author}
 
-◇ _Powered by:_ *France King*
 
+
+
+◇ _Powered by:_ *France King*
 
 
 ╔═════◇

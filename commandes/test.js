@@ -28,7 +28,7 @@ This is *FLASH-MD* The Following is it's *REPO*
 ✨ *Stars:* ${repoInfo.stars}
 🧧 *Forks:* ${repoInfo.forks}
 📅 *Release Date:* ${releaseDate}
-🕐 *Last Update:* ${data.Updated_at}
+🕐 *Last Update:* ${repoInfo.lastUpdate}
 👨‍💻 *Owner:* *France King*`;
 
 

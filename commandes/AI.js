@@ -55,7 +55,7 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const image = arg.join(' ');
-      const response = await axios.get(`https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${encodeURIComponent(image)}`);
+      const response = await axios.get(`https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`);
       
       const data = await response.json();
       let caption = '*powered by FLASH-MD*';

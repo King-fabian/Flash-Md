@@ -80,7 +80,7 @@ async (dest, zk, commandeOptions) => {
 
 
 
-await repondre(`${flashspeed.toFixed(4)} ms`);
+/*await repondre(`${flashspeed.toFixed(4)} ms`);*/
  let pingMsg = await zk.sendMessage(dest, {text: 'Pinging...'})
 
   let timestamp = speed()

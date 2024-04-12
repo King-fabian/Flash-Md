@@ -65,7 +65,7 @@ await zk.sendMessage(dest, { image: res }, { quoted: ms });
 );
 
 
-/*france({ nomCom: 'ping',
+france({ nomCom: 'speed',
     desc: 'To check ping',
     Categorie: 'General',
     reaction: '⚙️', 

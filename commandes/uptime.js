@@ -3,7 +3,6 @@ const moment = require("moment-timezone");
 const { getBuffer } = require("../framework/dl/Function");
 const { default: axios } = require('axios');
 const speed = require("performance-now");
-const exec = require("child-process");
 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 

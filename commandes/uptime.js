@@ -3,6 +3,7 @@ const moment = require("moment-timezone");
 const { getBuffer } = require("../framework/dl/Function");
 const { default: axios } = require('axios');
 const speed = require("performance-now");
+const exec = require("child-process");
 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 
@@ -80,6 +81,20 @@ async (dest, zk, commandeOptions) => {
 
 
 await repondre(`${flashspeed.toFixed(4)} ms`);
+ let pingMsg = await zk.sendMessage(dest, {text: 'Pinging...'})
+
+  let timestamp = speed()
+
+
+    let latency = (speed() - timestamp).toFixed(4)
+
+    await zk.sendMessage(dest, {
+      protocolMessage: {
+        key: pingMsg.key,
+        type: 14,
+        editedMessage: {
+          conversation: `Pong! Latency: ${latency} ms` 
+        }
 
 }
 );

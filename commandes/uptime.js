@@ -80,21 +80,8 @@ async (dest, zk, commandeOptions) => {
 
 
 
-/*await repondre(`${flashspeed.toFixed(4)} ms`);*/
- let pingMsg = await zk.sendMessage(dest, {text: 'Pinging...'})
+await repondre(`${flashspeed.toFixed(4)} ms`);
 
-  let timestamp = speed()
-
-
-    let latency = (speed() - timestamp).toFixed(4)
-
-    await zk.sendMessage(dest, {
-      protocolMessage: {
-        key: pingMsg.key,
-        type: 14,
-        editedMessage: {
-          conversation: `Pong! Latency: ${latency} ms` 
-        }
 
 }
 );

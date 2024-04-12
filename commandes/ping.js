@@ -37,8 +37,8 @@ france({ nomCom: 'ping',
   },
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre } = commandeOptions;
-    const { start} = new Date().getTime()
-    return repondre('*Pong!!*\n ```' + 2000 + '``` *ms*') 
+    const { start } = new Date().getTime()
+    return repondre('*Pong!!*\n ```' + 2000 + '``` *ms*' edit: key) 
     const { end } = new Date().getTime()
     await zk.sendMessage('*Pong!*\n ```' + (end - start) + '``` *ms*')
   }

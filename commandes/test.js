@@ -31,8 +31,8 @@ This is *FLASH-MD.*\n The Following is it's *REPO*
 📅 *RELEASE DATE:* ${releaseDate}
 🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
 👨‍💻 *OWNER:* *France King*
-____________________________________
-     Made with 🤍`;
+__________________________________
+         Made with 🤍`;
 
 
 await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });

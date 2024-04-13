@@ -54,7 +54,7 @@ france({
       'image': {
         'url': _0x3eb776.image
       },
-      'caption': "\t *Logo By FLASH-MD*\n                                            _By France King_"
+      'caption': "\t *Logo By FLASH-MD*"
     }, {
       'quoted': _0x2c8d47
     });
@@ -74,7 +74,7 @@ france({
     ms: _0x553819
   } = _0x52f99f;
   try {
-    const _0x4d9fd1 = "*_EXEMPLE *:  " + _0x2ff7d5 + "dragonball FranceKing";
+    const _0x4d9fd1 = "*_EXAMPLE *:  " + _0x2ff7d5 + "dragonball FranceKing";
     if (_0x3bca62 == '' || !_0x3bca62) {
       _0x28a782(_0x4d9fd1);
       return;
@@ -110,10 +110,10 @@ france({
   } = _0x64fc0b;
   try {
     if (!_0x421d25 || _0x421d25 == '') {
-      _0x48a3d9("*_Exemple : * " + _0x4206c3 + "naruto FLASH-MD");
+      _0x48a3d9("*_Example : * " + _0x4206c3 + "naruto FLASH-MD");
       return;
     }
-    _0x48a3d9("*traitement en cours...*");
+    _0x48a3d9("*FLASH-MD is Processing Your Request...*");
     var _0x45c6e5 = await mumaker.ephoto('https://en.ephoto360.com/naruto-shippuden-logo-style-text-effect-online-808.html', _0x421d25.join(" "));
     await _0x1d5bd.sendMessage(_0x1cd9ad, {
       'image': {
@@ -161,7 +161,7 @@ france({
     prefixe: _0x25ea07
   } = _0x11aa3e;
   if (!_0x5ecc77[0x0]) {
-    _0x51b26b("Exemple of using commande:\n " + _0x25ea07 + "wall FLASH-MD");
+    _0x51b26b("Example of using this command:\n " + _0x25ea07 + "wall FLASH-MD");
     return;
   }
   let _0x516dcd = _0x5ecc77.join(" ");
@@ -215,7 +215,7 @@ france({
     prefixe: _0x40b08a
   } = _0x19c522;
   if (!_0x358d9c || _0x358d9c == '') {
-    _0x151171("Exemple of using commande:\n " + _0x40b08a + "neonlight My text");
+    _0x151171("Example of using this command:\n " + _0x40b08a + "neonlight My text");
     return;
   }
   try {
@@ -244,7 +244,7 @@ france({
     prefixe: _0x2ba19c
   } = _0x56a8d2;
   if (!_0x5ac43d[0x0]) {
-    _0x6979a0("Exemple of using commande:\n " + _0x2ba19c + "greenneon My text");
+    _0x6979a0("Example of using this command:\n " + _0x2ba19c + "greenneon My text");
     return;
   }
   const _0x5ab78f = _0x5ac43d.join(" ");
@@ -271,7 +271,7 @@ france({
     prefixe: _0x528a55
   } = _0x23e3bd;
   if (!_0x262085[0x0]) {
-    _0x5c0330("Exemple of using commande:\n " + _0x528a55 + "glitch My text");
+    _0x5c0330("Example of using this command:\n " + _0x528a55 + "glitch My text");
     return;
   }
   const _0x127a98 = _0x262085.join(" ");
@@ -298,7 +298,7 @@ france({
     prefixe: _0x218f0d
   } = _0x36932c;
   if (!_0x2bf3a5[0x0]) {
-    _0x52145c("Exemple of using commande:\n " + _0x218f0d + "devil My text");
+    _0x52145c("Example of using this command:\n " + _0x218f0d + "devil My text");
     return;
   }
   mumaker.textpro('https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html', _0x2bf3a5).then(_0xe3ecc4 => {
@@ -369,7 +369,7 @@ france({
     repondre: _0x3240f8
   } = _0x1e333b;
   if (!_0x373fd2[0x0]) {
-    _0x3240f8("Exemple of using commande:\n " + _0x4fe976 + "Snow My text");
+    _0x3240f8("Example of using this command:\n " + _0x4fe976 + "Snow My text");
     return;
   }
   const _0x15a111 = _0x373fd2.join(" ");
@@ -383,7 +383,7 @@ france({
       'quoted': _0xa5142a
     });
   })["catch"](_0x4e86df => {
-    console.error("Une erreur s'est produite :", _0x4e86df);
+    console.error("An error occurred :", _0x4e86df);
   });
 });
 france({
@@ -398,7 +398,7 @@ france({
     repondre: _0x4fc8f7
   } = _0x51482f;
   if (!_0x240b0e[0x0]) {
-    _0x4fc8f7("Exemple of using commande:\n " + _0xcaef94 + "Transformer My text");
+    _0x4fc8f7("Example of using this command:\n " + _0xcaef94 + "Transformer My text");
     return;
   }
   const _0x1a18f0 = _0x240b0e.join(" ");

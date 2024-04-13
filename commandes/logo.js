@@ -54,7 +54,7 @@ france({
       'image': {
         'url': _0x3eb776.image
       },
-      'caption': "\t *Logo By FLASH-MD*"
+      'caption': "\t *Logo By FLASH-MD*\n By France King"
     }, {
       'quoted': _0x2c8d47
     });
@@ -81,7 +81,7 @@ france({
     }
     const _0x1073c6 = await mumaker.ephoto("https://en.ephoto360.com/create-dragon-ball-style-text-effects-online-809.html", _0x3bca62.join(" "));
     await _0x5408ed.sendMessage(_0x141807, {
-      'text': " *\t Traitement en cours ...*"
+      'text': "*Processing...*"
     }, {
       'quoted': _0x553819
     });

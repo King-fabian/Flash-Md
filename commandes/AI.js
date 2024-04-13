@@ -13,7 +13,7 @@ france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOpt
   const {repondre,auteurMessage,ms,arg}=commandeOptions;
   let nom = nomAuteurMessage; 
     if(!arg || !arg[0])
-    {return repondre("yes + nom +, I'm listening to you.")}
+    {return repondre("yes" + nom + "I'm listening to you.")}
     //var quest = arg.join(' ');
   try{
     

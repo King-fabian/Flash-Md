@@ -31,7 +31,7 @@ This is *FLASH-MD.*\n The Following is it's *REPO*
 📅 *RELEASE DATE:* ${releaseDate}
 🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
 👨‍💻 *OWNER:* *France King*
-________________________
+____________________________________
      Made with 🤍`;
 
 

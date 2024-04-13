@@ -19,6 +19,6 @@ france({ nomCom: "fancy", categorie: "Fun", reaction: "☑️" }, async (dest, z
         }
     } catch (error) {
         console.error(error);
-        return await repondre('_Une erreur s\'est produite :(_');
+        return await repondre('_Style Not Found 🥱 :(_');
     }
 });

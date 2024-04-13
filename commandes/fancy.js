@@ -8,14 +8,14 @@ france({ nomCom: "fancy", categorie: "Fun", reaction: "☑️" }, async (dest, z
 
     try {
         if (id === undefined || text === undefined) {
-            return await repondre(`\nExample : ${prefixe}fancy 10 Flash-Md\n` + String.fromCharCode(8206).repeat(4001) + fancy.list('FLASH-MD', fancy));
+            return await repondre(`\nExample : ${prefixe}fancy 10 Flash-Md\n` + String.fromCharCode(8206).repeat(4000) + fancy.list('FLASH-MD', fancy));
         }
 
         const selectedStyle = fancy[parseInt(id) - 1];
         if (selectedStyle) {
             return await repondre(fancy.apply(selectedStyle, text));
         } else {
-            return await repondre('_Style introuvable :(_');
+            return await repondre('_FLASH-MD Fancy List:(_');
         }
     } catch (error) {
         console.error(error);

@@ -15,10 +15,10 @@ france({ nomCom: "fancy", categorie: "Fun", reaction: "☑️" }, async (dest, z
         if (selectedStyle) {
             return await repondre(fancy.apply(selectedStyle, text));
         } else {
-            return await repondre('_FLASH-MD Fancy List:(_');
+            return await repondre('_Style Not Found :(_');
         }
     } catch (error) {
         console.error(error);
-        return await repondre('_Style Not Found 🥱 :(_');
+        return await repondre('_France King :(_');
     }
 });

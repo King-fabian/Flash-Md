@@ -11,7 +11,7 @@ france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOpt
   const {repondre,ms,arg}=commandeOptions;
   
     if(!arg || !arg[0])
-    {return repondre("YEES! _I'm listening to you._")}
+    {return repondre("YEES!\n _I'm listening to you._")}
     //var quest = arg.join(' ');
   try{
     

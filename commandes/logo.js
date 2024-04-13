@@ -54,7 +54,7 @@ france({
       'image': {
         'url': _0x3eb776.image
       },
-      'caption': "\t *Logo By FLASH-MD*\n By France King"
+      'caption': "\t *Logo By FLASH-MD*\n            By France King"
     }, {
       'quoted': _0x2c8d47
     });

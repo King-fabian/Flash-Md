@@ -6,7 +6,7 @@ const { default: axios } = require('axios');
 
 
 
-france({nomCom:"FLASH",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
+france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,ms,arg}=commandeOptions;
   
@@ -45,7 +45,7 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
 
 
 
-  france({ nomCom: "DALLE", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  france({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     try {
@@ -73,7 +73,7 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
     }
   });
   
-  france({ nomCom: "GPT", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  france({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     

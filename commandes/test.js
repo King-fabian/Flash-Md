@@ -31,7 +31,8 @@ This is *FLASH-MD.*\n The Following is it's *REPO*
 📅 *RELEASE DATE:* ${releaseDate}
 🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
 👨‍💻 *OWNER:* *France King*
-💙 *Description:* A simple WhatsApp user bot,Created by *FRANCE KING`;
+________________________
+     Made with 🤍`;
 
 
 await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });

@@ -1,8 +1,6 @@
 const { france } = require('../framework/france');
 const traduire = require("../framework/traduction") ;
 const { default: axios } = require('axios');
-const fs = require("fs-extra");
-const conf = require("../set");
 //const conf = require('../set');
 
 
@@ -10,10 +8,10 @@ const conf = require("../set");
 
 france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
-  const {repondre,auteurMessage,ms,arg}=commandeOptions;
-  let nom = nomAuteurMessage; 
+  const {repondre,ms,arg}=commandeOptions;
+  
     if(!arg || !arg[0])
-    {return repondre("yes" + nom + "I'm listening to you.")}
+    {return repondre("YEES! _I'm listening to you._")}
     //var quest = arg.join(' ');
   try{
     

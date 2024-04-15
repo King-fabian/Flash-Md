@@ -287,9 +287,9 @@ france({
   })["catch"](console.error);
 });
 france({
-  'nomCom': "devil",
+  'nomCom': "cloth",
   'categorie': "Logo",
-  'reaction': '😈'
+  'reaction': '🦺'
 }, async (_0x468813, _0x3c0b3e, _0x36932c) => {
   const {
     arg: _0x2bf3a5,
@@ -298,10 +298,10 @@ france({
     prefixe: _0x218f0d
   } = _0x36932c;
   if (!_0x2bf3a5[0x0]) {
-    _0x52145c("Example of using this command:\n " + _0x218f0d + "devil My text");
+    _0x52145c("Example of using this command:\n " + _0x218f0d + "cloth Flash-Md");
     return;
   }
-  mumaker.textpro('https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html', _0x2bf3a5).then(_0xe3ecc4 => {
+  mumaker.textpro('https://en.ephoto360.com/text-on-cloth-effect-62.html', _0x2bf3a5).then(_0xe3ecc4 => {
     _0x3c0b3e.sendMessage(_0x468813, {
       'image': {
         'url': _0xe3ecc4.image

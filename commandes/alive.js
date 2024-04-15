@@ -35,13 +35,14 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
     const alivemsg = `
+   ../Sprinter 
 *Owner* : ${s.OWNER_NAME}
 *Mode* : ${mode}
 *Date* : ${date}
 *Time* : ${temps}
 
  ${message}
- + (../Sprinter)
+ 
  
  *FLASH-MD by France King is alive*`
 

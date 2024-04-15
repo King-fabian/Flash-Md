@@ -150,9 +150,9 @@ france({
   }
 });
 france({
-  'nomCom': "stars",
+  'nomCom': "night",
   'categorie': 'Logo',
-  'reaction': '✨'
+  'reaction': '🌃'
 }, async (_0x4a29e7, _0xd75be3, _0x11aa3e) => {
   const {
     arg: _0x5ecc77,
@@ -161,7 +161,7 @@ france({
     prefixe: _0x25ea07
   } = _0x11aa3e;
   if (!_0x5ecc77[0x0]) {
-    _0x51b26b("Example of using this command:\n " + _0x25ea07 + "wall FLASH-MD");
+    _0x51b26b("Example of using this command:\n " + _0x25ea07 + "night FLASH-MD");
     return;
   }
   let _0x516dcd = _0x5ecc77.join(" ");

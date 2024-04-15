@@ -233,9 +233,9 @@ france({
   }
 });
 france({
-  'nomCom': "greenneon",
+  'nomCom': "mechanical",
   'categorie': 'Logo',
-  'reaction': '🟢'
+  'reaction': '🏢'
 }, async (_0x2d32ca, _0x387de4, _0x56a8d2) => {
   const {
     arg: _0x5ac43d,
@@ -244,11 +244,11 @@ france({
     prefixe: _0x2ba19c
   } = _0x56a8d2;
   if (!_0x5ac43d[0x0]) {
-    _0x6979a0("Example of using this command:\n " + _0x2ba19c + "greenneon My text");
+    _0x6979a0("Example of using this command:\n " + _0x2ba19c + "mechanical France King");
     return;
   }
   const _0x5ab78f = _0x5ac43d.join(" ");
-  mumaker.textpro("https://textpro.me/green-neon-text-effect-874.html", _0x5ab78f).then(_0x371f0b => {
+  mumaker.ephoto("https://en.ephoto360.com/create-your-name-in-a-mechanical-style-306.html", _0x5ab78f).then(_0x371f0b => {
     _0x387de4.sendMessage(_0x2d32ca, {
       'image': {
         'url': _0x371f0b.image

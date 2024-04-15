@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { france } = require("../framework/france");
-france({ nomCom: /*"sc",*/ reaction: "😌"}, async (dest, zk, commandeOptions) => {
+france({ nomCom: "sc",reaction: "😌"}, async (dest, zk, commandeOptions) => {
 
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';

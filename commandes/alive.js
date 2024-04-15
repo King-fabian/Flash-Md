@@ -41,7 +41,7 @@ const date = moment().format('DD/MM/YYYY');
 *Time* : ${temps}
 
  ${message}
- 
+ + (../Sprinter)
  
  *FLASH-MD by France King is alive*`
 

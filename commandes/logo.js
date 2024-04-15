@@ -373,7 +373,7 @@ france({
     return;
   }
   const _0x15a111 = _0x373fd2.join(" ");
-  mumaker.ephoto("https://en.ephoto360.com/create-pornhub-style-logos-online-free-549.html", _0x15a111).then(_0x3268a8 => {
+  mumaker.ephoto("https://en.ephoto360.com/create-pornhub-style-online-free-549.html", _0x15a111).then(_0x3268a8 => {
     _0x3fa1bb.sendMessage(_0x4b2015, {
       'image': {
         'url': _0x3268a8.image
@@ -484,7 +484,7 @@ france({
     prefixe: _0x52d82c
   } = _0x38548d;
   if (!_0x37615e[0x0]) {
-    repondre("Exemple of using commande:\n " + _0x52d82c + "FoggyWindow My text");
+    repondre("Example of using this command:\n " + _0x52d82c + "cat Flash Md");
     return;
   }
   const _0x460794 = _0x37615e.join(" ");

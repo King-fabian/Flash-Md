@@ -177,7 +177,7 @@ france({
   })["catch"](console.log);
 });
 france({
-  'nomCom': "summer",
+  'nomCom': "sunset",
   'categorie': "Logo",
   'reaction': '🌞'
 }, async (_0x7d657e, _0x1bd92d, _0x11435e) => {
@@ -188,7 +188,7 @@ france({
     prefixe: _0x24ee2b
   } = _0x11435e;
   if (!_0x3be5f2[0x0]) {
-    _0x37f281("Example of using this command:\n " + _0x24ee2b + "sunset My text");
+    _0x37f281("Example of using this command:\n " + _0x24ee2b + "sunset France King");
     return;
   }
   const _0x3fa918 = _0x3be5f2.join(" ");
@@ -204,9 +204,9 @@ france({
   })["catch"](console.error);
 });
 france({
-  'nomCom': "neonlight",
+  'nomCom': "chocolate",
   'categorie': "Logo",
-  'reaction': '💡'
+  'reaction': '🍫'
 }, async (_0x144c66, _0x3fdda4, _0x19c522) => {
   const {
     arg: _0x358d9c,
@@ -215,11 +215,11 @@ france({
     prefixe: _0x40b08a
   } = _0x19c522;
   if (!_0x358d9c || _0x358d9c == '') {
-    _0x151171("Example of using this command:\n " + _0x40b08a + "neonlight My text");
+    _0x151171("Example of using this command:\n " + _0x40b08a + "chocolate Flash-Md");
     return;
   }
   try {
-    let _0x45cb2e = await mumaker.textpro("https://textpro.me/create-glowing-neon-light-text-effect-online-free-1061.html", _0x358d9c);
+    let _0x45cb2e = await mumaker.ephoto("https://en.ephoto360.com/chocolate-text-effect-353.html", _0x358d9c);
     _0x3fdda4.sendMessage(_0x144c66, {
       'image': {
         'url': _0x45cb2e.image

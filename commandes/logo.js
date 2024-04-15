@@ -188,11 +188,11 @@ france({
     prefixe: _0x24ee2b
   } = _0x11435e;
   if (!_0x3be5f2[0x0]) {
-    _0x37f281("Exemple of using commande:\n " + _0x24ee2b + "summer My text");
+    _0x37f281("Example of using this command:\n " + _0x24ee2b + "sunset My text");
     return;
   }
   const _0x3fa918 = _0x3be5f2.join(" ");
-  mumaker.textpro('https://textpro.me/create-sunset-light-text-effects-online-for-free-1124.html', _0x3fa918).then(_0x39bf1e => {
+  mumaker.ephoto('https://en.ephoto360.com/create-sunset-light-text-effects-online-807.html', _0x3fa918).then(_0x39bf1e => {
     _0x1bd92d.sendMessage(_0x7d657e, {
       'image': {
         'url': _0x39bf1e.image

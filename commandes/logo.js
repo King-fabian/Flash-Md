@@ -150,9 +150,9 @@ france({
   }
 });
 france({
-  'nomCom': "wall",
+  'nomCom': "stars",
   'categorie': 'Logo',
-  'reaction': '👍'
+  'reaction': '✨'
 }, async (_0x4a29e7, _0xd75be3, _0x11aa3e) => {
   const {
     arg: _0x5ecc77,
@@ -165,7 +165,7 @@ france({
     return;
   }
   let _0x516dcd = _0x5ecc77.join(" ");
-  mumaker.textpro("https://textpro.me/break-wall-text-effect-871.html", _0x516dcd).then(_0x18f4e2 => {
+  mumaker.ephoto("https://en.ephoto360.com/stars-night-online-1-85.html", _0x516dcd).then(_0x18f4e2 => {
     _0xd75be3.sendMessage(_0x4a29e7, {
       'image': {
         'url': _0x18f4e2.image

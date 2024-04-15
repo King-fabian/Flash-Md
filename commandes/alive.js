@@ -35,16 +35,16 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
     const alivemsg = `
-   ../Sprinter 
+     ${message}
+   
 *Owner* : ${s.OWNER_NAME}
 *Mode* : ${mode}
 *Date* : ${date}
 *Time* : ${temps}
 
- ${message}
+
  
- 
- *FLASH-MD by France King is alive*`
+ *FLASH-MD by _France King_ is alive*`
 
  if (lien.match(/\.(mp4|gif)$/i)) {
     try {

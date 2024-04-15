@@ -301,7 +301,7 @@ france({
     _0x52145c("Example of using this command:\n " + _0x218f0d + "cloth Flash-Md");
     return;
   }
-  mumaker.textpro('https://en.ephoto360.com/text-on-cloth-effect-62.html', _0x2bf3a5).then(_0xe3ecc4 => {
+  mumaker.ephoto('https://en.ephoto360.com/text-on-cloth-effect-62.html', _0x2bf3a5).then(_0xe3ecc4 => {
     _0x3c0b3e.sendMessage(_0x468813, {
       'image': {
         'url': _0xe3ecc4.image
@@ -358,8 +358,8 @@ france({
   }
 });
 france({
-  'nomCom': "snow",
-  'categorie': "Logo",
+  'nomCom': "hub",
+  'categorie': "🍑",
   'reaction': '❄️'
 }, async (_0x4b2015, _0x3fa1bb, _0x1e333b) => {
   const {
@@ -369,11 +369,11 @@ france({
     repondre: _0x3240f8
   } = _0x1e333b;
   if (!_0x373fd2[0x0]) {
-    _0x3240f8("Example of using this command:\n " + _0x4fe976 + "Snow My text");
+    _0x3240f8("Example of using this command:\n " + _0x4fe976 + "hub France King");
     return;
   }
   const _0x15a111 = _0x373fd2.join(" ");
-  mumaker.textpro("https://textpro.me/create-beautiful-3d-snow-text-effect-online-1101.html", _0x15a111).then(_0x3268a8 => {
+  mumaker.ephoto("https://en.ephoto360.com/create-pornhub-style-logos-online-free-549.html", _0x15a111).then(_0x3268a8 => {
     _0x3fa1bb.sendMessage(_0x4b2015, {
       'image': {
         'url': _0x3268a8.image

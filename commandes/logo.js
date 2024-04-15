@@ -260,9 +260,9 @@ france({
   })["catch"](console.error);
 });
 france({
-  'nomCom': 'glitch',
+  'nomCom': 'rain',
   'categorie': "Logo",
-  'reaction': "🎛️"
+  'reaction': "☔"
 }, async (_0x263baf, _0x43a1ff, _0x23e3bd) => {
   const {
     arg: _0x262085,
@@ -271,11 +271,11 @@ france({
     prefixe: _0x528a55
   } = _0x23e3bd;
   if (!_0x262085[0x0]) {
-    _0x5c0330("Example of using this command:\n " + _0x528a55 + "glitch My text");
+    _0x5c0330("Example of using this command:\n " + _0x528a55 + "rain France King");
     return;
   }
   const _0x127a98 = _0x262085.join(" ");
-  mumaker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", _0x127a98).then(_0x42c768 => {
+  mumaker.ephoto("https://en.ephoto360.com/foggy-rainy-text-effect-75.html", _0x127a98).then(_0x42c768 => {
     _0x43a1ff.sendMessage(_0x263baf, {
       'image': {
         'url': _0x42c768.image

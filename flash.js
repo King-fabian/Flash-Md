@@ -663,7 +663,7 @@ zk.ev.on('group-participants.update', async (group) => {
     try {
         ppgroup = await zk.profilePictureUrl(group.id, 'image');
     } catch {
-        ppgroup = 'https://telegra.ph/file/6965abd5ea26b6cc84a52.jpg';
+        ppgroup = 'https://telegra.ph/file/3bf285a2c0f3d986028f3.jpg';
     }
 
     try {
@@ -857,7 +857,7 @@ ${metadata.desc}
                 await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `╔══◇ *『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』*
+                let cmsg = `*╔══◇『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』*
 ║◇ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
 ║◇ Prefix : [ ${prefixe} ]
 ║◇ Mode : ${md}
@@ -869,9 +869,9 @@ ${metadata.desc}
 ╔═════◇
 ║◇ *KEEP USING FLASH-MD*
 ╚════════════════>
-______________________________
+___________________________________
 
-*THE FLASH MULTI DEVICE*`;
+*THE  FLASH  MULTI  DEVICE*`;
                 await zk.sendMessage(zk.user.id, { text: cmsg });
                 }
             }

@@ -3,10 +3,10 @@ let cm = [];
 function france(obj, fonctions) {
     let infoComs = obj;
     if (!obj.categorie) {
-        infoComs.categorie = "";
+        infoComs.categorie = "General";
     }
     if (!obj.reaction) {
-        infoComs.reaction = "";
+        infoComs.reaction = "💯";
     }
     infoComs.fonction = fonctions;
     cm.push(infoComs);

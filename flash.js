@@ -163,7 +163,7 @@ setTimeout(() => {
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             
-            var dev = [Damon, Damon1,Damon2,Damon3].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
+            var dev = [k1, k2,k3,k4].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
             console.log("\t [][]...{FLASH-MD}...[][]");
             console.log("=========== New message ===========");
@@ -599,7 +599,7 @@ function mybotpic() {
             //execution des commandes   
             if (verifCom) {
                 //await await zk.readMessages(ms.key);
-                const cd = evt.cm.find((france) => zokou.nomCom === (com));
+                const cd = evt.cm.find((france) => france.nomCom === (com));
                 if (cd) {
                     try {
 
@@ -857,8 +857,7 @@ ${metadata.desc}
                 await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `
-╔══◇ *『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is CONNECTED』*
+                let cmsg = `╔══◇ *『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is CONNECTED』*
 ║◇ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
 ║◇ Prefix : [ ${prefixe} ]
 ║◇ Mode : ${md}
@@ -870,7 +869,7 @@ ${metadata.desc}
 ╔═════◇
 ║◇ *KEEP USING FLASH-MD*
 ╚════════════════>
-______________________
+__________________________
 
 *THE FLASH MULTI DEVICE*`;
                 await zk.sendMessage(zk.user.id, { text: cmsg });

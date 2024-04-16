@@ -51,7 +51,7 @@ france({ nomCom: "owner", categorie: "General", reaction: "💞" }, async (dest,
   }
 });
 
-france({ nomCom: "developer", categorie: "General", reaction: "💞" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "developer", categorie: "General", reaction: "🐐" }, async (dest, zk, commandeOptions) => {
     const { ms, mybotpic } = commandeOptions;
 
     const devs = [
@@ -60,7 +60,18 @@ france({ nomCom: "developer", categorie: "General", reaction: "💞" }, async (d
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
-    let message = "👋 *Welcome to Flash-Md!* here is the developer numbers:\n\n";
+    let message = "Hello 👋\n *Welcome to Flash-Md!*\n ◆━━━━━━✦CREATOR✦━━━━━━◆  
+*◇AGE: 23*
+*◇LOCATION: On Earth*
+*◇BELIEVER: YES ✅*
+*◇FRIENDLY: YES ✅*
+*◇EGOISTIC: YEEES ✅*
+_________________________
+╔═════◇
+║◇ *KEEP USING FLASH-MD*
+╚════════════════════> 
+
+_The following are my contacts_";
     for (const dev of devs) {
       message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }

@@ -857,13 +857,15 @@ ${metadata.desc}
                 await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `*╔══◇『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』*
-║◇ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
-║◇ Prefix : [ ${prefixe} ]
-║◇ Mode : ${md}
-║❒ Created on : *22.2.2024*
-║❒ Total Commands : ${evt.cm.length}︎
-╚═══════════════>
+                let cmsg = `*◇『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』*
+                
+❒ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
+❒ Prefix : [ ${prefixe} ]
+❒ Mode : ${md}
+❒ Total Commands : ${evt.cm.length}
+❒ Created on : *22.2.2024*︎
+
+___________________________________
    
  
 ╔═════◇

@@ -60,18 +60,7 @@ france({ nomCom: "developer", categorie: "General", reaction: "🐐" }, async (d
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
-    let message = "Hello 👋\n *Welcome to Flash-Md!*\n ◆━━━━━━✦CREATOR✦━━━━━━◆  
-*◇AGE: 23*
-*◇LOCATION: On Earth*
-*◇BELIEVER: YES ✅*
-*◇FRIENDLY: YES ✅*
-*◇EGOISTIC: YEEES ✅*
-_________________________
-╔═════◇
-║◇ *KEEP USING FLASH-MD*
-╚════════════════════> 
-
-_The following are my contacts_";
+    let message = "Hello 👋\n *Welcome to Flash-Md!*\n ◆━━━━━━✦CREATOR✦━━━━━━◆\n *◇AGE: 23*\n*◇NAME: France King*\n*◇LOCATION: On Earth*\n*◇BELIEVER: YES ✅*\n*◇FRIENDLY: YES ✅*\n*◇EGOISTIC: YEEES ✅*\n\n_________________________\n\n╔═════◇║◇ *KEEP USING FLASH-MD*╚════════════════════>\n _The following are my contacts_:\n\n:";
     for (const dev of devs) {
       message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }

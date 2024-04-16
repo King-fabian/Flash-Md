@@ -857,7 +857,7 @@ ${metadata.desc}
                 await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `╔══◇ *『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is CONNECTED』*
+                let cmsg = `╔══◇ *『𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected』*
 ║◇ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
 ║◇ Prefix : [ ${prefixe} ]
 ║◇ Mode : ${md}
@@ -869,7 +869,7 @@ ${metadata.desc}
 ╔═════◇
 ║◇ *KEEP USING FLASH-MD*
 ╚════════════════>
-__________________________
+______________________________
 
 *THE FLASH MULTI DEVICE*`;
                 await zk.sendMessage(zk.user.id, { text: cmsg });

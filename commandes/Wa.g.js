@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const { france } = require("../framework/france");
 france({ nomCom: "wagroup", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
     console.log("Commande saisie !!!s");
-    let z = 'Hello 👋 \n\n ' + "Click The link below to Join the OFFICIAL *FLASH-MD* WhatsApp Group";
-    let d = 'Created By France King*';
+    let z = 'Hello 👋\n\n ' + "Click The link below to Join the OFFICIAL *FLASH-MD* WhatsApp Group\n\n";
+    let d = 'https://chat.whatsapp.com/CtBGmUkwXiA6kGYAyU5MaX';
     let varmess = z + d;
     var img = 'https://telegra.ph/file/6771f559b5e3138ee8610.jpg';
     await zk.sendMessage(dest, { image: { url: img }, caption: varmess });

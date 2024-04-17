@@ -74,7 +74,7 @@ france({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (des
 
   const videoUrl = arg.join(" ");
 
- let data = await axios.get('https://vihangayt.me/download/tiktok?url='+ videoUrl) ;
+ let data = await axios.get('https://api.maher-zubair.tech/download/tiktok2?url='+ videoUrl) ;
 
   let tik = data.data.data
 

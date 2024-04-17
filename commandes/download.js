@@ -27,7 +27,7 @@ france({nomCom : "insta" , categorie : "Download"},async (dest , zk , commandeOp
 
 
 france({
-  nomCom: "fbdl",
+  nomCom: "fb",
   categorie: "Download",
   reaction: "📽️"
 },
@@ -49,7 +49,7 @@ async (dest, zk, commandeOptions) => {
         Lien: ${result.url}
       `;
        zk.sendMessage(dest,{image : { url : result.thumbnail}, caption : caption},{quoted : ms}) ;
-       zk.sendMessage(dest, { video: { url: result.hd  }, caption: 'facebook video downloader powered by *MEGATRON-BOT*' }, { quoted: ms });
+       zk.sendMessage(dest, { video: { url: result.hd  }, caption: 'facebook video Downloader.\n Powered by *FLASH-MD*' }, { quoted: ms });
       
     })
     .catch((error) => {console.log("Error:", error)
@@ -91,7 +91,7 @@ Description: ${tik.desc}
 });
 
 france({
-  nomCom: "fbdl2",
+  nomCom: "fb2",
   categorie: "Download",
   reaction: "📽️"
 },

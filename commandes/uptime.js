@@ -54,7 +54,7 @@ france({ nomCom: 'ss',
 
 
 
-let linkkk = `https://api.screenshotmachine.com/?key=c04d3a&url=${encodeURIComponent(linkk)}&dimension=720x720`;
+let linkkk = `https://api.maher-zubair.tech/misc/ssweb?url=https:=${encodeURIComponent(linkk)}&dimension=720x720`;
 
 let res = await getBuffer(linkkk);
 

@@ -74,7 +74,7 @@ france({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (des
 
   const toktik = arg.join(" ");
 
- const response = await fetch('https://api.maher-zubair.tech/download/tiktok2?url='+toktik) ;
+ const response = await fetch('https://api.maher-zubair.tech/download/tiktok2?url='+toktik);
 const data = await response.json()
 
       // Envoi du message avec le thumbnail de la vidéo

@@ -53,7 +53,7 @@ async (dest, zk, commandeOptions) => {
       
     })
     .catch((error) => {console.log("Error:", error)
-                      repondre('try fbdl2 on this link')});
+                      repondre('try fb2 on this link')});
 
 
    
@@ -72,11 +72,10 @@ france({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (des
     return;
   }
 
-  const videoUrl = arg.join(" ");
+  const toktik = arg.join(" ");
 
- let data = await axios.get('https://api.maher-zubair.tech/download/tiktok2?url='+ videoUrl) ;
-
-  let tik = data.data.data
+ const response = await fetch('https://api.maher-zubair.tech/download/tiktok2?url='+toktik) ;
+const data = await response.json()
 
       // Envoi du message avec le thumbnail de la vidéo
       const caption = `

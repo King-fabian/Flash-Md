@@ -58,7 +58,7 @@ let linkkk = `https://api.maher-zubair.tech/misc/ssweb?url=${linkk}&dimension=72
 
 let res = await getBuffer(linkkk);
 
-await zk.sendMessage(dest, { image: res }, caption: 'Web screenshot downloaded by *FLASH-MD*' }, { quoted: ms });
+await zk.sendMessage(dest, { image: res }, { caption: Web screenshot downloaded by *FLASH-MD* }, { quoted: ms });
 
 
 }

@@ -6,13 +6,13 @@ const { default: axios } = require('axios');
 france({nomCom : "insta" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
   const {ms,repondre,arg} = commandeOptions ;
 
-  let link = arg.join(' ')
+  let king = arg.join(' ')
 
   if (!arg[0]) { repondre('Please insert an Instagram video link');return}; 
 
   try {
      
-    let igvid = await axios.get('https://api.maher-zubair.tech/download/instagram?url='+link)
+    let igvid = await axios('https://api.maher-zubair.tech/download/instagram?url='+king)
 
     if (igvid.data.data.data[0].type == 'video') {
     zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "Here is your Instagram Video.\n _Downloaded by_ *FLASH-MD*",gifPlayback : false },{quoted : ms}) 
@@ -21,7 +21,7 @@ france({nomCom : "insta" , categorie : "Download"},async (dest , zk , commandeOp
         zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "Here is your Instagram Image!\n _Downloaded by_ *FLASH-MD*"})
     }
   
-  } catch (e) {repondre("An error occurred while downloading \n " + e)}
+  } catch (e) {repondre("An error occurred while downloading your media\n " + e)}
   
 });
 

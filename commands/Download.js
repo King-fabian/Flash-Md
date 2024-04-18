@@ -1,3 +1,4 @@
+const { mediafireDl } = require("../framework/dl/Function");
 const {france} = require('../framework/france');
 const fs = require('fs');
 const getFBInfo = require("@xaviabot/fb-downloader");
@@ -24,6 +25,43 @@ france({nomCom : "insta" , categorie : "Download"},async (dest , zk , commandeOp
   } catch (e) {repondre("An error occurred while downloading your media\n " + e)}
   
 });
+
+france({nomCom : "mediafire" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
+
+  const {ms,repondre,arg} = commandeOptions ;
+
+  let link = arg.join(' ')
+
+  if (!arg[0]) { repondre('Provide mediafire link\n\nmediafire <valid mediafire link>');return}; 
+
+  try {
+     
+    
+        const fileInfo = await mediafireDl(link);
+
+if (fileInfo[0].size.split('MB')[0] >= 100) {
+            return m.reply('File big eh');
+        }
+
+await zk.sendMessage(
+            dest,
+            {
+                document: {
+                    url: fileInfo[0].link,
+                },
+                fileName: fileInfo[0].nama,
+                mimetype: fileInfo[0].mime,
+                caption: `FLASH-MD Downloader: ${fileInfo[0].nama}`,  
+            },
+            { quoted: ms }
+        );
+
+    
+  
+  } catch (e) {repondre("I am unable to download the file. \n " + e)}
+  
+});
+
 
 
 france({

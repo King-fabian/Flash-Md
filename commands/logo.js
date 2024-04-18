@@ -359,8 +359,8 @@ france({
 });
 france({
   'nomCom': "hub",
-  'categorie': "🍑",
-  'reaction': '❄️'
+  'categorie': "Logo",
+  'reaction': '🍑'
 }, async (_0x4b2015, _0x3fa1bb, _0x1e333b) => {
   const {
     arg: _0x373fd2,

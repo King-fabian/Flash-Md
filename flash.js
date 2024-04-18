@@ -253,7 +253,7 @@ function mybotpic() {
 
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {
 
-                if(ms.key.fromMe || ms.message.protocolMessage.key.fromMe) { console.log('Message supprimer me concernant') ; return }
+                if(ms.key.fromMe || ms.message.protocolMessage.key.fromMe) { console.log('Delete message about me') ; return }
         
                                 console.log(`Message supprimer`)
                                 let key =  ms.message.protocolMessage.key ;
@@ -284,7 +284,7 @@ function mybotpic() {
         
                                   //  console.log(msg)
         
-                                    if(msg === null || !msg ||msg === 'undefined') {console.log('Message non trouver') ; return } 
+                                    if(msg === null || !msg ||msg === 'undefined') {console.log('Message not found') ; return } 
         
                                 await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        😈Anti-delete-message😈\n Message from @${msg.key.participant.split('@')[0]}​` , mentions : [msg.key.participant]},)
                                 .then( () => {
@@ -692,7 +692,7 @@ ${metadata.desc}
 
             zk.sendMessage(group.id, { image: { url: ppgroup }, caption: msg, mentions: membres });
         } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
-            let msg = `Goodbye to that Fallen soldier, Powered by *MEGATRON-BOT*;\n`;
+            let msg = `Goodbye to that Fallen soldier, Powered by *FLASH-MD*;\n`;
 
             let membres = group.participants;
             for (let membre of membres) {

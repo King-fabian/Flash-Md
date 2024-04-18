@@ -103,28 +103,49 @@ async (dest, zk, commandeOptions) => {
 
 
 
+
 france({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (dest, zk, commandeOptions) => {
   const { arg, ms, prefixe,repondre } = commandeOptions;
   if (!arg[0]) {
-    repondre(`how to use this command:\n ${prefixe}tiktok tiktok_video_link`);
+    repondre(`Voici comment utiliser la commande:\n ${prefixe}veiller lien_video_tiktok`);
     return;
   }
 
-  const toktik = arg.join(" ");
-
- const response = await axios.get('https://api.maher-zubair.tech/download/tiktok2?url='+toktik);
-const data = await response.json()
+  const videoUrl = arg.join(" ");
+  mumaker.tiktok(videoUrl)
+    .then((data) => {
+      const thumbnail = data.thumbnail;
+      const author = data.author;
+      const description = data.description;
+      const media = Array.isArray(data.media) ? data.media.join(", ") : data.media;
+      const music = data.music;
+      const like = data.like;
+      const comment = data.comment;
+      const share = data.share;
 
       // Envoi du message avec le thumbnail de la vidéo
       const caption = `
-Author: ${tik.author}
-Description: ${tik.desc}
+        Auteur: ${author}
+        Description: ${description}
+        Média: ${media}
+        Musique: ${music}
+        J'aime: ${like}
+        Commentaire: ${comment}
+        Partages: ${share}
       `;
 
-         
-      zk.sendMessage(dest, { video: { url: tik.links[0].a} , caption : caption },{quoted : ms});    
+      
+      zk.sendMessage(dest, { image: { url: thumbnail }, caption: caption},{quoted : ms});
 
-  
+      // Envoi de la vidéo sans commentaire
+      zk.sendMessage(dest, { video: { url: data.media } });
+
+      // Envoi des autres informations
+      
+    })
+    .catch((err) => {
+      console.error("Une erreur s'est produite :", err);
+    });
 });
 
 france({

@@ -756,7 +756,7 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
 });
 
 
-france({ nomCom: "apk", reaction: "✨", categorie: "Recherche" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   try {

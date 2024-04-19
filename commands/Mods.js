@@ -496,7 +496,7 @@ france({
 
 france({
     nomCom: 'bangroup',
-    categorie: 'Mods',
+    categorie: 'OWNER',
 }, async (dest, zk, commandeOptions) => {
 
     const { ms, arg, auteurMsgRepondu, msgRepondu , repondre,prefixe,superUser,verifGroupe } = commandeOptions;

@@ -55,11 +55,11 @@ const date = moment().format('DD/MM/YYYY');
 ┃❃│ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())} 
 ┃❃│ Uptime : ${runtime(process.uptime())} 
 ┃❃╰───────────────
-╰─────✧The-GOAT✧─────◆ \n\n`;
+╰─────✧The-GOAT✧─────◆ \n`;
 
   let menuMsg=`  
 
-*◇ FLASH-MD COMMANDS ◇*`;
+*◇ FLASH-MD COMMANDS ◇*\n`;
  
   for (const cat in coms) {
         menuMsg += `

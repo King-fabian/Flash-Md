@@ -63,20 +63,22 @@ const date = moment().format('DD/MM/YYYY');
  
   for (const cat in coms) {
         menuMsg += `
-*╭────☢️${cat}☢️═⊷*`;
+ *╭────☢️${cat}☢️═⊷*`;
         for (const cmd of coms[cat]) {
-        menuMsg += ` │❒ *_${cmd}_*`;
+        menuMsg += ` 
+│❒ *_${cmd}_*`;
         }
         menuMsg += `
 *╰═════════════⊷* \n`
     }
 
     menuMsg += `
-◇            ◇
-*————— ★ —————*
+◇ THE FLASH MULTI DEVICE ◇
+
+Released: 22.2.2024
 
   *📌France King®🐐²0²⁴*                                         
-*╰═════════════⊷*
+ *╰═════════════⊷*
 `;
 
    var lien = mybotpic();

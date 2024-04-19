@@ -174,3 +174,30 @@ async (dest, zk, commandeOptions) => {
     repondre('An error occurred while downloading your video.' , error);
   }
 }); 
+
+france({nomCom : "twitter" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
+  const {ms,repondre,arg} = commandeOptions;
+
+let xx = arg.join(' ')
+
+  if (!arg[0]) { repondre('Please insert a Twitter link to be downloaded');return};
+
+try {
+    const king = await fetch(`https://api.maher-zubair.tech/download/twitter?url=${xx}`);
+    const data = await king.json();
+
+    if (data && data.result && data.result.data && data.result.data.length > 0) {
+        const media = data.result.data[0];
+        if (media.type === 'video') {
+            zk.sendMessage(dest, { video: { url: media.url }, caption: "Here is your Twitter Video.\n _Downloaded by_ *FLASH-MD*", gifPlayback: false }, { quoted: ms });
+        } else {
+            zk.sendMessage(dest, { image: { url: media.url }, caption: "Here is your Twitter Image!\n _Downloaded by_ *FLASH-MD*" });
+        }
+    } else {
+        throw new Error("No media found in the response data");
+    }
+} catch (e) {
+    console.error("An error occurred while downloading:", e);
+}
+
+});

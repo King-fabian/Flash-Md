@@ -109,33 +109,31 @@ async (dest, zk, commandeOptions) => {
 });
 
 
+france({nomCom : "tiktok" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
+  const {ms,repondre,arg} = commandeOptions;
 
+let tk = arg.join(' ')
 
+  if (!arg[0]) { repondre('Please insert a Tik Tok link to be downloaded');return};
 
+try {
+    const tok = await fetch(`https://api.maher-zubair.tech/download/tiktok2?url=${tk}`);
+    const data = await tok.json();
 
-france({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (dest, zk, commandeOptions) => {
-  const { arg, ms, prefixe,repondre } = commandeOptions;
-  if (!arg[0]) {
-    repondre(`how to use this command:\n ${prefixe}tiktok tiktok_video_link`);
-    return;
-  }
+    if (data && data.result && data.result.data && data.result.data.length > 0) {
+        const media = data.result.data[0];
+        if (media.type === 'video') {
+            zk.sendMessage(dest, { video: { url: media.url }, caption: "Here is your Tik Tok Video.\n _Downloaded by_ *FLASH-MD*", gifPlayback: false }, { quoted: ms });
+        } else {
+            zk.sendMessage(dest, { image: { url: media.url }, caption: "Here is your Tik Tok Image!\n _Downloaded by_ *FLASH-MD*" });
+        }
+    } else {
+        throw new Error("No media found in the response data");
+    }
+} catch (e) {
+    console.error("An error occurred while downloading:", e);
+}
 
-  const videoUrl = arg.join(" ");
-
- let data = await axios.get('https://api.maher-zubair.tech/download/tiktok2?url='+ videoUrl) ;
-
-  let tik = data.data.data
-
-      // Envoi du message avec le thumbnail de la vidéo
-      const caption = `
-Author: ${tik.author}
-Description: ${tik.desc}
-      `;
-
-         
-      zk.sendMessage(dest, { video: { url: tik.links[0].a} , caption : caption },{quoted : ms});    
-
-  
 });
 
 france({

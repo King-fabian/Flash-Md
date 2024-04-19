@@ -4,27 +4,34 @@ const fs = require('fs');
 const getFBInfo = require("@xaviabot/fb-downloader");
 const { default: axios } = require('axios');
 
+
 france({nomCom : "insta" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
-  const {ms,repondre,arg} = commandeOptions ;
+  const {ms,repondre,arg} = commandeOptions;
 
-  let king = arg.join(' ')
+let goat = arg.join(' ')
 
-  if (!arg[0]) { repondre('Please insert an Instagram video link');return}; 
+  if (!arg[0]) { repondre('Please insert an Instagram video link');return};
 
-  try {
-     
-    let gram = await axios.get('https://api.maher-zubair.tech/download/instagram?url='+king) 
+try {
+    const flash = await fetch(`https://api.maher-zubair.tech/download/instagram?url=${goat}`);
+    const data = await flash.json();
 
-    if (gram.data.data.data[0].type == 'video') {
-    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "Here is your Instagram Video.\n _Downloaded by_ *FLASH-MD*",gifPlayback : false },{quoted : ms}) 
+    if (data && data.result && data.result.data && data.result.data.length > 0) {
+        const media = data.result.data[0];
+        if (media.type === 'video') {
+            zk.sendMessage(dest, { video: { url: media.url }, caption: "Here is your Instagram Video.\n _Downloaded by_ *FLASH-MD*", gifPlayback: false }, { quoted: ms });
+        } else {
+            zk.sendMessage(dest, { image: { url: media.url }, caption: "Here is your Instagram Image!\n _Downloaded by_ *FLASH-MD*" });
+        }
+    } else {
+        throw new Error("No media found in the response data");
     }
-    else {
-        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "Here is your Instagram Image!\n _Downloaded by_ *FLASH-MD*"})
-    }
-  
-  } catch (e) {repondre("An error occurred while downloading your media\n " + e)}
-  
+} catch (e) {
+    console.error("An error occurred while downloading:", e);
+}
+
 });
+
 
 france({nomCom : "mediafire" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
 

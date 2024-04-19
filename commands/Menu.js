@@ -63,7 +63,7 @@ const date = moment().format('DD/MM/YYYY');
  
   for (const cat in coms) {
         menuMsg += `
- *╭────◽${cat}◽═⊷*`;
+ *╭────☢️${cat}☢️═⊷*`;
         for (const cmd of coms[cat]) {
         menuMsg += ` 
  │❒ *_${cmd}_*`;
@@ -74,10 +74,12 @@ const date = moment().format('DD/MM/YYYY');
 
     menuMsg += `
 ◇ *THE FLASH MULTI DEVICE* ◇
+
    *Released: 22.2.2024*
+   
  _Thanks For choosing FLASH-MD_
 
-  *📌France King®🐐²0²⁴*                                         
+ Created by *📌France King®🐐²0²⁴*                                         
  *╰═════════════⊷*
 `;
 

@@ -186,7 +186,7 @@ try {
     const king = await fetch(`https://api.maher-zubair.tech/download/twitter?url=${xx}`);
     const data = await king.json();
 
-    if (data && data.result && data.result.data && data.result.data.length > 0) {
+    if (data && data.result && data.result.data.length > 0) {
         const media = data.result.data[0];
         if (media.type === 'video') {
             zk.sendMessage(dest, { video: { url: media.url }, caption: "Here is your Twitter Video.\n _Downloaded by_ *FLASH-MD*", gifPlayback: false }, { quoted: ms });

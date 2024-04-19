@@ -65,22 +65,29 @@ await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, {
 );
 
 
-france({ nomCom: 'speed',
-    desc: 'To check ping',
+france({ nomCom: 'sspdf',
+    desc: 'screenshots to pdf',
     Categorie: 'General',
-    reaction: '⚙️', 
+    reaction: '🎥', 
     fromMe: 'true', 
 
+},
+  async (dest, zk, commandeOptions) => {
+    const { ms, arg, repondre } = commandeOptions;
 
-  },
+    if (!arg || arg.length === 0) return repondre("provide a link...");
 
-async (dest, zk, commandeOptions) => {
-    const { ms, arg, repondre, flashspeed} = commandeOptions;
-
+         const goat = arg.join(' ');
 
 
-await repondre(`${flashspeed.toFixed(4)} ms`);
+
+let goat = `https://api.maher-zubair.tech/misc/sspdf?url=${goat}&dimension=720x720`;
+
+let res = await getBuffer(linkkk);
+
+await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, { quoted: ms });
 
 
 }
 );
+

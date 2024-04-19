@@ -79,7 +79,7 @@ const date = moment().format('DD/MM/YYYY');
    
  _Thanks For choosing FLASH-MD_
 
- Created by *📌France King®🐐²0²⁴*                                         
+ Created by *©France King ²0²⁴*                                         
  *╰═════════════⊷*
 `;
 

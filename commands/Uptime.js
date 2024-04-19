@@ -65,7 +65,7 @@ await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, {
 );
 
 
-france({ nomCom: 'sspdf',
+france({ nomCom: 'ig',
     desc: 'screenshots website',
     Categorie: 'General',
     reaction: '🎥', 
@@ -81,7 +81,7 @@ france({ nomCom: 'sspdf',
 
 
 
-let linkkk = `https://api.maher-zubair.tech/misc/sspdf?url=${linkk}`;
+let linkkk = `https://api.maher-zubair.tech/download/instagram?url=${linkk}`;
 
 let res = await getBuffer(linkkk);
 

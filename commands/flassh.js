@@ -11,6 +11,17 @@ france({ nomCom: "wagroup", reaction: "😌", nomFichier: __filename }, async (d
     //console.log("montest")
 });
 console.log("mon test");
+
+france({ nomCom: "channel", reaction: "🤍", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
+    console.log("Commande saisie !!!s");
+    let z = 'Hello 👋\n\nClick The link below to Join the OFFICIAL *FLASH-MD* WhatsApp Channel.\n\n';
+    let d = 'https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P';
+    let varmess = z + d;
+    var img = 'https://telegra.ph/file/6771f559b5e3138ee8610.jpg';
+    await zk.sendMessage(dest, { image: { url: img }, caption: varmess });
+    //console.log("montest")
+});
+console.log("mon test");
 /*module.exports.commande = () => {
   var nomCom = ["test","t"]
   var reaction="☺️"

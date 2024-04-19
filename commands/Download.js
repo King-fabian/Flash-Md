@@ -1,7 +1,7 @@
 const { mediafireDl } = require("../framework/dl/Function");
 const {france} = require('../framework/france');
 const fs = require('fs');
-const igvid = require('instagram-url-dl');
+const fetch = require('node-fetch');
 const getFBInfo = require("@xaviabot/fb-downloader");
 const { default: axios } = require('axios');
 

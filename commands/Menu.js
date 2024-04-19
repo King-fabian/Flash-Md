@@ -66,10 +66,10 @@ const date = moment().format('DD/MM/YYYY');
  *╭────☢️${cat}☢️═⊷*`;
         for (const cmd of coms[cat]) {
         menuMsg += ` 
-│❒ *_${cmd}_*`;
+ │❒ *_${cmd}_*`;
         }
         menuMsg += `
-*╰═════════════⊷* \n`
+ *╰═════════════⊷* \n`
     }
 
     menuMsg += `

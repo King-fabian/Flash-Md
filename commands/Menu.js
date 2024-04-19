@@ -64,7 +64,7 @@ const date = moment().format('DD/MM/YYYY');
 `;
 
     for (const cat in coms) {
-        menuMsg += '
+        menuMsg += `
 *╭────☢️${cat}☢️═⊷*`;
         for (const cmd of coms[cat]) {
             menuMsg += `

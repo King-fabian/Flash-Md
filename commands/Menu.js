@@ -59,11 +59,9 @@ const date = moment().format('DD/MM/YYYY');
 
   let menuMsg=`  
 
-*FLASH-MD COMMANDS :*
-◇                             ◇
+* ◇ FLASH-MD COMMANDS ◇*
 `;
-
-    for (const cat in coms) {
+  for (const cat in coms) {
         menuMsg += `
 *╭────☢️${cat}☢️═⊷*`;
         for (const cmd of coms[cat]) {

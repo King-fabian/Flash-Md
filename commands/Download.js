@@ -1,7 +1,6 @@
 const { mediafireDl } = require("../framework/dl/Function");
 const {france} = require('../framework/france');
 const fs = require('fs');
-const fetch = require('node-fetch');
 const getFBInfo = require("@xaviabot/fb-downloader");
 const { default: axios } = require('axios');
 
@@ -14,7 +13,7 @@ france({nomCom : "insta" , categorie : "Download"},async (dest , zk , commandeOp
 
   try {
      
-    let igvid = await axios.get('https://api.maher-zubair.tech/download/instagram?url='+king) 
+    let data = await axios.get('https://api.maher-zubair.tech/download/instagram?url='+king) 
 
     if (igvid.data.data.data[0].type == 'video') {
     zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "Here is your Instagram Video.\n _Downloaded by_ *FLASH-MD*",gifPlayback : false },{quoted : ms}) 

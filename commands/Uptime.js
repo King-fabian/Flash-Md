@@ -66,7 +66,7 @@ await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, {
 
 
 france({ nomCom: 'sspdf',
-    desc: 'screenshots to pdf',
+    desc: 'screenshots website',
     Categorie: 'General',
     reaction: '🎥', 
     fromMe: 'true', 
@@ -77,11 +77,11 @@ france({ nomCom: 'sspdf',
 
     if (!arg || arg.length === 0) return repondre("provide a link...");
 
-         const goat = arg.join(' ');
+         const linkk = arg.join(' ');
 
 
 
-let goat = `https://api.maher-zubair.tech/misc/sspdf?url=${goat}&dimension=720x720`;
+let linkkk = `https://api.maher-zubair.tech/misc/sspdf?url=${linkk}`;
 
 let res = await getBuffer(linkkk);
 
@@ -90,4 +90,3 @@ await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, {
 
 }
 );
-

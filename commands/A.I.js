@@ -94,3 +94,24 @@ console.log(data.completion);
 
 
   
+france({ nomCom: "bard", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    
+      if (!arg || arg.length === 0) {
+        return repondre(`*_Please provide some text to generate a response._*`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const goat = arg.join(' ');
+     const res = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${goat}`);
+const data = await res.json();
+
+await repondre(data.result);
+console.log(data.completion); 
+
+
+  });
+
+
+  

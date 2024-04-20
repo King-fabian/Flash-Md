@@ -313,17 +313,17 @@ france({
   })['catch'](console.error);
 });
 france({
-  'nomCom': 'oom',
+  'nomCom': 'graffiti',
   'categorie': 'Logo',
   'reaction': '💥'
 }, async (_0x117e9b, _0x154a8e, _0x3594e9) => {
   if (!_0xc0638 || _0xc0638 == '') {
-    _0x3f898a("  Exemple :* " + _0x338b80 + "boom FLASH-MD");
+    _0x3f898a("  Example :* " + _0x338b80 + "graffiti FLASH-MD");
     return;
   }
   try {
     console.log(_0xc0638);
-    var _0x140c55 = await mumaker.ephoto('https://en.ephoto360.com/boom-text-comic-style-text-effect-675.html', _0xc0638);
+    var _0x140c55 = await mumaker.ephoto('https://en.ephoto360.com/create-a-cartoon-style-graffiti-text-effect-online-668.html', _0xc0638);
     _0x3f898a("  processing ...");
     await _0x154a8e.sendMessage(_0x117e9b, {
       'image': {
@@ -575,7 +575,7 @@ france({
     return;
   }
   const _0x25e750 = _0x2adb87.join(" ");
-  mumaker.ephoto("https://en.ephoto360.com/create-thor-style-text-effects-online-796.html", _0x25e750).then(_0x465666 => {
+  mumaker.ephoto("https://en.ephoto360.com/create-thor-style-text-effects-online-for-free-796.html", _0x25e750).then(_0x465666 => {
     _0x5c27bb.sendMessage(_0x3fc490, {
       'image': {
         'url': _0x465666.image

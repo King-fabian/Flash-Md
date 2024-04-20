@@ -337,25 +337,30 @@ france({
 });
 france({
   'nomCom': "water",
-  'categorie': "Logo",
-  'reation': '💦'
-}, async (_0x294867, _0x45a9fb, _0x15e9f6) => {
-  if (!_0x4d7526 || _0x4d7526 == '') {
-    _0x24a9b6(_0x5803c7 + "water france");
+  'categorie': 'Logo',
+  'reaction': '💦'
+}, async (_0x4a29e7, _0xd75be3, _0x11aa3e) => {
+  const {
+    arg: _0x5ecc77,
+    repondre: _0x51b26b,
+    ms: _0x2f1fb6,
+    prefixe: _0x25ea07
+  } = _0x11aa3e;
+  if (!_0x5ecc77[0x0]) {
+    _0x51b26b("Example of using this command:\n " + _0x25ea07 + "water FLASH-MD");
     return;
   }
-  try {
-    var _0x79230 = await mumaker.ephoto('https://en.ephoto360.com/create-water-effect-text-online-295.html', _0x4d7526);
-    _0x24a9b6(" processing ...");
-    await _0x45a9fb.sendMessage(_0x294867, {
+  let _0x516dcd = _0x5ecc77.join(" ");
+  mumaker.ephoto("https://en.ephoto360.com/create-water-effect-text-online-295.html", _0x516dcd).then(_0x18f4e2 => {
+    _0xd75be3.sendMessage(_0x4a29e7, {
       'image': {
-        'url': _0x79230.image
+        'url': _0x18f4e2.image
       },
-      'caption': "  *Logo by FLASH-MD*"
+      'caption': "Logo by *France King*"
+    }, {
+      'quoted': _0x2f1fb6
     });
-  } catch (_0x5da0b3) {
-    _0x24a9b6("🥵🥵 " + _0x5da0b3);
-  }
+  })["catch"](console.log);
 });
 france({
   'nomCom': "1917",

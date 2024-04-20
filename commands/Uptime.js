@@ -64,29 +64,3 @@ await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, {
 }
 );
 
-
-france({ nomCom: 'ig',
-    desc: 'screenshots website',
-    Categorie: 'General',
-    reaction: '🎥', 
-    fromMe: 'true', 
-
-},
-  async (dest, zk, commandeOptions) => {
-    const { ms, arg, repondre } = commandeOptions;
-
-    if (!arg || arg.length === 0) return repondre("provide a link...");
-
-         const linkk = arg.join(' ');
-
-
-
-let linkkk = `https://api.maher-zubair.tech/download/instagram?url=${linkk}`;
-
-let res = await getBuffer(linkkk);
-
-await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, { quoted: ms });
-
-
-}
-);

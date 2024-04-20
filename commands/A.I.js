@@ -99,9 +99,19 @@ france({ nomCom: "bard", reaction: "📡", categorie: "IA" }, async (dest, zk, c
     }  
     // Regrouper les arguments en une seule chaîne séparée par "-"
     const goat = arg.join('-'); 
-    const res = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${goat}`);
-    const data = await res.json();
-    const response = data.result;
-    await repondre(response); 
-    console.log(data.completion); 
-});
+    const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${goat}`);
+    
+    const data = response.data;
+      if (data) {
+        repondre(data.data);
+      } else {
+        repondre("Error during response generation.");
+      }
+    } catch (error) {
+      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
+      repondre("Oops, an error occurred while processing your request.");
+    }
+  });
+
+
+  

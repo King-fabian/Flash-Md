@@ -173,29 +173,29 @@ async (dest, zk, commandeOptions) => {
   }
 }); 
 
-france({nomCom : "twitter" , categorie : "Download"},async (dest , zk , commandeOptions)=>{
-  const {ms,repondre,arg} = commandeOptions;
+france({ nomCom: "twitter", categorie: "Download" }, async (dest, zk, commandeOptions) => {
+    const { ms, repondre, arg } = commandeOptions;
+    let meta = arg.join(' ');
 
-let xx = arg.join(' ')
+    if (!arg[0]) {
+        repondre('Please insert a Twitter video or link');
+        return;
+    }
 
-  if (!arg[0]) { repondre('Please insert a Twitter link to be downloaded');return};
 
 try {
-    const king = await fetch(`https://api.maher-zubair.tech/download/twitter?url=${xx}`);
-    const data = await king.json();
+    
+        const xx = await fetch(`https://api.maher-zubair.tech/download/twitter?url=${meta}`);
+        const data = await xx.json();
 
-    if (data && data.result && data.result.data.length > 0) {
-        const media = data.result.data[0];
-        if (media.type === 'video') {
-            zk.sendMessage(dest, { video: { url: media.url }, caption: "Here is your Twitter Video.\n _Downloaded by_ *FLASH-MD*", gifPlayback: false }, { quoted: ms });
-        } else {
-            zk.sendMessage(dest, { image: { url: media.url }, caption: "Here is your Twitter Image!\n _Downloaded by_ *FLASH-MD*" });
-        }
-    } else {
-        throw new Error("No media found in the response data");
-    }
-} catch (e) {
-    console.error("An error occurred while downloading:", e);
-}
-
+        if (data && data.data && data.data.HD) {
+            const medi = data.data.HD;
+           
+                zk.sendMessage(dest, { video: { url: medi }, caption: "Here is your Twitter Video.\n _Downloaded by_ *FLASH-MD*", gifPlayback: false }, { quoted: ms });
+           
+        } catch (e) { repondre("I am unable to download your media. \n " + e)}
+       
+            
+        
+    
 });

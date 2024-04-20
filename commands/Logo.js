@@ -358,9 +358,9 @@ france({
   }
 });
 france({
-  'nomCom': "hub",
+  'nomCom': "1917",
   'categorie': "Logo",
-  'reaction': '🍑'
+  'reaction': '😤'
 }, async (_0x4b2015, _0x3fa1bb, _0x1e333b) => {
   const {
     arg: _0x373fd2,
@@ -373,7 +373,7 @@ france({
     return;
   }
   const _0x15a111 = _0x373fd2.join(" ");
-  mumaker.ephoto("https://en.ephoto360.com/create-pornhub-style-online-free-549.html", _0x15a111).then(_0x3268a8 => {
+  mumaker.ephoto("https://en.ephoto360.com/1917-style-text-effect-523.html", _0x15a111).then(_0x3268a8 => {
     _0x3fa1bb.sendMessage(_0x4b2015, {
       'image': {
         'url': _0x3268a8.image

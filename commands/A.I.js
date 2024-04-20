@@ -92,8 +92,6 @@ console.log(data.completion);
 
   });
 
-
-  
 france({ nomCom: "bard", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
@@ -108,8 +106,7 @@ france({ nomCom: "bard", reaction: "📡", categorie: "IA" }, async (dest, zk, c
 const data = await res.json();
 
 await repondre = data.result;
-console.log(data.completion); 
-} catch (e) repondre( `tired 😴`);return};
+console.log(data.completion);
   });
 
 

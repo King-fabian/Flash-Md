@@ -313,7 +313,7 @@ france({
   })['catch'](console.error);
 });
 france({
-  'nomCom': 'boom',
+  'nomCom': 'oom',
   'categorie': 'Logo',
   'reaction': '💥'
 }, async (_0x117e9b, _0x154a8e, _0x3594e9) => {
@@ -445,9 +445,9 @@ france({
   });
 });
 france({
-  'nomCom': "harrypotter",
+  'nomCom': "boom",
   'categorie': 'Logo',
-  'reaction': '🧙‍♂️'
+  'reaction': '💥'
 }, async (_0x2834b8, _0x2b6c85, _0x73e6b9) => {
   const {
     arg: _0x223829,
@@ -456,11 +456,11 @@ france({
     repondre: _0x5cd1c8
   } = _0x73e6b9;
   if (!_0x223829[0x0]) {
-    _0x5cd1c8("Exemple of using commande:\n " + _0x4445e4 + "HarryPotter My text");
+    _0x5cd1c8("Example of using this command:\n " + _0x4445e4 + "boom France King");
     return;
   }
   const _0x5e0876 = _0x223829.join(" ");
-  mumaker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", _0x5e0876).then(_0x133eb0 => {
+  mumaker.ephoto("https://en.ephoto360.com/boom-text-comic-style-text-effect-675.html", _0x5e0876).then(_0x133eb0 => {
     _0x2b6c85.sendMessage(_0x2834b8, {
       'image': {
         'url': _0x133eb0.image

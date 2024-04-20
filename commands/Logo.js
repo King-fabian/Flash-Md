@@ -313,7 +313,7 @@ france({
   })['catch'](console.error);
 });
 france({
-  'nomCom': 'graffiti',
+  'nomCom': 'null',
   'categorie': 'Logo',
   'reaction': '💥'
 }, async (_0x117e9b, _0x154a8e, _0x3594e9) => {
@@ -387,7 +387,7 @@ france({
   });
 });
 france({
-  'nomCom': "grafittis",
+  'nomCom': "graffiti",
   'categorie': "Logo",
   'reaction': "💥"
 }, async (_0xd36572, _0x4cc7d9, _0x4da9f5) => {
@@ -403,7 +403,7 @@ france({
   }
   try {
     let _0x306ea0 = await mumaker.ephoto('https://en.ephoto360.com/create-a-cartoon-style-graffiti-text-effect-online-668.html', _0x17e73d);
-    _0x7fa6fd('*processing...*');
+    _0x7fa6fd('*FLASH-MD is processing your request...*');
     await _0x4cc7d9.sendMessage(_0xd36572, {
       'image': {
         'url': _0x306ea0.image

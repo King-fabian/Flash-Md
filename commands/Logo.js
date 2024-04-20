@@ -313,7 +313,7 @@ france({
   })['catch'](console.error);
 });
 france({
-  'nomCom': 'null',
+  'nomCom': 'avenger',
   'categorie': 'Logo',
   'reaction': '💥'
 }, async (_0x117e9b, _0x154a8e, _0x3594e9) => {
@@ -323,8 +323,8 @@ france({
   }
   try {
     console.log(_0xc0638);
-    var _0x140c55 = await mumaker.ephoto('https://en.ephoto360.com/create-a-cartoon-style-graffiti-text-effect-online-668.html', _0xc0638);
-    _0x3f898a("  processing ...");
+    var _0x140c55 = await mumaker.ephoto('https://en.ephoto360.com/create-logo-3d-style-avengers-online-427.html', _0xc0638);
+    _0x3f898a(" Processing ...");
     await _0x154a8e.sendMessage(_0x117e9b, {
       'image': {
         'url': _0x140c55.image

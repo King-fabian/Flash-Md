@@ -74,7 +74,7 @@ france({ nomCom: "twitter", categorie: "Download" }, async (dest, zk, commandeOp
     let linkz = arg.join(' ');
 
     if (!arg[0]) {
-        repondre('Please insert an Instagram video link');
+        repondre('Please insert a *TWITTER Video Link* for *FLASH-MD* to download ');
         return;
     }
 
@@ -106,7 +106,7 @@ france({nomCom : "tiktok" , categorie : "Download"},async (dest , zk , commandeO
 
 let linkx = arg.join(' ')
 
-  if (!arg[0]) { repondre('Please insert a video link');return};
+  if (!arg[0]) { repondre('Please insert a Tik Tok video link');return};
 
 
 const green = await fetch(`https://api.maher-zubair.tech/download/tiktok2?url=${linkx}`);
@@ -198,8 +198,8 @@ async (dest, zk, commandeOptions) => {
 
    
   } catch (error) {
-    console.error('Erreur lors du téléchargement de la vidéo :', error);
-    repondre('Erreur lors du téléchargement de la vidéo.' , error);
+    console.error('An error occurred while *FLASH-MD* was downloading your media:', error);
+    repondre('An error occurred while downloading your media.' , error);
   }
 });
 

@@ -387,33 +387,34 @@ france({
   });
 });
 france({
-  'nomCom': "transformer",
+  'nomCom': "grafittis",
   'categorie': "Logo",
-  'reaction': '🤖'
-}, async (_0x44f8c3, _0x405bca, _0x51482f) => {
+  'reaction': "💥"
+}, async (_0xd36572, _0x4cc7d9, _0x4da9f5) => {
   const {
-    arg: _0x240b0e,
-    ms: _0x3239e1,
-    prefixe: _0xcaef94,
-    repondre: _0x4fc8f7
-  } = _0x51482f;
-  if (!_0x240b0e[0x0]) {
-    _0x4fc8f7("Example of using this command:\n " + _0xcaef94 + "Transformer My text");
+    prefixe: _0x34f139,
+    arg: _0x17e73d,
+    ms: _0x4243fc,
+    repondre: _0x7fa6fd
+  } = _0x4da9f5;
+  if (!_0x17e73d || _0x17e73d == '') {
+    _0x7fa6fd("*__Example : * " + _0x34f139 + "grafittis France");
     return;
   }
-  const _0x1a18f0 = _0x240b0e.join(" ");
-  mumaker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", _0x1a18f0).then(_0x1f2535 => {
-    _0x405bca.sendMessage(_0x44f8c3, {
+  try {
+    let _0x306ea0 = await mumaker.ephoto('https://en.ephoto360.com/create-a-cartoon-style-graffiti-text-effect-online-668.html', _0x17e73d);
+    _0x7fa6fd('*processing...*');
+    await _0x4cc7d9.sendMessage(_0xd36572, {
       'image': {
-        'url': _0x1f2535.image
+        'url': _0x306ea0.image
       },
-      'caption': "Logo BY *FLASH-MD*"
+      'caption': "\t *Logo by FLASH-MD*"
     }, {
-      'quoted': _0x3239e1
+      'quoted': _0x4243fc
     });
-  })["catch"](_0x556333 => {
-    console.error("Une erreur s'est produite :", _0x556333);
-  });
+  } catch (_0x1cc018) {
+    _0x7fa6fd("🥵🥵 " + _0x1cc018);
+  }
 });
 france({
   'nomCom': 'thunder',

@@ -99,7 +99,7 @@ france({ nomCom: "bard", reaction: "📡", categorie: "IA" }, async (dest, zk, c
     }  
     // Regrouper les arguments en une seule chaîne séparée par "-"
     const goat = arg.join('-'); 
-    const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${goat}`);
+    const response = await axios.get(`https://api.maher-zubair.tech/ai/bard?q=${goat}`);
     
     const data = response.data;
       if (data) {

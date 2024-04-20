@@ -92,26 +92,3 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "bard", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => { 
-    const { repondre, arg, ms } = commandeOptions; 
-    if (!arg || arg.length === 0) { 
-        return repondre(`*_Please provide some text to generate a response._*`); 
-    }  
-    // Regrouper les arguments en une seule chaîne séparée par "-"
-    const goat = arg.join('-'); 
-    const response = await axios.get(`https://api.maher-zubair.tech/ai/bard?q=${goat}`);
-    
-    const data = response.data;
-      if (data) {
-        repondre(data.data);
-      } else {
-        repondre("Error during response generation.");
-      }
-    } catch (error) {
-      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
-      repondre("Oops, an error occurred while processing your request.");
-    }
-  });
-
-
-  

@@ -173,20 +173,20 @@ async (dest, zk, commandeOptions) => {
   }
 }); 
 
-france({ nomCom: "twitter", categorie: "Download" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "twtdl", categorie: "Download" }, async (dest, zk, commandeOptions) => {
     const { ms, repondre, arg } = commandeOptions;
-    let meta = arg.join(' ');
+    let linkz = arg.join(' ');
 
     if (!arg[0]) {
-        repondre('Please insert a Twitter video or link');
+        repondre('Please insert an Instagram video link');
         return;
     }
 
 
 try {
     
-        const xx = await fetch(`https://api.maher-zubair.tech/download/twitter?url=${meta}`);
-        const data = await xx.json();
+        const blue = await fetch(`https://api.maher-zubair.tech/download/twitter?url=${linkz}`);
+        const data = await blue.json();
 
         if (data && data.data && data.data.HD) {
             const medi = data.data.HD;
@@ -195,4 +195,7 @@ try {
            
         } catch (e) { repondre("I am unable to download your media. \n " + e)}
        
+            
+        
+    
 });

@@ -880,9 +880,9 @@ france({
   }
 });
 france({
-  'nomCom': "scifi",
+  'nomCom': "frozen",
   'categorie': "Logo",
-  'reaction': '💥'
+  'reaction': '❄'
 }, async (_0x29a36a, _0x2c5269, _0xfaf6e1) => {
   const {
     arg: _0x1ae38a,
@@ -891,11 +891,11 @@ france({
     repondre: _0x346c17
   } = _0xfaf6e1;
   if (!_0x1ae38a[0x0]) {
-    _0x346c17("Example of using command:\n " + _0x389552 + "scifi France King");
+    _0x346c17("Example of using this command:\n " + _0x389552 + "frozen King");
     return;
   }
   const _0x35d3b8 = _0x1ae38a.join(" ");
-  mumaker.ephoto("https://en.ephoto360.com/create-a-awesome-logo-sci-fi-effects-492.html", _0x35d3b8).then(_0x3b491f => {
+  mumaker.ephoto("https://en.ephoto360.com/create-a-frozen-christmas-text-effect-online-792.html", _0x35d3b8).then(_0x3b491f => {
     _0x2c5269.sendMessage(_0x29a36a, {
       'image': {
         'url': _0x3b491f.image

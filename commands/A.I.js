@@ -57,7 +57,7 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
       const image = arg.join(' ');
       const response = await fetch(`https://api.maher-zubair.tech/ai/dalle?q=${image}`);
       
-      const data = await response.json();
+      const data = await response.data;
       let caption = '*powered by FLASH-MD*';
       
       if (data.status && data.owner && data.data) {

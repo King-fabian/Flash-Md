@@ -60,14 +60,15 @@ france({ nomCom: "developer", categorie: "General", reaction: "🐐" }, async (d
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
-    let message = "Hello 👋\n *Welcome to Flash-Md!*\n\n*✦━━◆CREATOR INFO◆━━✦*\n *◇NAME: France King*\n*◇AGE: 23*\n*◇LOCATION: On Earth*\n*◇BELIEVER: YES ✅*\n*◇FRIENDLY: YES ✅*\n*◇EGOISTIC: YEEES ✅*\n*◇FAV TEAM: CHELSEA*\n\n______________________________\n\n*💙KEEP USING FLASH-MD🤍*\n\n\n_The following are my contacts_:\n:";
+    let message = "Hello 👋\n *Welcome to Flash-Md!*\n\n*✦━━◆CREATOR INFO◆━━✦*\n\n\n *◇NAME: France King*\n*◇AGE: 23*\n*◇LOCATION: On Earth*\n*◇BELIEVER: YES ✅*\n*◇FRIENDLY: YES ✅*\n*◇EGOISTIC: YEEES ✅*\n*◇FAV TEAM: CHELSEA*\n\n______________________________\n\n*💙KEEP USING FLASH-MD🤍*\n\n\n_The following are my contacts_:\n:";
     for (const dev of devs) {
       message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }
+    var caption = Powered by FLASH-MD;
   var lien = mybotpic()
     if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption: " 📌Powered by France King 🐐🔵" }, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption: message }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);

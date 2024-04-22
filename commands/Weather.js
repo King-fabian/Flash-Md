@@ -26,7 +26,7 @@ if (!question) return repondre("Give me location...");
         const windSpeed = data.wind.speed;
         const rainVolume = data.rain ? data.rain['1h'] : 0;
         const cloudiness = data.clouds.all;        
-       /* const sunrise = new Date(data.sys.sunrise;*/
+        const sunrise = new Date(data.sys.sunrise;
         const sunset = new Date(data.sys.sunset;
         
 
@@ -39,7 +39,7 @@ await repondre(`❄️ Weather in ${cityName}
 🌀 *Wind Speed:* ${windSpeed} m/s
 🌧️ *Rain Volume (last hour):* ${rainVolume} mm
 ☁️ *Cloudiness:* ${cloudiness}%
-🌄 *Sunrise:* ${data.sys.sunrise}
+🌄 *Sunrise:* ${sunrise.tolocalestring()}
 🌅 *Sunset:* ${sunset.toLocaleTimeString()}
 🌫️ *Latitude:* ${data.coord.lat}
 🌪️ *Longitude:* ${data.coord.lon}

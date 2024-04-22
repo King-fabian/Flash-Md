@@ -45,6 +45,7 @@ await repondre(`❄️ Weather in ${cityName}
 🌪️ *Longitude:* ${data.coord.lon}
 
 🗺 *Country:* ${data.sys.country}
+Region ${data.sys.region}
 
 
 *°Powered by FLASH-MD*`);

@@ -67,7 +67,7 @@ france({ nomCom: "developer", categorie: "General", reaction: "🐐" }, async (d
   var lien = mybotpic()
     if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:message }, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption: " 📌Powered by France King 🐐🔵" }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);

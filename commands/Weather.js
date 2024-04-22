@@ -39,7 +39,7 @@ await repondre(`❄️ Weather in ${cityName}
 🌀 *Wind Speed:* ${windSpeed} m/s
 🌧️ *Rain Volume (last hour):* ${rainVolume} mm
 ☁️ *Cloudiness:* ${cloudiness}%
-🌄 *Sunrise:* ${sunrise.tolocalestring()}
+🌄 *Sunrise:* ${sunrise.toLocaleTimestring()}
 🌅 *Sunset:* ${sunset.toLocaleTimeString()}
 🌫️ *Latitude:* ${data.coord.lat}
 🌪️ *Longitude:* ${data.coord.lon}

@@ -43,6 +43,7 @@ await repondre(`❄️ Weather in ${cityName}
 🌅 *Sunset:* ${sunset.toLocaleTimeString()}
 🌫️ *Latitude:* ${data.coord.lat}
 🌪️ *Longitude:* ${data.coord.lon}
+📃 *Weather ID:* ${data.weather.id}
 
 🗺 *Country:* ${data.sys.country}
 

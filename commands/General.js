@@ -64,7 +64,7 @@ france({ nomCom: "developer", categorie: "General", reaction: "🐐" }, async (d
     for (const dev of devs) {
       message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }
-    var caption = Powered by FLASH-MD;
+   let caption = Powered by FLASH-MD 
   var lien = mybotpic()
     if (lien.match(/\.(mp4|gif)$/i)) {
     try {

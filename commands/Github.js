@@ -27,8 +27,8 @@ const public Repo = gitdata.repos_url;
 const public Gists = gitdata.gists_url;
 const followers = gitdata.followers;
 const following = gitdata.following
-const updated At = gitdata.updated_at;
-const created At = gitdata.created_at;
+const updated at = gitdata.updated_at;
+const created at = gitdata.created_at;
 
          await respondre(`°GITHUB USER INFO°
 

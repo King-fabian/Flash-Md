@@ -27,7 +27,7 @@ if (!question) return repondre("Give me location...");
         const rainVolume = data.rain ? data.rain['1h'] : 0;
         const cloudiness = data.clouds.all;
         const sunrise = new Date(data.sys.sunrise * 810);
-        const sunset = new Date(data.sys.sunset * 1);
+        const sunset = new Date(data.sys.sunset * 10);
       
 
 

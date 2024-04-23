@@ -14,8 +14,23 @@ if (!question) return repondre("Give me a valid github username like franceking1
             const response = await fetch(`https://api.github.com/users/${question}`);
 
         const data = await response.json();
+        const id = gitdata.id;
+    
+const  Nickname = gitdata.name;
+const Username = gitdata.login;
+const bio = gitdata.bio;
+const Company = gitdata.company;
+const Location = gitdata.location;
+const Email = gitdata.email;
+const Blog = gitdata.blog;
+const Public Repo = gitdata.repos_url;
+const Public Gists = gitdata.gists_url;
+const Followers = gitdata.followers;
+const Following = gitdata.following
+const Updated At = gitdata.updated_at;
+const Created At = gitdata.created_at;
 
-         const gitdata = `°GITHUB USER INFO°
+         await respondre(`°GITHUB USER INFO°
 
          
 🚩 Id : ${gitdata.id}
@@ -32,19 +47,6 @@ if (!question) return repondre("Give me a valid github username like franceking1
 👉 Following : ${gitdata.following}
 🔄 Updated At : ${gitdata.updated_at}
 🧩 Created At : ${gitdata.created_at}`
-
-
-
-
-            
-
-                    
-await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
-
-} else {
-console.log("no results found")
-
-}
 
 
 });

@@ -25,7 +25,7 @@ const blog = gitdata.blog;
 const repos = gitdata.repos_url;
 const gists = gitdata.gists_url;
 const followers = gitdata.followers;
-const following = gitdata.following
+const following = gitdata.following;
 
 
          await repondre(`°GITHUB USER INFO°

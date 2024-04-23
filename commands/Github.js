@@ -14,7 +14,7 @@ if (!question) return repondre("Give me a valid github username like franceking1
             const response = await fetch(`https://api.github.com/users/${question}`);
 
         const data = await response.json();
-/*const id = gitdata.id;  
+const id = gitdata.id;  
 const nickname = gitdata.name;
 const username = gitdata.login;
 const bio = gitdata.bio;
@@ -22,27 +22,27 @@ const company = gitdata.company;
 const location = gitdata.location;
 const email = gitdata.email;
 const blog = gitdata.blog;
-const public repo = gitdata.repos_url;
-const public gists = gitdata.gists_url;
+const repos = gitdata.repos_url;
+const gists = gitdata.gists_url;
 const followers = gitdata.followers;
 const following = gitdata.following
-*/
+
 
          await repondre(`°GITHUB USER INFO°
 
          
-🚩 Id : ${gitdata.id}
-🔖 Nickname : ${gitdata.name}
-🔖 Username : ${gitdata.login}
-✨ Bio : ${gitdata.bio}
-🏢 Company : ${gitdata.company}
-📍 Location : ${gitdata.location}
-📧 Email : ${gitdata.email}
-📰 Blog : ${gitdata.blog}
-🔓 Public Repo : ${gitdata.repos_url}
-🔐 Public Gists : ${gitdata.gists_url}
-💕 Followers : ${gitdata.followers}
-👉 Following : ${gitdata.following}`);
+🚩 Id : ${id}
+🔖 Nickname : ${nickname}
+🔖 Username : ${username}
+✨ Bio : ${bio}
+🏢 Company : ${company}
+📍 Location : ${location}
+📧 Email : ${email}
+📰 Blog : ${blog}
+🔓 Public Repo : ${repos}
+🔐 Public Gists : ${gists}
+💕 Followers : ${followers}
+👉 Following : ${following}`);
 
 
 });

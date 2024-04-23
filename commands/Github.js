@@ -42,7 +42,7 @@ const following = gitdata.following
 🔓 Public Repo : ${gitdata.repos_url}
 🔐 Public Gists : ${gitdata.gists_url}
 💕 Followers : ${gitdata.followers}
-👉 Following : ${gitdata.following}`
+👉 Following : ${gitdata.following}`);
 
 
 });

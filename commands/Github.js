@@ -15,7 +15,7 @@ if (!question) return repondre("Give me a valid github username like franceking1
 
         const data = await response.json();
 
-         await repondre(`°GITHUB USER INFO°
+         const gitdata = `°GITHUB USER INFO°
 
          
 🚩 Id : ${gitdata.id}

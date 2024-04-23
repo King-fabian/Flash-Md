@@ -26,8 +26,7 @@ const public repo = gitdata.repos_url;
 const public gists = gitdata.gists_url;
 const followers = gitdata.followers;
 const following = gitdata.following
-const updated at = gitdata.updated_at;
-const created at = gitdata.created_at;
+
 
          await repondre(`°GITHUB USER INFO°
 
@@ -43,9 +42,7 @@ const created at = gitdata.created_at;
 🔓 Public Repo : ${gitdata.repos_url}
 🔐 Public Gists : ${gitdata.gists_url}
 💕 Followers : ${gitdata.followers}
-👉 Following : ${gitdata.following}
-🔄 Updated At : ${gitdata.updated_at}
-🧩 Created At : ${gitdata.created_at}`
+👉 Following : ${gitdata.following}`
 
 
 });

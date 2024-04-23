@@ -14,7 +14,7 @@ if (!question) return repondre("Give me a valid github username like franceking1
             const response = await fetch(`https://api.github.com/users/${question}`);
 
         const data = await response.json();
-const id = gitdata.id;  
+/*const id = gitdata.id;  
 const nickname = gitdata.name;
 const username = gitdata.login;
 const bio = gitdata.bio;
@@ -26,7 +26,7 @@ const public repo = gitdata.repos_url;
 const public gists = gitdata.gists_url;
 const followers = gitdata.followers;
 const following = gitdata.following
-
+*/
 
          await repondre(`°GITHUB USER INFO°
 

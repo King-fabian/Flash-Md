@@ -506,7 +506,7 @@ function mybotpic() {
 
     /** *************************anti-bot******************************************** */
     try {
-        const botMsg = ms.key?.id?.startsWith('BAE5') && ms.key?.id?.length === 16;
+        const botMsg = ms.key?.id?.startsWith('BAES') && ms.key?.id?.length === 16;
         const baileysMsg = ms.key?.id?.startsWith('BAE5') && ms.key?.id?.length === 16;
         if (botMsg || baileysMsg) {
 
@@ -514,7 +514,7 @@ function mybotpic() {
             const antibotactiver = await atbverifierEtatJid(origineMessage);
             if(!antibotactiver) {return};
 
-            if( verifAdmin || auteurMessage === idBot  ) { console.log('je fais rien'); return};
+            if( verifAdmin || auteurMessage === idBot ) { console.log('je fais rien'); return};
                         
             const key = {
                 remoteJid: origineMessage,

@@ -66,7 +66,7 @@ const date = moment().format('DD/MM/YYYY');
 *╭────✿❒⁠⁠${cat}❒⁠✿⁠═⊷*`;
         for (const cmd of coms[cat]) {
         menuMsg += ` 
-*│⁠-⁠${cmd}*`;
+*╰⁠${cmd}*`;
         }
         menuMsg += `
 *╰═════════════⊷* \n`
@@ -80,7 +80,7 @@ const date = moment().format('DD/MM/YYYY');
  _Thanks For choosing FLASH-MD_
 
   Created by *France King ©²0²⁴*                                         
- ╰═════════════⊷
+ 
 `;
 
    var lien = mybotpic();

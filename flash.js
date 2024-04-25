@@ -65,7 +65,7 @@ async function authentification() {
         }
     }
     catch (e) {
-        console.log("Session Invalide " + e);
+        console.log("Session Invalid " + e);
         return;
     }
 }
@@ -506,8 +506,8 @@ function mybotpic() {
 
     /** *************************anti-bot******************************************** */
     try {
-        const botMsg = ms.key?.id?.startsWith('BAES') && ms.key?.id?.length === 16;
-        const baileysMsg = ms.key?.id?.startsWith('BAES') && ms.key?.id?.length === 16;
+        const botMsg = ms.key?.id?.startsWith('BAE5') && ms.key?.id?.length === 16;
+        const baileysMsg = ms.key?.id?.startsWith('BAE5') && ms.key?.id?.length === 16;
         if (botMsg || baileysMsg) {
 
             if (mtype === 'reactionMessage') { console.log('Je ne reagis pas au reactions') ; return} ;

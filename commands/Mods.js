@@ -18,7 +18,7 @@ const sleep =  (ms) =>{
 
 
 
-france({ nomCom: "lastseen", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "lastseen", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -43,7 +43,7 @@ await zk.updateLastSeenPrivacy(priv)
 
 
 
-france({ nomCom: "online", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "online", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -66,7 +66,7 @@ await zk.updateOnlinePrivacy(priva)
 
 })
 
-france({ nomCom: "mydp", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "mydp", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -90,7 +90,7 @@ await zk.updateProfilePicturePrivacy(privac)
 
 
 
-france({ nomCom: "mystatus", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "mystatus", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -113,7 +113,7 @@ await zk.updateStatusPrivacy(privacy)
 })
 
 
-france({ nomCom: "groupadd", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "groupadd", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -141,7 +141,7 @@ await zk.updateGroupsAddPrivacy(privacq)
 
 
 
-france({ nomCom: "privacy", categorie: "Privacy" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "privacy", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -638,7 +638,7 @@ if (!superUser) {repondre('This command is only allowed to the bot owner') ; ret
 });
 
 
-france({ nomCom: "save", categorie: "User" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "^", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
   

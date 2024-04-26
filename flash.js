@@ -411,7 +411,7 @@ function mybotpic() {
      //anti-lien
      try {
         const yes = await verifierEtatJid(origineMessage)
-        if (texte.includes('https://') && verifGroupe &&  yes  ) {
+        if (texte.includes('chat.whatsapp.com') && verifGroupe &&  yes  ) {
 
          console.log("lien detecté")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;

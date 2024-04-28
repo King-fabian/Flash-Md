@@ -65,7 +65,7 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
             }
 
         } catch (error) {
-            repondre('Erreur lors de la récupération des données :' + error);
+            repondre('Error occurred while retrieving data:' + error);
             console.log(error);
         }
     });

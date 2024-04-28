@@ -41,7 +41,7 @@ async (origineMessage, zk, commandeOptions) => {
 
     zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
   } catch (error) {
-    repondre('Erreur lors de la récupération des données :', error);
+    repondre('An Error occurred while retrieving data:', error);
   }
 });
 
@@ -61,7 +61,7 @@ async (origineMessage, zk, commandeOptions) => {
 
     zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
   } catch (error) {
-    repondre('Erreur lors de la récupération des données :', error);
+    repondre('Error occured while retrieving data:', error);
   }
 });
 
@@ -82,7 +82,27 @@ async (origineMessage, zk, commandeOptions) => {
 
     zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
   } catch (error) {
-    repondre('Erreur lors de la récupération des données :', error);
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "ass",
+  categorie: "Hentai",
+  reaction: "🍑"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/nsfw/ass'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
   }
 });
 

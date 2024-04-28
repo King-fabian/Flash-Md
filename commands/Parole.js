@@ -138,32 +138,4 @@ france({ nomCom: "lyrics",
 
         })
 
-      france({ nomCom: "insult",
-        reaction: "☠️",
-        categorie: "User" }, async (dest, zk, commandeOptions) => {
-    
-    const { repondre, arg, ms } = commandeOptions; 
-
-
-
-const response = await fetch('https://api.maher-zubair.tech/misc/insult');
-
-
-const data = await response.json();
-
-repondre(`✦INSULT✦  
-
-*◇* ${data.insult}
-
-
-
-
-*◇* Powered by *France King*
-
-╔═════◇
-║◇ *KEEP USING FLASH-MD*
-╚════════════════════>  `);
-
-
-})
-
+      

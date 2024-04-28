@@ -67,14 +67,14 @@ async (origineMessage, zk, commandeOptions) => {
 
 
 france({
-  nomCom: "blowjob",
+  nomCom: "bj",
   categorie: "Hentai",
   reaction: "🙄"
 },
 async (origineMessage, zk, commandeOptions) => {
   const { repondre, ms } = commandeOptions;
 
-  const url = 'https://api.waifu.pics/nsfw/blowjob'; // Remplace avec ton lien réel
+  const url = 'https://api.maher-zubair.tech/nsfw/blowjob'; // Remplace avec ton lien réel
 
   try { for (let i = 0 ; i < 5 ; i++ ) {
     const response = await axios.get(url);

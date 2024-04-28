@@ -64,3 +64,29 @@ await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, {
 }
 );
 
+france({ nomCom: 'pinterest',
+    desc: 'screenshots website',
+    Categorie: 'General',
+    reaction: '🎥', 
+    fromMe: 'true', 
+
+},
+  async (dest, zk, commandeOptions) => {
+    const { ms, arg, repondre } = commandeOptions;
+
+    if (!arg || arg.length === 0) return repondre("provide a link...");
+
+         const pin = arg.join(' ');
+
+
+
+let pinn = `https://api.maher-zubair.tech/misc/sstab?url=${pin}&dimension=720x720`;
+
+let res = await getBuffer(pinn);
+
+await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, { quoted: ms });
+
+
+}
+);
+

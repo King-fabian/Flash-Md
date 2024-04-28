@@ -80,9 +80,9 @@ france({ nomCom: 'pinterest',
 
 
 
-let pinn = `https://api.maher-zubair.tech/misc/sstab?url=${pin}&dimension=720x720`;
+let res = `https://api.maher-zubair.tech/misc/sstab?url=${pin}&dimension=720x720`;
 
-let res = await getBuffer(pinn);
+let dara = await res json();
 
 await zk.sendMessage(dest, { image: res }, { caption: 'Powered by FLASH-MD' }, { quoted: ms });
 

@@ -43,7 +43,7 @@ let link = arg.join(' ')
   if (!arg[0]) { repondre('Please insert an Instagram video link');return};
 
 try {
-    const red = await fetch(`https://api.maher-zubair.tech/download/instagram?url=${link}`);
+    const red = await fetch(`https://api.maher-zubair.tech/download/instagram2?url=${link}`);
     const data = await red.json();
 
     if (data && data.result && data.result.data && data.result.data.length > 0) {

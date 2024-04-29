@@ -97,7 +97,7 @@ france({ nomCom: "gemini", reaction: "📡", categorie: "IA" }, async (dest, zk,
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`Please ask a question for *FLASH-MD* To answer.`);
+        return repondre(`Hello am *FLASH-MD* an Ai developed by France King, what help can I offer you today?.`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
@@ -111,12 +111,12 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "calc", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "calc", reaction: "📡", categorie: "General" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`Please insert maths calculations like 1000*2.`);
+        return repondre(`Please insert maths calculations like 100000-2024.\nUse / for division and * for multiplication or letter x`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"

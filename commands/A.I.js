@@ -130,3 +130,22 @@ console.log(data.completion);
 
   });
 
+france({ nomCom: "bard", reaction: "🔢", categorie: "General" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    
+      if (!arg || arg.length === 0) {
+        return repondre(`Please Ask anything.\n\n FLASH-MD is here to help you.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const bad = arg.join(' ');
+     const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${bad}`);
+const data = await response.json();
+
+await repondre(data.result);
+console.log(data.completion); 
+
+
+  });
+

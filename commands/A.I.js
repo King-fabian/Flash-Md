@@ -130,17 +130,17 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "pinterest", reaction: "👌", categorie: "General" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "spotify", reaction: "🎶", categorie: "General" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`Please insert maths calculations like 100000-2024.\nUse / for division and * for multiplication or letter x`);
+        return repondre(`insert a song name`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const pin = arg.join(' ');
-     const response = await fetch(`https://api.maher-zubair.tech/search/pinterest?q=${pin}`);
+     const response = await fetch(`https://api.maher-zubair.tech/search/spotify?q=${pin}`);
 const data = await response.json();
 
 await repondre(data.result);

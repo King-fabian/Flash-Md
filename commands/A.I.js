@@ -97,12 +97,31 @@ france({ nomCom: "gemini", reaction: "📡", categorie: "IA" }, async (dest, zk,
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`Please ask a question.`);
+        return repondre(`Please ask a question for *FLASH-MD* To answer.`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const gemi = arg.join(' ');
      const response = await fetch(`https://api.maher-zubair.tech/ai/gemini?q=${gemi}`);
+const data = await response.json();
+
+await repondre(data.result);
+console.log(data.completion); 
+
+
+  });
+
+france({ nomCom: "calc", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    
+      if (!arg || arg.length === 0) {
+        return repondre(`Please insert maths calculations like 1000*2.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const cal = arg.join(' ');
+     const response = await fetch(`https://api.maher-zubair.tech/ai/mathssolve?q=${cal}`);
 const data = await response.json();
 
 await repondre(data.result);

@@ -116,12 +116,31 @@ france({ nomCom: "calc", reaction: "📡", categorie: "General" }, async (dest, 
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`Please insert maths calculations like 100000-2024.\nUse / for division and * for multiplication or letter x`);
+        return repondre(`Please insert maths calculations like 100000+2024.\nUse "(/)" for division and "(*)" for multiplication or letter x`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const cal = arg.join(' ');
      const response = await fetch(`https://api.maher-zubair.tech/ai/mathssolve?q=${cal}`);
+const data = await response.json();
+
+await repondre(data.result);
+console.log(data.completion); 
+
+
+  });
+
+france({ nomCom: "pinterest", reaction: "👌", categorie: "General" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    
+      if (!arg || arg.length === 0) {
+        return repondre(`Please insert maths calculations like 100000-2024.\nUse / for division and * for multiplication or letter x`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const pin = arg.join(' ');
+     const response = await fetch(`https://api.maher-zubair.tech/search/pinterest?q=${pin}`);
 const data = await response.json();
 
 await repondre(data.result);

@@ -20,6 +20,7 @@ const runtime = function (seconds) {
 
 france({ nomCom: 'uptime',
     desc: 'To check runtime',
+     alias: ['up'], 
     Categorie: 'General',
     reaction: '⚙️', 
     fromMe: 'true', 

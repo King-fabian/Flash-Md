@@ -53,6 +53,13 @@
       "required":false
     }
 	,
+	  "ANTI_DELETE_MESSAGE":
+    {
+      "description":"type yes",
+      "value":"yes",
+      "required":false
+    }
+	,
     "HEROKU_API_KEY": {
     "description": "insert your heroku api-key (this is optionnal)",
      "required" :false

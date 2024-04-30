@@ -130,12 +130,12 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "bard", reaction: "👍", categorie: "AI" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
+france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, nomAuteurMessage, arg, ms } = commandeOptions;
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`Please Ask anything.\n\n *FLASH-MD* is here to help you.`);
+        return repondre(`hello ${nomAuteurMessage}\n\n Please Ask anything.\n\n *FLASH-MD* is here to help you.`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"

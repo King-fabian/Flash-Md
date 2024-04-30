@@ -638,7 +638,7 @@ if (!superUser) {repondre('This command is only allowed to the bot owner') ; ret
 });
 
 
-france({ nomCom: "^", categorie: "User" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "send", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { repondre , msgRepondu , nomAuteurMessage, auteurMessage } = commandeOptions;
   
@@ -711,7 +711,7 @@ france({ nomCom: "^", categorie: "User" }, async (dest, zk, commandeOptions) => 
   
       zk.sendMessage(auteurMessage,msg)
   
-      } else { repondre('Mention the message that you want to save') }
+      } else { repondre('Reply to the message that you want to be sent to you') }
   
   } else {
     repondre('only mods can use this command')

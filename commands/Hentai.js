@@ -215,3 +215,222 @@ async (origineMessage, zk, commandeOptions) => {
 });
 
 
+france({
+  nomCom: "car",
+  categorie: "Wallpapers",
+  reaction: "🚗"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/car'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "enemy",
+  categorie: "Wallpapers",
+  reaction: "💀"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/horror'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "random",
+  categorie: "Wallpapers",
+  reaction: "😋"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/random'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "pubg",
+  categorie: "Hentai",
+  reaction: "😋"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/pubg'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "dog",
+  categorie: "Wallpapers",
+  reaction: "🐶"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/dog'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "cr7",
+  categorie: "Wallpapers",
+  reaction: "😋"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/cr7'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "blackpink",
+  categorie: "Wallpapers",
+  reaction: "😋"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/blackpink'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "bits",
+  categorie: "Wallpapers",
+  reaction: "🤍"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/bts'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "bike",
+  categorie: "Wallpapers",
+  reaction: "🚲"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/bike'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "aesthetic",
+  categorie: "Wallpapers",
+  reaction: ""
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/asthetic'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});
+
+france({
+  nomCom: "islamic",
+  categorie: "Wallpapers",
+  reaction: "🌻"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/wallpaper/islamic'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});

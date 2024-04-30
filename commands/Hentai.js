@@ -355,25 +355,6 @@ async (origineMessage, zk, commandeOptions) => {
   }
 });
 
-france({
-  nomCom: "bits",
-  categorie: "Wallpapers",
-  reaction: "🤍"
-},
-async (origineMessage, zk, commandeOptions) => {
-  const { repondre, ms } = commandeOptions;
-
-  const url = 'https://api.maher-zubair.tech/wallpaper/bts'; // Remplace avec ton lien réel
-
-  try { for (let i = 0 ; i < 5 ; i++ ) {
-    const response = await axios.get(url);
-    const imageUrl = response.data.url;
-
-    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
-  } catch (error) {
-    repondre('Error occurred while retrieving data :', error);
-  }
-});
 
 france({
   nomCom: "bike",

@@ -640,9 +640,9 @@ if (!superUser) {repondre('This command is only allowed to the bot owner') ; ret
 
 france({ nomCom: "^", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
-  const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
+  const { repondre , msgRepondu , /*superUser*/, auteurMessage } = commandeOptions;
   
-    if ( superUser) { 
+   // if ( superUser) { 
   
       if(msgRepondu) {
 

@@ -8,10 +8,10 @@ const { default: axios } = require('axios');
 
 france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
-  const {repondre,ms,arg}=commandeOptions;
+  const {repondre,ms,nomAuteurMessage,arg}=commandeOptions;
   
     if(!arg || !arg[0])
-    {return repondre("YEES!\n _I'm listening to you._")}
+    {return repondre("YEES! ${nomAuteurMessage}\n _I'm listening to you._")}
     //var quest = arg.join(' ');
   try{
     
@@ -135,7 +135,7 @@ france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, c
   
     
       if (!arg || arg.length === 0) {
-        return repondre(`hello ${nomAuteurMessage}\n\n Please Ask anything.\n\n *FLASH-MD* is here to help you.`);
+        return repondre(`What's up ${nomAuteurMessage}\nPlease Ask anything.\n *FLASH-MD* is here to help you.`);
       }
   
       // Regrouper les arguments en une seule chaîne séparée par "-"

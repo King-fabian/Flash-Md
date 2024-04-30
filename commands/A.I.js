@@ -8,10 +8,10 @@ const { default: axios } = require('axios');
 
 france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
 
-  const {repondre,ms,nomAuteurMessage,arg}=commandeOptions;
+  const {repondre,ms,arg}=commandeOptions;
   
     if(!arg || !arg[0])
-    {return repondre("YEES! ${nomAuteurMessage}\n _I'm listening to you._")}
+    {return repondre("YEES!\n _I'm listening to you._")}
     //var quest = arg.join(' ');
   try{
     

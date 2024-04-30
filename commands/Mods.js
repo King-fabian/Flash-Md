@@ -642,7 +642,7 @@ france({ nomCom: "^", categorie: "User" }, async (dest, zk, commandeOptions) => 
 
   const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
   
-    if(superUser) { 
+   // if(superUser) { 
   
       if(msgRepondu) {
 

@@ -510,7 +510,7 @@ function mybotpic() {
                     //bad-words
      try {
         const yes = await verifierEtatJid(origineMessage)
-        if (texte.includes('fuck, pusyy, motherfucker,shoga, kuma') && verifGroupe &&  yes  ) {
+        if (texte.includes('Fuck,pusyy,motherfucker,shoga,kuma') && verifGroupe &&  yes  ) {
 
          console.log("bad word detected")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;
@@ -550,7 +550,7 @@ function mybotpic() {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
                                     }
                                     catch (e) {
-                                        console.log("antiien ") + e;
+                                        console.log("antiword") + e;
                                     }
                                     await zk.sendMessage(origineMessage, { delete: key });
                                     await fs.unlink("st1.webp"); } 

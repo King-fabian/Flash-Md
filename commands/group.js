@@ -1040,3 +1040,70 @@ france({
       repondre('You must enter "on" or "off"') ;
     }
 } ) ;
+
+
+                                             //------------------------------------antiword-------------------------------
+
+ france({ nomCom: "antiword", categorie: 'Group', reaction: "😖" }, async (dest, zk, commandeOptions) => {
+
+
+  var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
+
+
+
+  if (!verifGroupe) {
+    return repondre("*for groups only*");
+  }
+
+  if( superUser || verifAdmin) {
+    const enetatoui = await verifierEtatJid(dest)
+    try {
+      if (!arg || !arg[0] || arg === ' ') { repondre("antiword on to activate the anti-word feature\nantieord off to deactivate the anti-word feature\nantiword action/remove to directly remove the word without notice\nantiword action/warn to give warnings\nantiword action/delete to remove the word without any sanctions\n\nPlease note that by default, the anti-eord feature is set to delete.") ; return};
+
+      if(arg[0] === 'on') {
+
+
+       if(enetatoui ) { repondre("the antiword is already activated for this group")
+                    } else {
+                  await ajouterOuMettreAJourJid(dest,"oui");
+
+              repondre("the antiword is activated successfully") }
+
+            } else if (arg[0] === "off") {
+
+              if (enetatoui) { 
+                await ajouterOuMettreAJourJid(dest , "non");
+
+                repondre("The antiword has been successfully deactivated");
+
+              } else {
+                repondre("antiword is not activated for this group");
+              }
+            } else if (arg.join('').split("/")[0] === 'action') {
+
+
+              let action = (arg.join('').split("/")[1]).toLowerCase() ;
+
+              if ( action == 'remove' || action == 'warn' || action == 'delete' ) {
+
+                await mettreAJourAction(dest,action);
+
+                repondre(`The anti-word action has been updated to ${arg.join('').split("/")[1]}`);
+
+              } else {
+                  repondre("The only actions available are warn, remove, and delete") ;
+              }
+
+
+            } else repondre("antiword on to activate the anti-word feature\nantiword off to deactivate the anti-word feature\nantiword action/remove to directly remove the word without notice\nantiword action/warn to give warnings\nantiword action/delete to remove the word without any sanctions\n\nPlease note that by default, the anti-link feature is set to delete.")
+
+
+    } catch (error) {
+       repondre(error)
+    }
+
+  } else { repondre('You are not entitled to this order') ;
+  }
+
+});
+

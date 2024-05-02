@@ -1058,7 +1058,7 @@ france({
   if( superUser || verifAdmin) {
     const enetatoui = await verifierEtatJid(dest)
     try {
-      if (!arg || !arg[0] || arg === ' ') { repondre("antiword on to activate the anti-word feature\nantieord off to deactivate the anti-word feature\nantiword action/remove to directly remove the word without notice\nantiword action/warn to give warnings\nantiword action/delete to remove the word without any sanctions\n\nPlease note that by default, the anti-eord feature is set to delete.") ; return};
+      if (!arg || !arg[0] || arg === ' ') { repondre("antiword on to activate the anti-word feature\nantiword off to deactivate the anti-word feature\nantiword action/remove to directly remove the word without notice\nantiword action/warn to give warnings\nantiword action/delete to remove the word without any sanctions\n\nPlease note that by default, the anti-eord feature is set to delete.") ; return};
 
       if(arg[0] === 'on') {
 

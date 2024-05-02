@@ -510,7 +510,7 @@ function mybotpic() {
                     //bad-words
      try {
         const yes = await verifierEtatJid(origineMessage)
-        if (texte.includes('Fuck,pusyy,motherfucker,shoga,kuma') && verifGroupe &&  yes  ) {
+        if (texte.includes('Fuck,pussy,motherfucker,shoga,kuma') && verifGroupe &&  yes  ) {
 
          console.log("bad word detected")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;
@@ -523,7 +523,7 @@ function mybotpic() {
                                         id: ms.key.id,
                                         participant: auteurMessage
                                     };
-                                    var txt = "link detected, \n";
+                                    var txt = "badword detected, \n";
                                    // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
                                     const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
                                     var sticker = new Sticker(gifLink, {

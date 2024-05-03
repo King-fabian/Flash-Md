@@ -510,7 +510,7 @@ function mybotpic() {
                     //bad-words
      try {
         const yes = await verifierEtatJid(origineMessage)
-        if (texte.includes('Fuck') && verifGroupe &&  yes  ) {
+        if (texte.includes('Fuck', 'pussy', 'kuma', 'motherfucker') && verifGroupe &&  yes  ) {
 
          console.log("bad word detected")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;

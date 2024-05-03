@@ -161,13 +161,13 @@ const {
 
 const msgg = `*Privacy settings*
 
-*Name:* ${zk.user.name}
-*Online:* ${online}
-*Profile :* ${profile}
-*Last Seen :* ${last}
-*Read receipt :* ${readreceipts}
-*Group Add :* ${groupadd}
-*Call Add :* ${calladd}`;
+* name :* ${zk.user.name}
+* online:* ${online}
+* profile :* ${profile}
+* last seen :* ${last}
+* read receipt :* ${readreceipts}
+* group add :* ${groupadd}
+* call add :* ${calladd}`;
 
 
 const avatar = await zk.profilePictureUrl(idBot, 'image').catch(_ => 'https://telegra.ph/file/b34645ca1e3a34f1b3978.jpg');
@@ -212,7 +212,7 @@ var {
                     })
 fs.unlinkSync(medis)
                    
-                    repondre("Your Profile Picture Updated")
+                    repondre("Bot Profile Picture Updated")
                 })
 
   
@@ -640,9 +640,9 @@ if (!superUser) {repondre('This command is only allowed to the bot owner') ; ret
 
 france({ nomCom: "send", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
-  const { repondre , msgRepondu , nomAuteurMessage, auteurMessage } = commandeOptions;
+  const { repondre , msgRepondu , nomAuteurMessage , auteurMessage } = commandeOptions;
   
-     if(nomAuteurMessage) { 
+    if(nomAuteurMessage) { 
   
       if(msgRepondu) {
 
@@ -711,7 +711,7 @@ france({ nomCom: "send", categorie: "User" }, async (dest, zk, commandeOptions) 
   
       zk.sendMessage(auteurMessage,msg)
   
-      } else { repondre('Reply to the message that you want to be sent to you') }
+      } else { repondre('Mention the message that you want to save') }
   
   } else {
     repondre('only mods can use this command')

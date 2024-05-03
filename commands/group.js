@@ -1,3 +1,5 @@
+
+
 const { france } = require("../framework/france")
 //const { getGroupe } = require("../bdd/groupe")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
@@ -8,7 +10,7 @@ const fs = require("fs-extra");
 const conf = require("../set");
 const { default: axios } = require('axios');
 //const { uploadImageToImgur } = require('../framework/imgur');
-
+const {getBinaryNodeChild, getBinaryNodeChildren} = require('@whiskeysockets/baileys').default;
 
 
 
@@ -18,7 +20,7 @@ france({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, 
   const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 
-
+ 
 
   if (!verifGroupe) { repondre("✋🏿 ✋🏿this command is reserved for groups ❌"); return; }
   if (!arg || arg === ' ') {
@@ -50,7 +52,7 @@ france({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, 
     tag += `${emoji[random]}      @${membre.id.split("@")[0]}\n`
   }
 
-
+ 
  if (verifAdmin || superUser) {
 
   zk.sendMessage(dest, { text: tag, mentions: membresGroupe.map((i) => i.id) }, { quoted: ms })
@@ -75,6 +77,99 @@ Click Here To Join :${lien}`
 
 
 });
+
+
+
+/*
+zokou({ nomCom: "addd", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+  let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot, arg } = commandeOptions;
+  let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
+  if (!verifGroupe) { return repondre("For groups"); }
+
+
+  let metadata = await zk.groupMetadata(dest) ;
+
+      let participants = metadata.participants ;
+
+if (!arg[0]) {
+      repondre("Provide number to be added. Example:\nadd 25472222222222");
+      return;
+    }
+  
+    let num = arg.join(' ');
+
+const _participants = participants.map((user) => user.id);
+
+const users = (await Promise.all(
+      num.split(',')
+          .map((v) => v.replace(/[^0-9]/g, ''))
+          .filter((v) => v.length > 4 && v.length < 20 && !_participants.includes(v + '@s.whatsapp.net'))
+          .map(async (v) => [
+            v,
+            await zk.onWhatsApp(v + '@s.whatsapp.net'),
+          ]),
+  )).filter((v) => v[1][0]?.exists).map((v) => v[0] + '@c.us');
+
+
+const response = await zk.query({
+    tag: 'iq',
+    attrs: {
+      type: 'set',
+      xmlns: 'w:g2',
+      to: dest,
+    },
+    content: users.map((jid) => ({
+      tag: 'add',
+      attrs: {},
+      content: [{tag: 'participant', attrs: {jid}}],
+    })),
+  });
+
+
+const pp = await zk.profilePictureUrl(m.chat, 'image').catch((_) => "https://telegra.ph/file/39436fea9098ae0aeded3.jpg");
+let jpegThumbnail = Buffer.alloc(0);
+
+if (pp) {
+  try {
+    const respons = await fetch(pp);
+    if (respons.ok) {
+      jpegThumbnail = await respons.buffer();
+    } else {
+      console.error('Failed to fetch profile picture:', respons.statusText);
+    }
+  } catch (error) {
+    console.error('Error fetching profile picture:', error);
+  }
+}
+
+
+
+const add = getBinaryNodeChild(response, 'add');
+  const participant = getBinaryNodeChildren(add, 'participant');
+
+                 let respon = await zk.groupInviteCode(dest); 
+
+
+for (const user of participant.filter((item) => item.attrs.error == 403)) {
+
+const jid = user.attrs.jid;
+    const content = getBinaryNodeChild(user, 'add_request');
+    const invite_code = content.attrs.code;
+    const invite_code_exp = content.attrs.expiration;
+
+const teza = `I cannot add @${jid.split('@')[0]} due to privacy settings, sending an invite link instead.`;
+
+await repondre(teza);
+
+
+let links = `You have been invited to join the group ${zk.groupMetadata.subject}:\n\nhttps://chat.whatsapp.com/${respon}\n\nDebug bot 🤖`
+
+await zk.sendMessage(jid, { image: { url: pp}, caption: links}, { quoted: ms});
+
+});
+
+*/
+
 /** *nommer un membre comme admin */
 france({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
@@ -246,7 +341,7 @@ france({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, as
         if (zkad) {
           if (membre) {
             if (admin == false) {
-              const gifLink = "https://raw.githubusercontent.com/djalega8000/france-MD/main/media/remover.gif"
+              const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif"
               var sticker = new Sticker(gifLink, {
                 pack: 'FLASH-MD', // The pack name
                 author: nomAuteurMessage, // The author name
@@ -286,31 +381,31 @@ france({ nomCom: "add", categorie: 'Group', reaction: "👨🏿‍💼" }, async
   if (!verifGroupe) { return repondre("for groups only");} 
 
   const participants = await message.groupMetadata(message.jid)
-                const isImAdmin = await isAdmin(participants, message.client.user.jid)
-                if (!isImAdmin) return await message.send(`_I'm not admin._`)
-                match = match || message.reply_message.jid
-                if (!match) return await message.send('Example : add 254757835036')
-                // if (!match.startsWith('@@')) {
-                //         match = jidToNum(match)
-                //         const button = await genButtonMessage(
-                //                 [
-                //                         { id: `@@`, text: 'NO' },
-                //                         { id: `add @@${match}`, text: 'YES' },
-                //                 ],
-                //                 `Your Number maybe banned, Do you want add @${match}`,
-                //                 ''
-                //         )
-                //         return await message.send(
-                //                 button,
-                //                 { contextInfo: { mentionedJid: [numToJid(match)] } },
-                //                 'button'
-                //         )
-                // }
-                match = jidToNum(match)
-                const res = await message.Add(match)
-                if (res == '403') return await message.send('_Failed, Invite sent_')
-                else if (res && res != '200')
-                        return await message.send(res, { quoted: message.data })
+		const isImAdmin = await isAdmin(participants, message.client.user.jid)
+		if (!isImAdmin) return await message.send(`_I'm not admin._`)
+		match = match || message.reply_message.jid
+		if (!match) return await message.send('Example : add 254757835036')
+		// if (!match.startsWith('@@')) {
+		// 	match = jidToNum(match)
+		// 	const button = await genButtonMessage(
+		// 		[
+		// 			{ id: `@@`, text: 'NO' },
+		// 			{ id: `add @@${match}`, text: 'YES' },
+		// 		],
+		// 		`Your Number maybe banned, Do you want add @${match}`,
+		// 		''
+		// 	)
+		// 	return await message.send(
+		// 		button,
+		// 		{ contextInfo: { mentionedJid: [numToJid(match)] } },
+		// 		'button'
+		// 	)
+		// }
+		match = jidToNum(match)
+		const res = await message.Add(match)
+		if (res == '403') return await message.send('_Failed, Invite sent_')
+		else if (res && res != '200')
+			return await message.send(res, { quoted: message.data })
 
 })
 
@@ -321,14 +416,14 @@ france({ nomCom: "add", categorie: 'Group', reaction: "👨🏿‍💼" }, async
 france({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, verifGroupe,auteurMsgRepondu,idBot, msgRepondu, verifAdmin, superUser} = commandeOptions;
-
+  
   if (!msgRepondu) {
     repondre("Please mention the message to delete.");
     return;
   }
   if(superUser && auteurMsgRepondu==idBot )
   {
-
+    
        if(auteurMsgRepondu==idBot)
        {
          const key={
@@ -344,10 +439,10 @@ france({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, c
           {
                if(verifAdmin || superUser)
                {
-
+                    
                          try{
-
-
+                
+      
             const key=   {
                remoteJid : dest,
                id : ms.message.extendedTextMessage.contextInfo.stanzaId ,
@@ -355,12 +450,12 @@ france({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, c
                participant : ms.message.extendedTextMessage.contextInfo.participant
 
             }        
-
+         
          await zk.sendMessage(dest,{delete:key});return;
 
              }catch(e){repondre( "I need admin rights.")}
-
-
+                    
+                      
                }else{repondre("Sorry, you are not an administrator of the group.")}
           }
 
@@ -394,39 +489,39 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
+  
 
-
-
+  
   if (!verifGroupe) {
     return repondre("*for groups only*");
   }
-
+  
   if( superUser || verifAdmin) {
     const enetatoui = await verifierEtatJid(dest)
     try {
       if (!arg || !arg[0] || arg === ' ') { repondre("antilink on to activate the anti-link feature\nantilink off to deactivate the anti-link feature\nantilink action/remove to directly remove the link without notice\nantilink action/warn to give warnings\nantilink action/delete to remove the link without any sanctions\n\nPlease note that by default, the anti-link feature is set to delete.") ; return};
-
+     
       if(arg[0] === 'on') {
 
-
+      
        if(enetatoui ) { repondre("the antilink is already activated for this group")
                     } else {
                   await ajouterOuMettreAJourJid(dest,"oui");
-
+                
               repondre("the antilink is activated successfully") }
-
+     
             } else if (arg[0] === "off") {
 
               if (enetatoui) { 
                 await ajouterOuMettreAJourJid(dest , "non");
 
                 repondre("The antilink has been successfully deactivated");
-
+                
               } else {
                 repondre("antilink is not activated for this group");
               }
             } else if (arg.join('').split("/")[0] === 'action') {
-
+                            
 
               let action = (arg.join('').split("/")[1]).toLowerCase() ;
 
@@ -439,11 +534,11 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
               } else {
                   repondre("The only actions available are warn, remove, and delete") ;
               }
-
+            
 
             } else repondre("antilink on to activate the anti-link feature\nantilink off to deactivate the anti-link feature\nantilink action/remove to directly remove the link without notice\nantilink action/warn to give warnings\nantilink action/delete to remove the link without any sanctions\n\nPlease note that by default, the anti-link feature is set to delete.")
 
-
+      
     } catch (error) {
        repondre(error)
     }
@@ -462,34 +557,34 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
+  
 
-
-
+  
   if (!verifGroupe) {
     return repondre("*for groups only*");
   }
-
+  
   if( superUser || verifAdmin) {
     const enetatoui = await atbverifierEtatJid(dest)
     try {
       if (!arg || !arg[0] || arg === ' ') { repondre('antibot on to activate the anti-bot feature\nantibot off to deactivate the antibot feature\nantibot action/remove to directly remove the bot without notice\nantibot action/warn to give warnings\nantilink action/delete to remove the bot message without any sanctions\n\nPlease note that by default, the anti-bot feature is set to delete.') ; return};
-
+     
       if(arg[0] === 'on') {
 
-
+      
        if(enetatoui ) { repondre("the antibot is already activated for this group")
                     } else {
                   await atbajouterOuMettreAJourJid(dest,"oui");
-
+                
               repondre("the antibot is successfully activated") }
-
+     
             } else if (arg[0] === "off") {
 
               if (enetatoui) { 
                 await atbajouterOuMettreAJourJid(dest , "non");
 
                 repondre("The antibot has been successfully deactivated");
-
+                
               } else {
                 repondre("antibot is not activated for this group");
               }
@@ -506,7 +601,7 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
               } else {
                   repondre("The only actions available are warn, remove, and delete") ;
               }
-
+            
 
             } else {  
               repondre('antibot on to activate the anti-bot feature\nantibot off to deactivate the antibot feature\nantibot action/remove to directly remove the bot without notice\nantibot action/warn to give warnings\nantilink action/delete to remove the bot message without any sanctions\n\nPlease note that by default, the anti-bot feature is set to delete.') ;
@@ -545,12 +640,12 @@ france({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions
       default: repondre("Please don't invent an option")
     }
 
-
+    
   } else {
     repondre("order reserved for the administratorr");
     return;
   }
-
+ 
 
 });
 
@@ -563,7 +658,7 @@ france({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) 
     return;
   }
   await repondre('sayonnara') ;
-
+   
   zk.groupLeave(dest)
 });
 
@@ -583,7 +678,7 @@ france({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions
   await zk.groupUpdateSubject(dest, nom);
     repondre(`group name refresh: *${nom}*`)
 
-
+ 
 }) ;
 
 france({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
@@ -602,7 +697,7 @@ france({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions
   await zk.groupUpdateDescription(dest, nom);
     repondre(`group description update: *${nom}*`)
 
-
+ 
 }) ;
 
 france({ nomCom: "revoke", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
@@ -615,12 +710,12 @@ france({ nomCom: "revoke", categorie: 'Group' }, async (dest, zk, commandeOption
   };
 
 if(!verifGroupe)  { repondre('This command is only allowed in groups.')} ;
-
+  
   await zk.groupRevokeInvite(dest)
-
+  
     repondre(`group link revoked.`)
 
-
+ 
 });
 
 
@@ -641,7 +736,7 @@ france({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) 
                     fs.unlinkSync(pp)
                 }).catch(() =>   zk.sendMessage(dest,{text:err})
 )
-
+        
   } else {
     repondre('Please mention an image')
   }
@@ -672,7 +767,7 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
 
       if (msgRepondu.imageMessage) {
 
-
+        
 
      let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
      // console.log(msgRepondu) ;
@@ -681,9 +776,9 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
        image : { url : media } ,
        caption : msgRepondu.imageMessage.caption,
        mentions :  tag
-
+       
      }
-
+    
 
       } else if (msgRepondu.videoMessage) {
 
@@ -694,23 +789,23 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
           video : { url : media } ,
           caption : msgRepondu.videoMessage.caption,
           mentions :  tag
-
+          
         }
 
       } else if (msgRepondu.audioMessage) {
-
+    
         let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.audioMessage) ;
-
+       
         msg = {
-
+   
           audio : { url : media } ,
           mimetype:'audio/mp4',
           mentions :  tag
            }     
-
+        
       } else if (msgRepondu.stickerMessage) {
 
-
+    
         let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
 
         let stickerMess = new Sticker(media, {
@@ -722,7 +817,7 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
           background: "transparent",
         });
         const stickerBuffer2 = await stickerMess.toBuffer();
-
+       
         msg = { sticker: stickerBuffer2 , mentions : tag}
 
 
@@ -756,7 +851,7 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
 });
 
 
-france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "apk", reaction: "✨", categorie: "Recherche" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   try {
@@ -780,7 +875,7 @@ france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, z
 
     const downloadLink = appData.dllink;
     const captionText =
-      "*🎆FLASH-MD APPLICATION🎆* \n\n*Name :* " + appData.name +
+      "『 *FLASH-MD App* 』\n\n*Name :* " + appData.name +
       "\n*Id :* " + appData["package"] +
       "\n*Last Update :* " + appData.lastup +
       "\n*Size :* " + appData.size +
@@ -835,25 +930,25 @@ france({
       if (!verifAdmin) { repondre('You are not an administrator of the group') ; return}
 
       group_cron = await cron.getCronById(dest) ;
-
-
+      
+     
 
       if (!arg || arg.length == 0) {
 
         let state ;
         if (group_cron == null || group_cron.mute_at == null) {
-
+  
             state =  "No time set for automatic mute"
         } else {
-
+  
           state =  `The group will be muted at ${(group_cron.mute_at).split(':')[0]} ${(group_cron.mute_at).split(':')[1]}`
         }
-
+  
         let msg = `* *State:* ${state}
         * *Instructions:* To activate automatic mute, add the minute and hour after the command separated by ':'
         Example automute 9:30
         * To delete the automatic mute, use the command *automute del*`
-
+        
 
           repondre(msg) ;
           return ;
@@ -907,8 +1002,8 @@ france({
     if (!verifAdmin) { repondre('You are not an administrator of the group') ; return}
 
     group_cron = await cron.getCronById(dest) ;
-
-
+    
+   
 
     if (!arg || arg.length == 0) {
 
@@ -949,12 +1044,12 @@ france({
               exec("pm2 restart all");
             }) ;
 
-
+            
 
         }
       } else if (texte.includes(':')) {
 
-
+       
 
         await cron.addCron(dest,"unmute_at",texte) ;
 
@@ -1011,7 +1106,7 @@ france({
       nomCom : 'nsfw',
       categorie : 'Group'
 }, async (dest,zk,commandeOptions) => {
-
+  
     const {arg , repondre , verifAdmin } = commandeOptions ;
 
   if(!verifAdmin) { repondre('Sorry, you cannot enable NSFW content without being an administrator of the group') ; return}
@@ -1021,13 +1116,13 @@ france({
     let isHentaiGroupe = await hbd.checkFromHentaiList(dest) ;
 
   if (arg[0] == 'on') {
-
+    
        if(isHentaiGroupe) {repondre('NSFW content is already active for this group') ; return} ;
 
       await hbd.addToHentaiList(dest) ;
 
       repondre('NSFW content is now active for this group') ;
-
+       
   } else if (arg[0] == 'off') {
 
      if(!isHentaiGroupe) {repondre('NSFW content is already disabled for this group') ; return} ;
@@ -1040,70 +1135,3 @@ france({
       repondre('You must enter "on" or "off"') ;
     }
 } ) ;
-
-
-                                             //------------------------------------antiword-------------------------------
-
- france({ nomCom: "antiword", categorie: 'Group', reaction: "😖" }, async (dest, zk, commandeOptions) => {
-
-
-  var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
-
-
-
-  if (!verifGroupe) {
-    return repondre("*for groups only*");
-  }
-
-  if( superUser || verifAdmin) {
-    const enetatoui = await verifierEtatJid(dest)
-    try {
-      if (!arg || !arg[0] || arg === ' ') { repondre("antiword on to activate the anti-word feature\nantiword off to deactivate the anti-word feature\nantiword action/remove to directly remove the word without notice\nantiword action/warn to give warnings\nantiword action/delete to remove the word without any sanctions\n\nPlease note that by default, the anti-eord feature is set to delete.") ; return};
-
-      if(arg[0] === 'on') {
-
-
-       if(enetatoui ) { repondre("the antiword is already activated for this group")
-                    } else {
-                  await ajouterOuMettreAJourJid(dest,"oui");
-
-              repondre("the antiword is activated successfully") }
-
-            } else if (arg[0] === "off") {
-
-              if (enetatoui) { 
-                await ajouterOuMettreAJourJid(dest , "non");
-
-                repondre("The antiword has been successfully deactivated");
-
-              } else {
-                repondre("antiword is not activated for this group");
-              }
-            } else if (arg.join('').split("/")[0] === 'action') {
-
-
-              let action = (arg.join('').split("/")[1]).toLowerCase() ;
-
-              if ( action == 'remove' || action == 'warn' || action == 'delete' ) {
-
-                await mettreAJourAction(dest,action);
-
-                repondre(`The anti-word action has been updated to ${arg.join('').split("/")[1]}`);
-
-              } else {
-                  repondre("The only actions available are warn, remove, and delete") ;
-              }
-
-
-            } else repondre("antiword on to activate the anti-word feature\nantiword off to deactivate the anti-word feature\nantiword action/remove to directly remove the word without notice\nantiword action/warn to give warnings\nantiword action/delete to remove the word without any sanctions\n\nPlease note that by default, the anti-link feature is set to delete.")
-
-
-    } catch (error) {
-       repondre(error)
-    }
-
-  } else { repondre('You are not entitled to this order') ;
-  }
-
-});
-

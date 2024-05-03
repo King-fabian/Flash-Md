@@ -149,3 +149,22 @@ console.log(data.completion);
 
   });
 
+france({ nomCom: "attp", reaction: "Fun", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, nomAuteurMessage, arg, ms } = commandeOptions;
+  
+    
+      if (!arg || arg.length === 0) {
+        return repondre(`What's up ${nomAuteurMessage}\nPlease Ask anything.\n *FLASH-MD* is here to help you.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const att = arg.join(' ');
+     const response = await fetch(`https://api.maher-zubair.tech/maker/text2gif?q=${att}`);
+const data = await response.json();
+
+await repondre(data.result);
+console.log(data.completion); 
+
+
+  });
+

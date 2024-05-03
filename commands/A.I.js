@@ -149,7 +149,7 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "igstalk", reaction: "Fun", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "ip", reaction: "Fun", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, nomAuteurMessage, arg, ms } = commandeOptions;
   
     
@@ -159,7 +159,7 @@ france({ nomCom: "igstalk", reaction: "Fun", categorie: "IA" }, async (dest, zk,
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const att = arg.join(' ');
-     const response = await fetch(`https://api.maher-zubair.tech/stalk/instagram?q=${att}`);
+     const response = await fetch(`https://api.maher-zubair.tech/stalk/ip?q=${att}`);
 const data = await response.json();
 
 await repondre(data.result);

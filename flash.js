@@ -256,6 +256,11 @@ function mybotpic() {
 
             /************************ anti-delete-message */
 
+if (origineMessage === auteurMessage ) {
+
+zk.readMessages([ms.key]);
+            }
+
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {
 
                 if(ms.key.fromMe || ms.message.protocolMessage.key.fromMe) { console.log('Delete message about me') ; return }

@@ -141,6 +141,7 @@ setTimeout(() => {
             if(origineMessage === "120363244435092946@g.us") return 
             
             const verifGroupe = origineMessage?.endsWith("@g.us");
+const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");
             var infosGroupe = verifGroupe ? await zk.groupMetadata(origineMessage) : "";
             var nomGroupe = verifGroupe ? infosGroupe.subject : "";
             var msgRepondu = ms.message.extendedTextMessage?.contextInfo?.quotedMessage;
@@ -1182,6 +1183,13 @@ function mybotpic() {
             if (!superUser && origineMessage === auteurMessage&& conf.PM_PERMIT === "yes" ) {
                 repondre("You don't have acces to commands here") ; return }
             ///////////////////////////////
+
+
+            if (MsgInbox && conf.AUTOREAD_MESSAGES === "yes" ) {
+
+await zk.readMessages([ms.key]);
+            }
+
 
              
             /*****************************banGroup  */

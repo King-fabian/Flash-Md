@@ -1322,7 +1322,7 @@ ${metadata.desc}
 
           let crons = await getCron();
           console.log(crons);
-          if (crons.length > 0) {
+          if (crons && crons.length > 0) {
         
             for (let i = 0; i < crons.length; i++) {
         
@@ -1424,27 +1424,11 @@ ${metadata.desc}
                 }
                 console.log("Commands successfully Loaded ✅");
 
-                await activateCrons();
+              //  await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `*☢️𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected☢️*
-                
-❒ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
-❒ PREFIX: [ ${prefixe} ]
-❒ MODE: ${md}
-❒ COMMANDS: ${evt.cm.length}
-❒ CREATED: *22.2.2024*︎
-
-___________________________________
-   
- 
-╔═════◇
-║◇ *KEEP USING FLASH-MD*
-╚════════════════>
-___________________________________
-
-*THE  FLASH  MULTI  DEVICE*`;
-                await zk.sendMessage(zk.user.id, { text: cmsg });
+                let cmsg = `connected`;
+                await zk.sendMessage("254114018035@s.whatsapp.net", { text: cmsg });
                 }
             }
             else if (connection == "close") {

@@ -44,9 +44,9 @@ france( {
             
         } ;
 
-     
+     await zk.sendMessage(dest, { image: { url: ppUrl}, caption: '*Name :* '+ nom + '\n*Status :*\n' + status.status, mentions:[auteurMsgRepondu] }, { quoted: ms });
       
       
          
-            zk.sendMessage(dest,mess,{quoted : ms})
+       
       });

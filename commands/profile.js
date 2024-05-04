@@ -27,7 +27,7 @@ france( {
 
 const status = await zk.fetchStatus(jid) ;
 
-     await zk.sendMessage(dest, { image: { url: ppUrl}, caption: '*Name :* '+ nom + '\n*Status :*\n' + status.status, mentions:[auteurMsgRepondu] }, { quoted: ms });
+     await zk.sendMessage(dest, { image: { url: ppUrl}, caption: '*Name :* '+ nom + '\n*Status :*\n' + status.status }, { quoted: ms });
       
        
         } 

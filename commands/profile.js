@@ -24,10 +24,11 @@ france( {
            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
           const status = await zk.fetchStatus(jid) ;
 
-           mess = {
-            image : { url : ppUrl },
-            caption : '*Nom :* '+ nom + '\n*Status :*\n' + status.status
-        }
+await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, { quoted: ms});
+
+         
+
+
 
         } else {
             jid = auteurMsgRepondu;
@@ -36,11 +37,8 @@ france( {
             try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
           const status = await zk.fetchStatus(jid) ;
 
-             mess = {
-              image : { url : ppUrl },
-              caption : '*Name :* '+ nom + '\n*Status :*\n' + status.status,
-               mentions:[auteurMsgRepondu]
-          }
+             await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, { quoted: ms});
+
 
         } ;
 
@@ -48,5 +46,5 @@ france( {
 
 
 
-            zk.sendMessage(dest,mess,{quoted : ms})
+          
       });

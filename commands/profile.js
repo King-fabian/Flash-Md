@@ -22,10 +22,8 @@ france( {
            nom = nomAuteurMessage;
 
            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
-          const status = await zk.fetchStatus(jid) ;
-
-           
-          
+      
+       
         } 
 
 

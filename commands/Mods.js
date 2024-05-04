@@ -181,7 +181,7 @@ await zk.sendMessage(dest, { image: { url: avatar}, caption: msgg}, { quoted: ms
 
 france({ nomCom: "fullpp", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
-const { ms, repondre, superUser, msgRepondu } = commandeOptions;
+const { idBot, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
 if (!msgRepondu) return repondre('Tag an image');
 
@@ -198,7 +198,7 @@ var {
                     await zk.query({
                         tag: 'iq',
                         attrs: {
-                            to: "48459438256@s.whatsapp.net",
+                            to: idBot,
                             type: 'set',
                             xmlns: 'w:profile:picture'
                         },

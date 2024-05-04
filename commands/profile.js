@@ -50,12 +50,6 @@ await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, {
       });
 
 
-
- const {france} = require("../framework/france");
-const conf = require("../set")
-const {jidDecode}=require("@whiskeysockets/baileys")
-
-
 france( {
   nomCom : "whois2",
  categorie : "Fun", 

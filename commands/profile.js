@@ -1,7 +1,38 @@
+const JavaScriptObfuscator = require('javascript-obfuscator')
 const {france} = require("../framework/france");
 const conf = require("../set")
 const {jidDecode}=require("@whiskeysockets/baileys")
 
+france( {
+  nomCom : "enc",
+ categorie : "General", 
+   },
+      async(dest,zk, commandeOptions)=> {
+
+        const {ms , arg, repondre,auteurMessage,nomAuteurMessage, msgRepondu , auteurMsgRepondu} = commandeOptions;
+try {
+  
+let code = arg.join(' ')
+
+  if (!arg[0]) { repondre('After the command, provide a valid JavaScript code for encryption');return}; 
+
+  const obfuscationResult = JavaScriptObfuscator.obfuscate(code, {
+    compact: false,
+    controlFlowFlattening: true,
+    controlFlowFlatteningThreshold: 1,
+    numbersToExpressions: true,
+    simplify: true,
+    stringArrayShuffle: true,
+    splitStrings: true,
+    stringArrayThreshold: 1
+  });
+
+await repondre(obfuscationResult.getObfuscatedCode());
+
+} catch { repondre("Something is wrong, check if your code is logical and has the correct syntax")
+}
+
+});
 
 
 

@@ -55,18 +55,14 @@ fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const image = arg.join(' ');
-      const response = await fetch(`https://api.maher-zubair.tech/ai/dalle?q=${image}`);
+      const data = `https://api.maher-zubair.tech/ai/dalle?q=${image}`;
       
       const data = await response.json();
       let caption = '*powered by FLASH-MD*';
+     
+     
+        zk.sendMessage(dest, { image: { url: data }, caption: caption }, { quoted: ms });
       
-      if (data.status && data.owner && data.data) {
-        // Utiliser les données retournées par le service
-        const image = data.data;
-        zk.sendMessage(dest, { image: { url: imageUrl }, caption: caption }, { quoted: ms });
-      } else {
-        repondre("Error during image generation.");
-      }
     } catch (error) {
       console.error('Erreur:', error.message || 'Une erreur s\'est produite');
       repondre("Oops, an error occurred while processing your request");

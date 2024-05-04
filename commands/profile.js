@@ -21,7 +21,7 @@ france( {
             jid = auteurMessage;
            nom = nomAuteurMessage;
 
-           try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
+           try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = "https://static.animecorner.me/2023/08/op2.jpg"};
           const status = await zk.fetchStatus(jid) ;
 
 await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, { quoted: ms});
@@ -34,7 +34,7 @@ await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, {
             jid = auteurMsgRepondu;
             nom ="@"+auteurMsgRepondu.split("@")[0] ;
 
-            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
+            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = "https://static.animecorner.me/2023/08/op2.jpg"};
           const status = await zk.fetchStatus(jid) ;
 
              await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, { quoted: ms});

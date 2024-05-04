@@ -1185,10 +1185,7 @@ function mybotpic() {
             ///////////////////////////////
 
 
-            if (origineMessage === auteurMessage && conf.AUTOREAD_MESSAGES === "yes" ) {
-
-await zk.readMessages([ms.key]);
-            }
+            
 
 
              

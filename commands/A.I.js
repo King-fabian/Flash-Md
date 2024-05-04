@@ -130,7 +130,7 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "wallpaper", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "pinterest", reaction: "📡", categorie: "Search" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     try {
@@ -140,7 +140,7 @@ france({ nomCom: "wallpaper", reaction: "📡", categorie: "IA" }, async (dest, 
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const wall = arg.join(' ');
-      const data = `https://api-smd.onrender.com/api/wallpaper?query=${wall}`;
+      const data = `https://api.maher-zubair.tech/search/pinterest?q=${wall}`;
       
     
       let caption = '*powered by FLASH-MD*';

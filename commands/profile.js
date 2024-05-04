@@ -17,7 +17,7 @@ france( {
 
 
 
-        if (!msgRepondu) {
+        if (msgRepondu) {
             jid = auteurMessage;
            nom = nomAuteurMessage;
 

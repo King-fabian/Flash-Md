@@ -51,13 +51,13 @@ await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, {
 
 
 
-/* const {zokou} = require("../framework/france");
+ const {france} = require("../framework/france");
 const conf = require("../set")
 const {jidDecode}=require("@whiskeysockets/baileys")
 
 
 france( {
-  nomCom : "whois",
+  nomCom : "whois2",
  categorie : "Fun", 
    },
       async(dest,zk, commandeOptions)=> {

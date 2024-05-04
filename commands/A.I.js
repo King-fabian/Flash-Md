@@ -130,3 +130,28 @@ console.log(data.completion);
 
   });
 
+france({ nomCom: "wallpaper", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    try {
+      if (!arg || arg.length === 0) {
+        return repondre(`Please enter the necessary information to generate the image.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const wall = arg.join(' ');
+      const data = `https://api-smd.onrender.com/api/wallpaper?query=${wall}`;
+      
+    
+      let caption = '*powered by FLASH-MD*';
+     
+     
+        zk.sendMessage(dest, { image: { url: data }, caption: caption }, { quoted: ms });
+      
+    } catch (error) {
+      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
+      repondre("Oops, an error occurred while processing your request");
+    }
+  });
+  
+

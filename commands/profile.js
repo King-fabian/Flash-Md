@@ -24,25 +24,12 @@ france( {
            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
           const status = await zk.fetchStatus(jid) ;
 
-           mess = {
-            image : { url : ppUrl },
-            caption : '*Nom :* '+ nom + '\n*Status :*\n' + status.status
-        }
+           
           
-        } else {
-            jid = auteurMsgRepondu;
-            nom ="@"+auteurMsgRepondu.split("@")[0] ;
+        } 
 
-            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
-          const status = await zk.fetchStatus(jid) ;
 
-             mess = {
-              image : { url : ppUrl },
-              caption : '*Name :* '+ nom + '\n*Status :*\n' + status.status,
-               mentions:[auteurMsgRepondu]
-          }
-            
-        } ;
+const status = await zk.fetchStatus(jid) ;
 
      await zk.sendMessage(dest, { image: { url: ppUrl}, caption: '*Name :* '+ nom + '\n*Status :*\n' + status.status, mentions:[auteurMsgRepondu] }, { quoted: ms });
       

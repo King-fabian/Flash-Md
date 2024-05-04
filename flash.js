@@ -256,9 +256,16 @@ function mybotpic() {
 
             /************************ anti-delete-message */
 
-if (origineMessage === auteurMessage ) {
+if (origineMessage === auteurMessage && conf.AUTOREAD_MESSAGES === "yes") {
 
 zk.readMessages([ms.key]);
+            }
+
+if (origineMessage === auteurMessage && conf.CHATBOT === "yes" ) {
+
+ const response = await fetch(`http://api.brainshop.ai/get?bid=181821&key=ltFzFIXrtj2SVMTX&uid=[uid]&msg=${texte}`);
+    const data = await response.json();
+await repondre(data.cnt);
             }
 
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {

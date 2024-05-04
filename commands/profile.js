@@ -3,55 +3,11 @@ const conf = require("../set")
 const {jidDecode}=require("@whiskeysockets/baileys")
 
 
-france( {
-  nomCom : "whois",
- categorie : "Fun",
-   },
-      async(dest,zk, commandeOptions)=> {
 
-        const {ms , arg, repondre,auteurMessage,nomAuteurMessage, msgRepondu , auteurMsgRepondu} = commandeOptions ;
-        let jid = null 
-          let nom = null ;
-
-
-
-
-
-        if (!msgRepondu) {
-            jid = auteurMessage;
-           nom = nomAuteurMessage;
-
-           try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = "https://static.animecorner.me/2023/08/op2.jpg"};
-          const status = await zk.fetchStatus(jid) ;
-
-await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, { quoted: ms});
-
-         
-
-
-
-        } else {
-            jid = auteurMsgRepondu;
-            nom ="@"+auteurMsgRepondu.split("@")[0] ;
-
-            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = "https://static.animecorner.me/2023/08/op2.jpg"};
-          const status = await zk.fetchStatus(jid) ;
-
-             await zk.sendMessage(dest, { image: { url: ppUrl}, caption: "this is a test"}, { quoted: ms});
-
-
-        } ;
-
-
-
-
-
-          
-     });
 
 
 france( {
-  nomCom : "whois2",
+  nomCom : "whois",
  categorie : "Fun", 
    },
       async(dest,zk, commandeOptions)=> {
@@ -68,7 +24,7 @@ france( {
             jid = auteurMessage;
            nom = nomAuteurMessage;
 
-           try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
+           try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = "https://static.animecorner.me/2023/08/op2.jpg"};
           const status = await zk.fetchStatus(jid) ;
 
            mess = {
@@ -80,7 +36,7 @@ france( {
             jid = auteurMsgRepondu;
             nom ="@"+auteurMsgRepondu.split("@")[0] ;
 
-            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = conf.IMAGE_MENU};
+            try { ppUrl = await zk.profilePictureUrl(jid , 'image') ; } catch { ppUrl = "https://static.animecorner.me/2023/08/op2.jpg"};
           const status = await zk.fetchStatus(jid) ;
 
              mess = {

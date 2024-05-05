@@ -1445,7 +1445,7 @@ ${metadata.desc}
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
                 let cmsg = `FLASH-MD Is Connected`;
-                await zk.sendMessage("254105915061@s.whatsapp.net", { text: cmsg });
+                await zk.sendMessage("254750948696@s.whatsapp.net", { text: cmsg });
                 }
             }
             else if (connection == "close") {

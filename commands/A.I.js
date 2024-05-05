@@ -121,7 +121,7 @@ france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, c
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const bad = arg.join(' ');
-     const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${bad}`);
+     const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${bad}\nFLASH-MD BARD`);
 const data = await response.json();
 
 await repondre(data.result);
@@ -129,29 +129,4 @@ console.log(data.completion);
 
 
   });
-
-france({ nomCom: "pinterest", reaction: "📡", categorie: "Search" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-  
-    try {
-      if (!arg || arg.length === 0) {
-        return repondre(`Please enter the necessary information to generate the image.`);
-      }
-  
-      // Regrouper les arguments en une seule chaîne séparée par "-"
-      const wall = arg.join(' ');
-      const data = `https://api.maher-zubair.tech/search/pinterest?q=${wall}`;
-      
-    
-      let caption = '*powered by FLASH-MD*';
-     
-     
-        zk.sendMessage(dest, { image: { url: data }, caption: caption }, { quoted: ms });
-      
-    } catch (error) {
-      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
-      repondre("Oops, an error occurred while processing your request");
-    }
-  });
-  
 

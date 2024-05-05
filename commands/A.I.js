@@ -124,7 +124,7 @@ france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, c
      const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${bad}`);
 const data = await response.json();
 
-await repondre(`FLASH-MD : data.result`);
+await repondre(data.result\n\n'Flash-Md BARD');
 console.log(data.completion); 
 
 

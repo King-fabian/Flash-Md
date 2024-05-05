@@ -121,10 +121,10 @@ france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, c
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const bad = arg.join(' ');
-     const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${bad} \n FLASH-MD BARD`);
+     const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${bad}`);
 const data = await response.json();
 
-await repondre(data.result);
+await repondre(`FLASH-MD :` data.result);
 console.log(data.completion); 
 
 

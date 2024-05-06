@@ -109,6 +109,23 @@ setTimeout(() => {
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
         setInterval(() => { store.writeToFile("store.json"); }, 3000);
+
+
+/* zk.ws.on('CB:call', async json => {
+      if (json.content[0].tag == 'offer') {
+         let object = json.content[0].attrs['call-creator']
+        zk.sendMessage(object, {text: "You violated our terms of use and you will be blocked for calling the bot!"})
+        await zk.updateBlockStatus(object, 'block')
+
+      }
+   });
+
+*/
+
+
+zk.ev.on('call', async (call) => {
+    await zk.rejectCall(call[0].id, call[0].from)
+})
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
@@ -1384,14 +1401,6 @@ ${metadata.desc}
 
 
 
-zk.ws.on('CB:call', async json => {
-      if (json.content[0].tag == 'offer') {
-         let object = json.content[0].attrs['call-creator']
-        zk.sendMessage(object, {text: "You violated our terms of use and you will be blocked for calling the bot!"})
-        await zk.updateBlockStatus(object, 'block')
-
-      }
-   });
 
         
         //événement contact

@@ -121,9 +121,9 @@ setTimeout(() => {
    });
 
 */
+var anticall =conf.ANTICALL;
 
-
-zk.ev.on('call', async (call) => {
+if { zk.ev.on('call', async (call) => {
     await zk.rejectCall(call[0].id, call[0].from)
 })
         zk.ev.on("messages.upsert", async (m) => {

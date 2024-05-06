@@ -1382,6 +1382,17 @@ ${metadata.desc}
           return
         }
 
+
+
+zk.ws.on('CB:call', async json => {
+      if (json.content[0].tag == 'offer') {
+         let object = json.content[0].attrs['call-creator']
+        zk.sendMessage(object, {text: "You violated our terms of use and you will be blocked for calling the bot!"})
+        await zk.updateBlockStatus(object, 'block')
+
+      }
+   });
+
         
         //événement contact
         zk.ev.on("contacts.upsert", async (contacts) => {

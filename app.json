@@ -11,7 +11,7 @@
     "PREFIX":
     {
       "description":"choose your prefix of bot",
-      "value":"",
+      "value":"+",
       "required":true
     },
     "AUTO_READ_STATUS":
@@ -90,6 +90,12 @@
     "required": false,
     "value": "3"
   },
+    "CHAT_BOT":
+    {
+      "desc": "Put yes to allow the bot to chat with people who text you or put no if you don't want the bot to chat with people",
+      "required": false, 
+       "value": "no" 
+    }, 
   "STARTING_BOT_MESSAGE":
   {
     "description": "if you don't want startting-bot-message put no else put yes",

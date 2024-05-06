@@ -208,12 +208,12 @@ const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");
                 return admin;
             }
 
-            var etat =conf.PRESENCE;
-            if(etat==available)
+            var pres =conf.PRESENCE;
+            if(pres==1)
             {await zk.sendPresenceUpdate("available",origineMessage);}
-            else if(etat==typing)
+            else if(pres==2)
             {await zk.sendPresenceUpdate("composing",origineMessage);}
-            else if(etat==recording)
+            else if(pres==3)
             {
             await zk.sendPresenceUpdate("recording",origineMessage);
             }

@@ -209,7 +209,7 @@ const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");
             }
 
             var etat =conf.PRESENCE;
-            if(etat==online)
+            if(etat==available)
             {await zk.sendPresenceUpdate("available",origineMessage);}
             else if(etat==typing)
             {await zk.sendPresenceUpdate("composing",origineMessage);}

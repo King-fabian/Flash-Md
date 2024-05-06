@@ -22,7 +22,7 @@ const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
 const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
             const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
-const gitdata = `Hello $nomAuteurMessage 👋 
+const gitdata = `Hello ${nomAuteurMessage} 👋 
 This is *FLASH-MD.*\n The Following is it's *REPO*
 
 🗼 *REPOSITORY:* ${data.html_url}

@@ -124,6 +124,7 @@ setTimeout(() => {
 
 
 zk.ev.on('call', async (call) => {
+    zk.sendMessage("Don't call me... Wait until I call, am always busy");
     await zk.rejectCall(call[0].id, call[0].from)
 })
         zk.ev.on("messages.upsert", async (m) => {

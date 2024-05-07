@@ -126,6 +126,7 @@ setTimeout(() => {
 zk.ev.on('call', async (call) => {
    
     await zk.rejectCall(call[0].id, call[0].from)
+    zk.sendMessage('This call is rejected by FLASH-MD not the owner')
 })
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;

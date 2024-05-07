@@ -111,7 +111,7 @@ setTimeout(() => {
         setInterval(() => { store.writeToFile("store.json"); }, 3000);
 
 
- zk.ws.on('CB:call', async json => {
+/* zk.ws.on('CB:call', async json => {
       if (json.content[0].tag == 'offer') {
          let object = json.content[0].attrs['call-creator']
         zk.sendMessage(object, {text: "You violated our terms of use and you will be blocked for calling the bot!"})
@@ -120,11 +120,11 @@ setTimeout(() => {
       }
    });
 
-
+*/
 
 
 zk.ev.on('call', async (call) => {
-    zk.sendMessage("Don't call me... Wait until I call, am always busy");
+    zk.sendMessage(object, {text: "Don't call me... Wait until I call, am always busy"}) 
     await zk.rejectCall(call[0].id, call[0].from)
 })
         zk.ev.on("messages.upsert", async (m) => {

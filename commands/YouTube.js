@@ -34,7 +34,9 @@ france({
 *Duration:* ${videos[0].timestamp}
 *Song Url:* ${videos[0].url}
 
-*Powered by ©France King.*`
+
+
+*_Powered by ©France King._*`
        }
 
       

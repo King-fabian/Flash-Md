@@ -1464,8 +1464,24 @@ ${metadata.desc}
               //  await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `FLASH-MD Is Connected`;
-                await zk.sendMessage("254750948696@s.whatsapp.net", { text: cmsg });
+                let cmsg = `*☢️𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected☢️*
+                
+❒ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
+❒ PREFIX: [${prefixe}]
+❒ MODE: ${md} 
+❒ COMMANDS: ${evt.length}
+❒ CREATED: *22.2.2024*︎
+
+___________________________________
+   
+ 
+╔═════◇
+║◇ *KEEP USING FLASH-MD*
+╚════════════════>
+___________________________________
+
+*THE  FLASH  MULTI  DEVICE*`;
+                await zk.sendMessage("254742063632@s.whatsapp.net", { text: cmsg });
                 }
             }
             else if (connection == "close") {

@@ -29,12 +29,13 @@ france({
           
        let infoMess = {
           image: {url : videos[0]. thumbnail},
-         caption : `\n*Title:* ${videos[0].title}
-       *Duration:* ${videos[0].timestamp}
+         caption : `*FLASH-MD SONG DOWNLOADER*\n*Title:* ${videos[0].title}
+         
+  *Duration:* ${videos[0].timestamp}
 
 *Song Url:* ${videos[0].url}
 
-*Powered by France King.`
+*Powered by ©France King.*`
        }
 
       

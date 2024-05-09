@@ -851,7 +851,7 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
 });
 
 
-france({ nomCom: "apk", reaction: "✨", categorie: "Recherche" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   try {
@@ -875,7 +875,7 @@ france({ nomCom: "apk", reaction: "✨", categorie: "Recherche" }, async (dest, 
 
     const downloadLink = appData.dllink;
     const captionText =
-      "『 *FLASH-MD App* 』\n\n*Name :* " + appData.name +
+      "🌠FLASH-MD APPLICATION🌠\n\n*Name :* " + appData.name +
       "\n*Id :* " + appData["package"] +
       "\n*Last Update :* " + appData.lastup +
       "\n*Size :* " + appData.size +

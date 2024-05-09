@@ -1467,9 +1467,9 @@ ${metadata.desc}
                 let cmsg = `*☢️𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected☢️*
                 
 ❒ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  
-❒ PREFIX: [${prefixe}]
+❒ PREFIX: ${prefixe}
 ❒ MODE: ${md} 
-❒ COMMANDS: ${evt.length}
+❒ COMMANDS: ${evt.cm.length}
 ❒ CREATED: *22.2.2024*︎
 
 ___________________________________

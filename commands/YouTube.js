@@ -15,7 +15,7 @@ france({
   const { ms, repondre, arg } = commandeOptions;
      
   if (!arg[0]) {
-    repondre("wich song do you want.");
+    repondre("Please insert a song name.");
     return;
   }
 
@@ -29,14 +29,12 @@ france({
           
        let infoMess = {
           image: {url : videos[0]. thumbnail},
-         caption : `\n*song name :* _${videos[0].title}_
+         caption : `\n*Title:* ${videos[0].title}
+       *Duration:* ${videos[0].timestamp}
 
-*Time :* _${videos[0].timestamp}_
+*Song Url:* ${videos[0].url}
 
-*Url :* _${videos[0].url}_
-
-
-_*DOWNLOADING...*_\n\n`
+*Powered by France King.`
        }
 
       

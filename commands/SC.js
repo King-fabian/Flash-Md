@@ -32,7 +32,9 @@ const gitdata = `
              *Made With* 🤍`;
 
 
-await zk.sendMessage(dest, caption: gitdata });
+
+
+await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
 
 } else {
 console.log("Could not fetch data")

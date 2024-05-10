@@ -28,9 +28,10 @@ const followers = data.followers;
 const following = data.following;
 
 
-         await repondre(`°GITHUB USER INFO°
-
+         await repondre(`
          
+         °GITHUB USER INFO°
+       
 🚩 Id : ${id}
 🔖 Nickname : ${nickname}
 🔖 Username : ${username}
@@ -41,8 +42,8 @@ const following = data.following;
 📰 Blog : ${blog}
 🔓 Public Repo : ${repos}
 🔐 Public Gists : ${gists}
-💕 Followers : ${followers}
-👉 Following : ${following}`);
+👪 Followers : ${followers}
+🫶 Following : ${following}`);
 
 
 });

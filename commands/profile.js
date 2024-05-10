@@ -109,8 +109,8 @@ france( {
 
            mess = {
             image : { url : ppUrl },
-           /* caption : '*Nom :* '+ nom + '\n*Status :*\n' + status.status
-        } */
+            caption : 'Here is the Profile picture' 
+        } 
           
         } else {
             jid = auteurMsgRepondu;
@@ -121,8 +121,8 @@ france( {
 
              mess = {
               image : { url : ppUrl },
-             // caption : '*Name :* '+ nom + '\n*Status :*\n' + status.status,
-              // mentions:[auteurMsgRepondu]
+              caption : 'Here is the Profile picture', 
+               mentions:[auteurMsgRepondu]
           }
             
         } ;

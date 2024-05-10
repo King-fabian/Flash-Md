@@ -39,7 +39,7 @@ await repondre(obfuscationResult.getObfuscatedCode());
 
 france( {
   nomCom : "whois",
- categorie : "Fun", 
+ categorie : "User", 
    },
       async(dest,zk, commandeOptions)=> {
 
@@ -88,7 +88,7 @@ france( {
 
         france( {
   nomCom : "getpp",
- categorie : "Fun", 
+ categorie : "User", 
    },
       async(dest,zk, commandeOptions)=> {
 

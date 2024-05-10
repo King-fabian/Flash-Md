@@ -7,9 +7,9 @@ france({ nomCom: "github",
         reaction: "📃",
         categorie: "Search" }, async (dest, zk, commandeOptions) => {
 
-    const { repondre, arg, ms } = commandeOptions;  
+    const { repondre, prefixe, arg, ms } = commandeOptions;  
       const question = arg.join(' ');
-if (!question) return repondre("Give me a valid github username like franceking1");
+if (!question) return repondre("Give me a valid github username like" + prefixe + "franceking1");
 
             const response = await fetch(`https://api.github.com/users/${question}`);
 

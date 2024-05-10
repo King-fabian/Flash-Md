@@ -6,7 +6,7 @@ france({ nomCom: "fmd",reaction: "😌"}, async (dest, zk, commandeOptions) => {
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';
 
-
+const image = 'https://telegra.ph/file/7cc6e55a2ea3d8cd7f30e.jpg';
 
     const response = await fetch(githubRepo); 
         const data = await response.json(); 

@@ -24,10 +24,9 @@ const img = 'https://telegra.ph/file/7cc6e55a2ea3d8cd7f30e.jpg';
 const gitdata = `
 *A Total of ${repoInfo.forks} People are using FLASH-MD.*
 
-*${repoInfo.stars} People have starred it as a sign of Loving it*
+*${repoInfo.stars} People have starred it as a sign of Loving it.*
 
 *KEEP USING FLASH-MD* 
-
 
              *Made With* 🤍`;
 

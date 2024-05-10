@@ -29,11 +29,10 @@ const following = data.following;
 
 
          await repondre(`
-         
          °GITHUB USER INFO°
        
 🚩 Id : ${id}
-🔖 Nickname : ${nickname}
+🔖 Name : ${nickname}
 🔖 Username : ${username}
 ✨ Bio : ${bio}
 🏢 Company : ${company}

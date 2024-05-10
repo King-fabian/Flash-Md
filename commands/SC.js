@@ -5,7 +5,7 @@ france({ nomCom: "fmd",reaction: "😌"}, async (dest, zk, commandeOptions) => {
 
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';
-const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
+
 
 
     const response = await fetch(githubRepo); 
@@ -22,13 +22,17 @@ const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
 
 
 const gitdata = `
-🧧 *A Total of ${repoInfo.forks} people using FLASH-MD*
-✨ *STARS:* ${repoInfo.stars}
-👨‍💻 *OWNER:* *France King*
+*A Total of ${repoInfo.forks} People are using FLASH-MD*
+*FLASH-MD is also at ${repoInfo.stars} STARS ✨*
+
+
+*KEEP USING FLASH-MD* 
+
+
              *Made With* 🤍`;
 
 
-await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
+await zk.sendMessage(dest, caption: gitdata });
 
 } else {
 console.log("Could not fetch data")

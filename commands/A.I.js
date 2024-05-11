@@ -129,7 +129,7 @@ console.log(data.completion);
 
 
   });
-france({ nomCom: "dalle2", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "random", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     try {
@@ -139,10 +139,10 @@ france({ nomCom: "dalle2", reaction: "📡", categorie: "IA" }, async (dest, zk,
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const image = arg.join(' ');
-      const data = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`;
+      const data = `https://raganork-api.onrender.com/api/random/wallpaper?apikey=${image}`;
       
     
-      let caption = '*powered by FLASH-MD*';
+      let caption = '*Random wallpaper is here! Powered by FLASH-MD*';
      
      
         zk.sendMessage(dest, { image: { url: data }, caption: caption }, { quoted: ms });

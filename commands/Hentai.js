@@ -415,3 +415,24 @@ async (origineMessage, zk, commandeOptions) => {
     repondre('Error occurred while retrieving data :', error);
   }
 });
+
+
+  france({
+  nomCom: "nasa",
+  categorie: "News",
+  reaction: "🌻"
+},
+async (origineMessage, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
+
+  const url = 'https://api.maher-zubair.tech/details/nasa'; // Remplace avec ton lien réel
+
+  try { for (let i = 0 ; i < 5 ; i++ ) {
+    const response = await axios.get(url);
+    const imageUrl = response.data.url;
+
+    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+  } catch (error) {
+    repondre('Error occurred while retrieving data :', error);
+  }
+});

@@ -111,7 +111,7 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "lyrics2", reaction: "👍", categorie: "IA" }, async (dest, zk, commandeOptions) => {
     const { repondre, nomAuteurMessage, arg, ms } = commandeOptions;
   
     
@@ -121,7 +121,7 @@ france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, c
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const bad = arg.join(' ');
-     const response = await fetch(`https://ultimetron.guruapi.tech/gpt4?prompt=${bad}`);
+     const response = await fetch(`https://weeb-api.vercel.app/genius?query=${bad}`);
 const data = await response.json();
 
 await repondre(data.result);

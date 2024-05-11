@@ -431,7 +431,7 @@ async (origineMessage, zk, commandeOptions) => {
     const response = await axios.get(url);
     const imageUrl = response.data.url;
 
-    zk.sendMessage(origineMessage, { image: { url: imageUrl } }, { quoted: ms }); }
+    const respondre = await fetch('https://api.maher-zubair.tech/details/nasa');
   } catch (error) {
     repondre('Error occurred while retrieving data :', error);
   }

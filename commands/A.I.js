@@ -129,4 +129,27 @@ console.log(data.completion);
 
 
   });
-
+france({ nomCom: "dalle2", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    try {
+      if (!arg || arg.length === 0) {
+        return repondre(`Please enter the necessary information to generate the image.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const image = arg.join(' ');
+      const data = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`;
+      
+    
+      let caption = '*powered by FLASH-MD*';
+     
+     
+        zk.sendMessage(dest, { image: { url: data }, caption: caption }, { quoted: ms });
+      
+    } catch (error) {
+      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
+      repondre("Oops, an error occurred while processing your request");
+    }
+  });
+  

@@ -121,7 +121,7 @@ france({ nomCom: "bard", reaction: "👍", categorie: "IA" }, async (dest, zk, c
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const bad = arg.join(' ');
-     const response = await fetch(`https://api-smd.onrender.com/api/bard?query=${bad}`);
+     const response = await fetch(`https://ultimetron.guruapi.tech/gpt4?prompt=${bad}`);
 const data = await response.json();
 
 await repondre(data.result);

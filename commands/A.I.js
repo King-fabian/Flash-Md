@@ -83,7 +83,7 @@ france({ nomCom: "gemini", reaction: "🤗", categorie: "IA" }, async (dest, zk,
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const gemi = arg.join(' ');
-     const response = await fetch(`https://api.maher-zubair.tech/ai/gemini?q=${gemi}`);
+     const response = await fetch(`https://api.maher-zubair.tech/ai/chatgpt3?q=${gemi}`);
 const data = await response.json();
 
 await repondre(data.result);

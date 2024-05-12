@@ -1572,10 +1572,10 @@ ___________________________________
 ╔═════◇
 ║◇ *KEEP USING FLASH-MD*
 ╚════════════════>
-___________________________________
+___________________________________ 
 
 *THE  FLASH  MULTI  DEVICE*`;
-                await zk.sendMessage("zk.user.id", { text: cmsg });
+                await zk.sendMessage(zk.user.id, { text: cmsg });
                 }
             }
             else if (connection == "close") {

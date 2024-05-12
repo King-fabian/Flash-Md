@@ -43,7 +43,7 @@ let link = arg.join(' ')
   if (!arg[0]) { repondre('Please insert an Instagram video link');return};
 
 try {
-    const red = await fetch(`https://apis-samir.onrender.com/docs/#/downloader/get_igdl?url=${link}`);
+    const red = await fetch(`https://apis-samir.onrender.com/docs/#/downloader/get_igdl${link}`);
     const data = await red.application/json();
 //  const data = await red.json();
 

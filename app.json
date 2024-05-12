@@ -14,7 +14,7 @@
       "value":"+",
       "required":true
     },
-    "AUTO_READ_MESSAGES" 
+    "AUTO_READ_MESSAGES":
     {
       "description":"Put yes if you want the bot to autoread people's messages or else put no", 
       "value":"no", 

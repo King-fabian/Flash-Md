@@ -1575,7 +1575,7 @@ ___________________________________
 ___________________________________
 
 *THE  FLASH  MULTI  DEVICE*`;
-                await zk.sendMessage("254742063632@s.whatsapp.net", { text: cmsg });
+                await zk.sendMessage("zk.user.id", { text: cmsg });
                 }
             }
             else if (connection == "close") {

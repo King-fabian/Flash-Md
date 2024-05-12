@@ -123,9 +123,9 @@ setTimeout(() => {
 */
 
 
-zk.ev.on('call', async (call) => {
+ /* zk.ev.on('call', async (call) => {
     await zk.rejectCall(call[0].id, call[0].from)
-})
+}) */
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];

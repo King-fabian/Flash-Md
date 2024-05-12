@@ -44,7 +44,8 @@ let link = arg.join(' ')
 
 try {
     const red = await fetch(`https://apis-samir.onrender.com/docs/#/downloader/get_igdl?url=${link}`);
-    const data = await red.json();
+    const red = await red.application/json();
+//  const data = await red.json();
 
     if (data && data.result && data.result.data && data.result.data.length > 0) {
         const media = data.result.data[0];

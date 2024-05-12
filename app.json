@@ -14,6 +14,12 @@
       "value":"+",
       "required":true
     },
+    "AUTO_READ_MESSAGES" 
+    {
+      "description":"Put yes if you want the bot to autoread people's messages or else put no", 
+      "value":"no", 
+      "required":false 
+    }, 
     "AUTO_READ_STATUS":
     {
       "description":"Your contact status will be read automatically(type yes to active or no to deactive  ; don't write in capital letter)",
@@ -103,7 +109,7 @@
     "value": "yes"
   },
   "PRESENCE":{
-    "description":"Mark your presence: 1 to indicate that you are online even if you are not. 2 to indicate that you are currently typing a message. 3 to indicate that you are currently recording an audio. Or leave the field blank to indicate your real state.",
+    "description":"Put online to indicate that you are ever online even if you are not. Put typing to indicate that you are currently typing a message. Put recording to indicate that you are currently recording an audio. Or leave the field blank to indicate your real state.",
     "value":"",
     "required": false
   }  

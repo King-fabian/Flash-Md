@@ -5,6 +5,7 @@ const { france } = require("../framework/france")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../bdd/antilien")
 const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
+const fs = require("fs");
 const { search, download } = require("aptoide-scraper");
 const fs = require("fs-extra");
 const conf = require("../set");
@@ -13,6 +14,39 @@ const { default: axios } = require('axios');
 const {getBinaryNodeChild, getBinaryNodeChildren} = require('@whiskeysockets/baileys').default;
 
 
+france({ nomCom: "vcf", categorie: 'Group', reaction: "🎉" }, async (dest, zk, commandeOptions) => {
+
+  const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("not group"); return; };
+
+  let metadat = await zk.groupMetadata(dest) ;
+
+const partic = await metadat.participants;
+
+
+let gcdata = await zk.groupMetadata(dest)
+let gcmem = partic.map(a => a.id)
+
+let vcard = ''
+let noPort = 0
+
+for (let a of gcdata.participants) {
+    vcard += `BEGIN:VCARD\nVERSION:3.0\nFN:[${noPort++}] +${a.id.split("@")[0]}\nTEL;type=CELL;type=VOICE;waid=${a.id.split("@")[0]}:+${a.id.split("@")[0]}\nEND:VCARD\n`
+}
+
+let cont = './contacts.vcf'
+
+await repondre('A moment while compiling '+gcdata.participants.length+' contacts into a vcf...');
+
+await fs.writeFileSync(cont, vcard.trim())
+
+await zk.sendMessage(dest, {
+    document: fs.readFileSync(cont), mimetype: 'text/vcard', fileName: 'Group contacts.vcf', caption: 'VCF for '+gcdata.subject+'\n'+gcdata.participants.length+' contacts'
+}, {ephemeralExpiration: 86400, quoted: ms})
+fs.unlinkSync(cont)
+
+});
 
 
 france({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {

@@ -1,9 +1,9 @@
-const { france } = require('../framework/france');
-const {ajouterUtilisateurAvecWarnCount , getWarnCountByJID , resetWarnCountByJID} = require('../bdd/warn')
+const { king } = require('../france/king');
+const {ajouterUtilisateurAvecWarnCount , getWarnCountByJID , resetWarnCountByJID} = require('../data/warn')
 const s = require("../set")
 
 
-france(
+king(
     {
         nomCom : 'warn',
         categorie : 'Group'

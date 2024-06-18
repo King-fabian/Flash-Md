@@ -1,11 +1,11 @@
-const {france} =require("../framework/france");
+const {king} =require("../france/king");
 const axios =require("axios");
 const Genius = require("genius-lyrics"); 
  const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oNa9-hsrLxQV5l5FiAZO");
 
 
 
-france({ nomCom: "poll",
+king({ nomCom: "poll",
         reaction: "✨",
         categorie: "General" }, async (dest, zk, commandeOptions) => {
     
@@ -32,7 +32,7 @@ let options = []
 
 })
 
- france({ nomCom: "fact",
+ king({ nomCom: "fact",
         reaction: "✌️",
         categorie: "User" }, async (dest, zk, commandeOptions) => {
     
@@ -60,7 +60,7 @@ repondre(`◆━━━━━━✦FACT✦━━━━━━◆
 
 })
 
-france({ nomCom: "quotes",
+king({ nomCom: "quotes",
         reaction: "🗿",
         categorie: "User" }, async (dest, zk, commandeOptions) => {
     
@@ -87,7 +87,7 @@ const flashhh= `
 repondre(flashhh);
 
 })
-france({ nomCom: "define",
+king({ nomCom: "define",
         reaction: "😁",
         categorie: "Search" }, async (dest, zk, commandeOptions) => {
     
@@ -111,7 +111,7 @@ if (!arg || arg.length === 0) return repondre("provide a term");
 })
 
         
-france({ nomCom: "lyrics",
+king({ nomCom: "lyrics",
         reaction: "✨",
         categorie: "Search" }, async (dest, zk, commandeOptions) => {
     

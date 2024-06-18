@@ -1,9 +1,9 @@
 const axios = require('axios');
 const fs = require('fs');
-const {france} = require('../framework/france');
+const {king} = require('../france/king');
 const { writeFile } = require('fs/promises')
 
-france({ nomCom: "weather",
+king({ nomCom: "weather",
         reaction: "🌡️",
         categorie: "Search" }, async (dest, zk, commandeOptions) => {
 

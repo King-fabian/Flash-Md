@@ -1,9 +1,9 @@
-const { france } = require('../framework/france');
-const {addOrUpdateDataInAlive , getDataFromAlive} = require('../bdd/alive')
+const { king } = require('../france/king');
+const {addOrUpdateDataInAlive , getDataFromAlive} = require('../data/alive')
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
 
-france(
+king(
     {
         nomCom : 'alive',
         categorie : 'General'

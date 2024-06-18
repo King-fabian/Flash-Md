@@ -1,6 +1,6 @@
 
 
-const { king } = require("../framework/king")
+const { france } = require("../framework/france")
 //const { getGroupe } = require("../data/groupe")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../bdd/antilien")
@@ -14,7 +14,7 @@ const { default: axios } = require('axios');
 const {getBinaryNodeChild, getBinaryNodeChildren} = require('@whiskeysockets/baileys').default;
 
 	
-king({ nomCom: "broadcast", categorie: 'Group', reaction: "📡" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "broadcast", categorie: 'Group', reaction: "📡" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 let msgbc = arg.join(' ');
@@ -81,7 +81,7 @@ await zk.sendMessage(i, {
      } 
 });*/
 
-king({ nomCom: "disap-off", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "disap-off", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -92,7 +92,7 @@ await zk.groupToggleEphemeral(dest, 0*24*3600);
  }
 );
 
-king({ nomCom: "disap", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "disap", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -103,7 +103,7 @@ if (!verifAdmin) { repondre("You are not an admin here!"); return; };
 );
 
 
-king({ nomCom: "req", categorie: 'Group', reaction: "☑️ " }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "req", categorie: 'Group', reaction: "☑️ " }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -132,7 +132,7 @@ response.forEach((participant, index) => {
   
 
 
-king({ nomCom: "reject", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "reject", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -155,7 +155,7 @@ repondre("all pending join requests have been rejected.");
 
 }
     );
-king({ nomCom: "disap90", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "disap90", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -168,7 +168,7 @@ await zk.groupToggleEphemeral(dest, 90*24*3600);
 );
 
 
-king({ nomCom: "disap7", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "disap7", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -180,7 +180,7 @@ await zk.groupToggleEphemeral(dest, 7*24*3600);
 }
 );
 
-king({ nomCom: "disap1", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "disap1", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -191,7 +191,7 @@ await zk.groupToggleEphemeral(dest, 1*24*3600);
  dest('Dissapearing messages successfully turned on for 24 hours'); 
 }
 );
-king({ nomCom: "approve", categorie: 'Group', reaction: "☑️ " }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "approve", categorie: 'Group', reaction: "☑️ " }, async (dest, zk, commandeOptions) => {
 const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 if (!verifGroupe) { repondre("This command works in groups only"); return; };
@@ -217,7 +217,7 @@ repondre("all pending participants have been approved to join.");
 
 
 
-king({ nomCom: "vcf", categorie: 'Group', reaction: "🎉" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "vcf", categorie: 'Group', reaction: "🎉" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 if (!verifAdmin) { repondre("You are not an admin here!"); return; };
@@ -253,7 +253,7 @@ fs.unlinkSync(cont)
 });
 
 
-king({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
@@ -300,7 +300,7 @@ king({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, zk
 });
 
 
-king({ nomCom: "invite", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "invite", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
   const { repondre, nomGroupe, nomAuteurMessage, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("wait bro , you want the link to my dm?"); return; };
 
@@ -409,7 +409,7 @@ await zk.sendMessage(dest, { image: { url: pp}, caption: links}, { quoted: ms});
 
 
 /** *nommer un membre comme admin */
-king({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups only"); }
@@ -470,7 +470,7 @@ king({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, asy
 //fin nommer
 /** ***demettre */
 
-king({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups only"); }
@@ -536,7 +536,7 @@ king({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, asyn
 
 /** ***fin démettre****  **/
 /** **retirer** */
-king({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("for groups only"); }
@@ -651,7 +651,7 @@ king({ nomCom: "add", categorie: 'Group', reaction: "👨🏿‍💼" }, async (
 /** *****fin retirer */
 
 
-king({ nomCom: "del", categorie: 'User',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "del", categorie: 'User',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, verifGroupe,auteurMsgRepondu,idBot, msgRepondu, verifAdmin, superUser} = commandeOptions;
   
@@ -699,7 +699,7 @@ king({ nomCom: "del", categorie: 'User',reaction:"🧹" }, async (dest, zk, comm
 
 });
 
-king({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for the group only"); return };
 
@@ -723,7 +723,7 @@ king({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) =
 
  //------------------------------------antilien-------------------------------
 
- king({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ france({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
@@ -791,7 +791,7 @@ king({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) =
 
  //------------------------------------antibot-------------------------------
 
- king({ nomCom: "antibot", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ france({ nomCom: "antibot", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
@@ -857,7 +857,7 @@ king({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) =
 
 //----------------------------------------------------------------------------
 
-king({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { repondre, verifGroupe, verifAdmin, superUser, arg } = commandeOptions;
 
@@ -900,7 +900,7 @@ king({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) 
   zk.groupLeave(dest)
 });*/
 
-king({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { arg, repondre, verifAdmin } = commandeOptions;
 
@@ -909,17 +909,17 @@ king({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) 
     return;
   };
   if (!arg[0]) {
-    repondre("Please enter the group name");
+    repondre("Please enter your desired group name");
     return;
   };
    const nom = arg.join(' ')
   await zk.groupUpdateSubject(dest, nom);
-    repondre(`group name refresh: *${nom}*`)
+    repondre(`group name changed to: *${nom}*`)
 
  
 }) ;
 
-king({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { arg, repondre, verifAdmin } = commandeOptions;
 
@@ -938,7 +938,7 @@ king({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) 
  
 }) ;
 
-king({ nomCom: "revoke", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "revoke", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { arg, repondre, verifGroupe, verifAdmin } = commandeOptions;
 
@@ -957,7 +957,7 @@ if(!verifGroupe)  { repondre('This command is only allowed in groups.')} ;
 });
 
 
-king({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { repondre, msgRepondu, verifAdmin } = commandeOptions;
 
@@ -982,7 +982,7 @@ king({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) =>
 });
 
 /////////////
-king({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commandeOptions)=>{
+france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,msgRepondu,verifGroupe,arg ,verifAdmin , superUser}=commandeOptions;
 
@@ -1089,7 +1089,7 @@ king({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commande
 });
 
 
-king({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
+france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   try {
@@ -1155,11 +1155,11 @@ king({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk,
 
 /*******************************  automute && autoummute ***************************/
 
-const cron = require(`../data/cron`) ;
+const cron = require(`../dbb/cron`) ;
 
 
-king({
-      nomCom : 'automute',
+france({
+      nomCom : 'close-at',
       categorie : 'Group'
   } , async (dest,zk,commandeOptions) => {
 
@@ -1176,16 +1176,16 @@ king({
         let state ;
         if (group_cron == null || group_cron.mute_at == null) {
   
-            state =  "No time set for automatic mute"
+            state =  "No time set for automatic close of the group"
         } else {
   
-          state =  `The group will be muted at ${(group_cron.mute_at).split(':')[0]} ${(group_cron.mute_at).split(':')[1]}`
+          state =  `The group will be closed at ${(group_cron.mute_at).split(':')[0]} ${(group_cron.mute_at).split(':')[1]}`
         }
   
         let msg = `* *State:* ${state}
-        * *Instructions:* To activate automatic mute, add the minute and hour after the command separated by ':'
+        * *Instructions:* To activate automatic closing, add the minute and hour after the command separated by ':'
         Example automute 9:30
-        * To delete the automatic mute, use the command *automute del*`
+        * To delete the automatic mute, use the command *close-at del*`
         
 
           repondre(msg) ;
@@ -1230,8 +1230,8 @@ king({
   });
 
 
-  king({
-    nomCom : 'autounmute',
+  france({
+    nomCom : 'open-at',
     categorie : 'Group'
 } , async (dest,zk,commandeOptions) => {
 
@@ -1248,17 +1248,17 @@ king({
       let state ;
       if (group_cron == null || group_cron.unmute_at == null) {
 
-          state = "No time set for autounmute" ;
+          state = "No time set for automatic open of the group" ;
 
       } else {
 
-        state = `The group will be un-muted at ${(group_cron.unmute_at).split(':')[0]}H ${(group_cron.unmute_at).split(':')[1]}`
+        state = `The group will be opened at ${(group_cron.unmute_at).split(':')[0]}H ${(group_cron.unmute_at).split(':')[1]}`
       }
 
       let msg = `* *State:* ${state}
-      * *Instructions:* To activate autounmute, add the minute and hour after the command separated by ':'
-      Example autounmute 7:30
-      * To delete autounmute, use the command *autounmute del*`
+      * *Instructions:* To activate auto open, add the minute and hour after the command separated by ':'
+      Example open-at 7:30
+      * To delete auto open , use the command *open-at del*`
 
         repondre(msg) ;
         return ;
@@ -1276,7 +1276,7 @@ king({
 
             await cron.delCron(dest) ;
 
-            repondre("The autounmute has been removed; restart to apply the changes")
+            repondre("The auto open has been removed; restart to apply the changes")
             .then(() => {
 
               exec("pm2 restart all");
@@ -1307,7 +1307,7 @@ king({
 
 
 
-king({
+france({
   nomCom : 'fkick',
   categorie : 'Group'
 } , async (dest,zk,commandeOptions) => {
@@ -1340,7 +1340,7 @@ king({
 }) ;
 
 
-king({
+france({
       nomCom : 'nsfw',
       categorie : 'Group'
 }, async (dest,zk,commandeOptions) => {
@@ -1378,7 +1378,7 @@ king({
 
  //------------------------------------antiword-------------------------------
 
- king({ nomCom: "antiword", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ france({ nomCom: "antiword", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
@@ -1444,7 +1444,7 @@ king({
 
  //------------------------------------antilink-all-------------------------------
 
- king({ nomCom: "antilink-all", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ france({ nomCom: "antilink-all", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;

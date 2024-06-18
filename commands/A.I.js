@@ -216,3 +216,19 @@ await repondre(timeD);
 
 
   });
+
+          king({ nomCom: "hack", reaction: "👿", categorie: "General" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+
+repondre("```Injecting malware```")
+
+await sleep(1000)
+
+repondre("```hacking into device \n 0%```")
+
+await sleep(1000)
+
+repondre("```transfering photos \n █ 10%```")
+
+await sleep(1000)
+          });

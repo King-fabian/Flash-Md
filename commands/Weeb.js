@@ -1,10 +1,10 @@
 const axios = require('axios');
 const fs = require('fs');
-const { france } = require("../framework/france");
+const { king } = require("../france/king");
 const { writeFile } = require('fs/promises')
 
 // Commande waifu
-france({
+king({
   nomCom: "waifu",
   categorie: "Weeb",
   reaction: "😏"
@@ -28,7 +28,7 @@ async (origineMessage, zk, commandeOptions) => {
 });
 
 // Commande neko
-france({
+king({
   nomCom: "neko",
   categorie: "Weeb",
   reaction: "😺"
@@ -51,7 +51,7 @@ async (origineMessage, zk, commandeOptions) => {
 });
 
 // Commande shinobu
-france({
+king({
   nomCom: "shinobu",
   categorie: "Weeb",
   reaction: "🦋"
@@ -74,7 +74,7 @@ async (origineMessage, zk, commandeOptions) => {
 });
 
 // Commande megumin
-france({
+king({
   nomCom: "megumin",
   categorie: "Weeb",
   reaction: "💥"
@@ -98,7 +98,7 @@ async (origineMessage, zk, commandeOptions) => {
 
 
 
-france({
+king({
   nomCom: "cosplay",
   categorie: "Weeb",
   reaction: "😏"
@@ -127,7 +127,7 @@ async (origineMessage, zk, commandeOptions) => {
 });
 
 
-france({nomCom:"couplepp",categorie: "Weeb",reaction : "💞"},async(dest,zk,commandeOptions)=>{ const {repondre , ms} = commandeOptions;
+king({nomCom:"couplepp",categorie: "Weeb",reaction : "💞"},async(dest,zk,commandeOptions)=>{ const {repondre , ms} = commandeOptions;
     let api = 'https://smiling-hosiery-bear.cyclic.app/weeb/couplepp'
   try {
      repondre('she/he dont love you :)')

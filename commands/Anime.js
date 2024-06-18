@@ -1,9 +1,9 @@
 const axios = require("axios");
-const {france} = require("../framework/france");
-const traduire = require("../framework/traduction");
+const {king} = require("../france/king");
+const traduire = require("../france/traduction");
 const {Sticker ,StickerTypes}= require('wa-sticker-formatter');
 
-france({
+king({
   nomCom: "ranime",
   categorie: "Fun",
   reaction: "📺"
@@ -35,7 +35,7 @@ async (origineMessage, zk, commandeOptions) => {
   }
 });
 
-france({
+king({
   nomCom: "google",
   categorie: "Search"
 }, async (dest, zk, commandeOptions) => {
@@ -64,7 +64,7 @@ france({
   }
 });
 
-france({
+king({
   nomCom: "imdb",
   categorie: "Search"
 }, async (dest, zk, commandeOptions) => {
@@ -115,7 +115,7 @@ france({
 });
 
 
-france({
+king({
   nomCom: "emomix",
   categorie: "Conversion"
 }, async (dest, zk, commandeOptions) => {

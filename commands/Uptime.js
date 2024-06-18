@@ -1,8 +1,9 @@
-const { france } = require("../framework/france");
+const { king } = require("../france/king");
 const moment = require("moment-timezone");
-const { getBuffer } = require("../framework/dl/Function");
+const { getBuffer } = require("../france/dl/Function");
 const { default: axios } = require('axios');
 const speed = require("performance-now");
+
 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 
@@ -16,9 +17,49 @@ const runtime = function (seconds) {
  var sDisplay = s > 0 ? s + (s == 1 ? " second" : " s") : ""; 
  return dDisplay + hDisplay + mDisplay + sDisplay; 
  } 
+let timestamp = speed() 
+let flashspeed = (speed() + timestamp).toFixed(0)
+king({ nomCom: 'ping',
+    desc: 'To check ping',
+    Categorie: 'General',
+    reaction: '⚙️', 
+    fromMe: 'true', 
 
 
-france({ nomCom: 'uptime',
+  },
+
+async (dest, zk, commandeOptions) => {
+    const { ms, arg, repondre} = commandeOptions;
+
+
+
+await repondre(`*FLASH-MD SPEED!!*\n*_${flashspeed} ms_* `);
+
+}
+);
+
+
+/*king({ nomCom: 'active',
+    desc: 'To check ping',
+    Categorie: 'General',
+    reaction: '⚙️', 
+    fromMe: 'true', 
+
+
+  },
+
+async (dest, zk, commandeOptions) => {
+    const { ms, arg, repondre, } = commandeOptions;
+
+
+
+await zk.sendMessage(dest, { video: { url: 'https://telegra.ph/file/4bbcfdf0a62d8a53165ee.mp4' }, caption: `Hello ${m.pushName}, 𝐑𝐀𝐈𝐃𝐄𝐑 is alive since  ${runtime(process.uptime())}`, { quoted: m }); 
+}
+
+}
+);*/
+
+king({ nomCom: 'uptime',
     desc: 'To check runtime',    
     Categorie: 'General',
     reaction: '⚙️', 
@@ -38,7 +79,7 @@ france({ nomCom: 'uptime',
 );
 
 
-france({ nomCom: 'ss',
+king({ nomCom: 'ss',
     desc: 'screenshots website',
     Categorie: 'General',
     reaction: '🎥', 
@@ -64,4 +105,3 @@ await zk.sendMessage(dest, { image: res }, { caption: caption }, { quoted: ms })
 
 }
 );
-

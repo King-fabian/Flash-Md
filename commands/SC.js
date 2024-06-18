@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const { france } = require("../framework/france");
-france({ nomCom: "fmd",reaction: "😌"}, async (dest, zk, commandeOptions) => {
+const { king } = require("../france/king");
+king({ nomCom: "fmd",reaction: "😌"}, async (dest, zk, commandeOptions) => {
 
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';
 
-const img = 'https://telegra.ph/file/7cc6e55a2ea3d8cd7f30e.jpg';
+const img = 'https://telegra.ph/file/0820836f81fe0eb66850d.mp4';
 
     const response = await fetch(githubRepo); 
         const data = await response.json(); 
@@ -33,7 +33,7 @@ const gitdata = `
 
 
 
-await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
+await zk.sendMessage(dest, { video: { url: img }, caption: gitdata });
 
 } else {
 console.log("Could not fetch data")

@@ -1,9 +1,9 @@
 const JavaScriptObfuscator = require('javascript-obfuscator')
-const {france} = require("../framework/france");
+const {king} = require("../france/king");
 const conf = require("../set")
 const {jidDecode}=require("@whiskeysockets/baileys")
 
-france( {
+king( {
   nomCom : "enc",
  categorie : "General", 
    },
@@ -17,7 +17,7 @@ let code = arg.join(' ')
   if (!arg[0]) { repondre('After the command, provide a valid JavaScript code for encryption');return}; 
 
   const obfuscationResult = JavaScriptObfuscator.obfuscate(code, {
-    compact: false,
+    compact: true,
     controlFlowFlattening: true,
     controlFlowFlatteningThreshold: 1,
     numbersToExpressions: true,
@@ -37,7 +37,7 @@ await repondre(obfuscationResult.getObfuscatedCode());
 
 
 
-france( {
+king( {
   nomCom : "whois",
  categorie : "User", 
    },
@@ -86,7 +86,7 @@ france( {
       }); 
 
 
-        france( {
+        king( {
   nomCom : "getpp",
  categorie : "User", 
    },

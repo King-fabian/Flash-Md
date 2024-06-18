@@ -1,12 +1,12 @@
-const { france } = require('../framework/france');
-const traduire = require("../framework/traduction") ;
+const { king } = require('../france/king');
+const traduire = require("../france/traduction") ;
 const { default: axios } = require('axios');
 //const conf = require('../set');
 
 
 
 
-france({nomCom:"flash",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
+king({nomCom:"flash",reaction:"📡",categorie:"AI"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,ms,arg}=commandeOptions;
   
@@ -30,7 +30,7 @@ repondre('something went wrong...')
 
 
 
-  france({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  king({ nomCom: "dalle", reaction: "📡", categorie: "AI" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     try {
@@ -40,7 +40,7 @@ repondre('something went wrong...')
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const image = arg.join(' ');
-      const data = `https://api.maher-zubair.tech/ai/dalle?q=${image}`;
+      const data = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${image}`;
       
     
       let caption = '*powered by FLASH-MD*';
@@ -54,7 +54,7 @@ repondre('something went wrong...')
     }
   });
   
-  france({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  king({ nomCom: "gpt", reaction: "📡", categorie: "AI" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     
@@ -73,7 +73,7 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "gemini", reaction: "🤗", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "gemini", reaction: "🤗", categorie: "AI" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     
@@ -92,7 +92,7 @@ console.log(data.completion);
 
   });
 
-france({ nomCom: "calc", reaction: "🔢", categorie: "General" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "calc", reaction: "🔢", categorie: "General" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     
@@ -111,3 +111,108 @@ console.log(data.completion);
 
   });
 
+king({ nomCom: "gpt4", reaction: "📡", categorie: "AI" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  
+    try {
+      if (!arg || arg.length === 0) {
+        return repondre(`Please ask a question.`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const question = arg.join(' ');
+      const response = await axios.get(`https://api.vihangayt.com/ai/gemini?q=${question}`);
+      
+      const data = response.data;
+      if (data) {
+        repondre(data.data);
+      } else {
+        repondre("Error during response generation.");
+      }
+    } catch (error) {
+      console.error('Erreur:', error.message || 'Une erreur s\'est produite');
+      repondre("Oops, an error occurred while processing your request.");
+    }
+  });
+
+
+king({ nomCom: "best-wallp", reaction: "🙌", categorie: "FLASH-MD PICS" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  const response = await fetch('https://api.unsplash.com/photos/random?client_id=72utkjatCBC-PDcx7-Kcvgod7-QOFAm2fXwEeW8b8cc');
+const data = await response.json();
+  const url =data.urls.regular
+  //citel.reply ('url here :'+url);
+
+                let buttonMessaged = {
+                    image: { url: url },
+                    caption: `*POWERED BY FLASH-MD*`,
+                    
+                   
+                };
+                return await zk.sendMessage(dest, buttonMessaged , {quoted : ms});
+
+
+}
+   );
+king({ nomCom: "random", reaction: "🥂", categorie: "FLASH-MD PICS" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  const response = await fetch('https://api.unsplash.com/photos/random?client_id=72utkjatCBC-PDcx7-Kcvgod7-QOFAm2fXwEeW8b8cc');
+const data = await response.json();
+  const url =data.urls.regular
+  //citel.reply ('url here :'+url);
+
+                let buttonMessaged = {
+                    image: { url: url },
+                    caption: `*POWERED BY FLASH-MD*`,
+                    
+                   
+                };
+                return await zk.sendMessage(dest, buttonMessaged , {quoted : ms});
+
+
+}
+   );
+
+king({ nomCom: "nature", reaction: "🦗", categorie: "FLASH-MD PICS" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+  const response = await fetch('https://api.unsplash.com/photos/random?client_id=72utkjatCBC-PDcx7-Kcvgod7-QOFAm2fXwEeW8b8cc');
+const data = await response.json();
+  const url =data.urls.regular
+  //citel.reply ('url here :'+url);
+
+                let buttonMessaged = {
+                    image: { url: url },
+                    caption: `*POWERED BY FLASH-MD*`,
+                    
+                   
+                };
+                return await zk.sendMessage(dest, buttonMessaged , {quoted : ms});
+
+
+}
+   );
+
+
+king({ nomCom: "time", reaction: "⌚", categorie: "General" }, async (dest, zk, commandeOptions) => {
+    const { repondre, arg, ms } = commandeOptions;
+
+try {
+  
+    
+      if (!arg || arg.length === 0) {
+        return repondre(`Enter a name of a given country in short form...\neg: KE to represent Kenya or IN to represent India`);
+      }
+  
+      // Regrouper les arguments en une seule chaîne séparée par "-"
+      const cal = arg.join(' ');
+     const response = await fetch(`https://levanter.onrender.com/time?code=${cal}`);
+const data = await response.json();
+
+const timeD = data.result[0].time;
+
+await repondre(timeD);
+
+} catch (e) { repondre("That country name is incorrect!") }
+
+
+  });

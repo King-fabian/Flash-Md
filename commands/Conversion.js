@@ -1,6 +1,6 @@
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
-const { france } = require("../framework/france");
-const traduire = require("../framework/traduction");
+const { king } = require("../france/king");
+const traduire = require("../france/traduction");
 const { downloadMediaMessage,downloadContentFromMessage } =  require('@whiskeysockets/baileys');
 const fs =require("fs-extra") ;
 const axios = require('axios');  
@@ -36,7 +36,7 @@ async function uploadToTelegraph(Path) {
 
 
 
-france({nomCom:"sticker",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
+king({nomCom:"sticker",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
 
 let {ms,mtype,arg,repondre,nomAuteurMessage}=commandeOptions
   var txt=JSON.stringify(ms.message)
@@ -127,7 +127,7 @@ try{
   
 });
 
-france({nomCom:"scrop",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
+king({nomCom:"scrop",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
@@ -163,7 +163,7 @@ mediamsg = msgRepondu.videoMessage
 
 });
 
-france({nomCom:"take",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
+king({nomCom:"take",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
@@ -201,7 +201,7 @@ mediamsg = msgRepondu.videoMessage
 
 
 
-france({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
+king({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
   const { ms, msgRepondu, arg, repondre, nomAuteurMessage } = commandeOptions;
 
   if (!msgRepondu) {
@@ -275,7 +275,7 @@ france({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" }
 
 
 
-france({nomCom:"photo",categorie: "Conversion", reaction: "👨🏿‍💻"},async(dest,zk,commandeOptions)=>{
+king({nomCom:"photo",categorie: "Conversion", reaction: "👨🏿‍💻"},async(dest,zk,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
@@ -314,7 +314,7 @@ france({nomCom:"photo",categorie: "Conversion", reaction: "👨🏿‍💻"},asy
         });
 });
 
-france({ nomCom: "trt", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "trt", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (dest, zk, commandeOptions) => {
 
   const { msgRepondu, repondre , arg } = commandeOptions;
 
@@ -347,7 +347,7 @@ france({ nomCom: "trt", categorie: "Conversion", reaction: "👨🏿‍💻" }, 
 }) ;
 
 
-france({ nomCom: "url", categorie: "General", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
+king({ nomCom: "url", categorie: "General", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
   const { msgRepondu, repondre } = commandeOptions;
 
   if (!msgRepondu) {

@@ -1,24 +1,228 @@
 
 
-const { france } = require("../framework/france")
-//const { getGroupe } = require("../bdd/groupe")
+const { king } = require("../framework/king")
+//const { getGroupe } = require("../data/groupe")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
-const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../bdd/antilien")
-const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
-const fs = require("fs");
+const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../data/antilien")
+const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../data/antibot")
+//const fs = require("fs");
 const { search, download } = require("aptoide-scraper");
 const fs = require("fs-extra");
 const conf = require("../set");
 const { default: axios } = require('axios');
-//const { uploadImageToImgur } = require('../framework/imgur');
+//const { uploadImageToImgur } = require('../france/imgur');
 const {getBinaryNodeChild, getBinaryNodeChildren} = require('@whiskeysockets/baileys').default;
 
+	
+king({ nomCom: "broadcast", categorie: 'Group', reaction: "📡" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
-france({ nomCom: "vcf", categorie: 'Group', reaction: "🎉" }, async (dest, zk, commandeOptions) => {
+let msgbc = arg.join(' ');
+
+if (!arg[0]) {
+        repondre('After the command *broadcast*, type your message to be sent to all groups you are in.');
+        return;
+    }
+
+if (!superUser) { repondre("You are too weak To do that"); return; };
+
+let getGroups = await zk.groupFetchAllParticipating() 
+         let groups = Object.entries(getGroups) 
+             .slice(0) 
+             .map(entry => entry[1]) 
+         let res = groups.map(v => v.id)
+
+await repondre("*FLASH-MD is sending this message to all groups you are in*...")
+
+for (let i of res) { 
+
+let txtbc = `*𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓*\n\n🀄 Message: ${msgbc}\n\n🗣️ Author: ${nomAuteurMessage}` 
+
+
+await zk.sendMessage(i, { 
+                 image: { 
+                     url: "https://telegra.ph/file/ee2916cd24336231d8194.jpg" 
+                 },
+                 caption: `${txtbc}` 
+             }) 
+         }
+
+});
+
+
+/*king({ nomCom: "broadcast", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
-if (!verifGroupe) { repondre("not group"); return; };
+
+ 
+
+  if (!verifGroupe) { repondre("This command works in groups only ❌"); return; }
+	
+	if (!arg) { repondre("Still testing  ❌"); return; }
+	if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+	
+ let getGroups = await zk.groupFetchAllParticipating() 
+         let groups = Object.entries(getGroups) 
+             .slice(0) 
+             .map(entry => entry[1]) 
+         let res = groups.map(v => v.id) 
+         repondre(` Broadcasting in ${res.length} Group Chat, in ${res.length * 1.5} seconds`) 
+         for (let i of res) { 
+             let txt = `*FLASH-MD BROADCAST` 
+             await zk.sendMessage(i, { 
+                 image: { 
+                     url: "https://telegra.ph/file/ee2916cd24336231d8194.jpg" 
+                 }, 
+                 caption: `${txt}` 
+             }) 
+         } 
+         repondre(`Broadcasted to ${res.length} Groups.`) 
+     } 
+});*/
+
+king({ nomCom: "disap-off", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+await zk.groupToggleEphemeral(dest, 0*24*3600); 
+ repondre('Dissapearing messages successfully turned off!'); 
+ }
+);
+
+king({ nomCom: "disap", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+ repondre('*Do you want to turn on disappearing messages?*\n\nIf yes type _*disap1* for messages to disappear after 1 day._\n_or *disap7* for messages to disappear after 7 days._\n_or *disap90* for messages to disappear after 90 days._\n\n To turn in off, type *disap-off*'); 
+ }
+);
+
+
+king({ nomCom: "req", categorie: 'Group', reaction: "☑️ " }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here, what will you do if there are pending requests?!"); return; };
+
+	const response = await zk.groupRequestParticipantsList(dest);
+
+if (response.length === 0) return repondre("there are no pending join requests.");
+
+let jids = ''; 
+
+response.forEach((participant, index) => {
+    jids +='+' + participant.jid.split('@')[0];
+    if (index < response.length - 1) {
+        jids += '\n'; 
+    }
+});
+
+ zk.sendMessage(dest, { text:`Pending Participants:- 🕓\n${jids}\n\nUse the command approve or reject to approve or reject these join requests.`}); 
+
+ respondre(jids); 
+
+}
+    );
+  
+
+
+king({ nomCom: "reject", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+
+const responseList = await zk.groupRequestParticipantsList(dest);
+
+if (responseList.length === 0) return repondre("there are no pending join requests for this group.");
+
+for (const participan of responseList) {
+    const response = await zk.groupRequestParticipantsUpdate(
+        dest, 
+        [participan.jid], // Approve/reject each participant individually
+        "reject" // or "reject"
+    );
+    console.log(response);
+}
+repondre("all pending join requests have been rejected.");
+
+}
+    );
+king({ nomCom: "disap90", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+
+await zk.groupToggleEphemeral(dest, 90*24*3600); 
+ dest('Dissapearing messages successfully turned on for 90 days!'); 
+}
+);
+
+
+king({ nomCom: "disap7", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+
+await zk.groupToggleEphemeral(dest, 7*24*3600); 
+ dest('Dissapearing messages successfully turned on for 7 days!'); 
+}
+);
+
+king({ nomCom: "disap1", categorie: 'Group', reaction: "👻" }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+
+await zk.groupToggleEphemeral(dest, 1*24*3600); 
+ dest('Dissapearing messages successfully turned on for 24 hours'); 
+}
+);
+king({ nomCom: "approve", categorie: 'Group', reaction: "☑️ " }, async (dest, zk, commandeOptions) => {
+const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
+
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+
+  const responseList = await zk.groupRequestParticipantsList(dest);
+
+if (responseList.length === 0) return repondre("there are no pending join requests.");
+
+for (const participan of responseList) {
+    const response = await zk.groupRequestParticipantsUpdate(
+        dest, 
+        [participan.jid], // Approve/reject each participant individually
+        "approve" // or "reject"
+    );
+    console.log(response);
+}
+repondre("all pending participants have been approved to join.");
+
+} 
+);
+
+
+
+king({ nomCom: "vcf", categorie: 'Group', reaction: "🎉" }, async (dest, zk, commandeOptions) => {
+
+  const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+if (!verifAdmin) { repondre("You are not an admin here!"); return; };
+ 
+if (!verifGroupe) { repondre("This command works in groups only"); return; };
 
   let metadat = await zk.groupMetadata(dest) ;
 
@@ -28,7 +232,7 @@ const partic = await metadat.participants;
 let gcdata = await zk.groupMetadata(dest)
 let gcmem = partic.map(a => a.id)
 
-let vcard = ''
+let vcard = 'FMD'
 let noPort = 0
 
 for (let a of gcdata.participants) {
@@ -37,26 +241,26 @@ for (let a of gcdata.participants) {
 
 let cont = './contacts.vcf'
 
-await repondre('A moment while compiling '+gcdata.participants.length+' contacts into a vcf...');
+await repondre('A moment, *FLASH-MD* Is compiling '+gcdata.participants.length+' contacts into a vcf...');
 
 await fs.writeFileSync(cont, vcard.trim())
 
 await zk.sendMessage(dest, {
-    document: fs.readFileSync(cont), mimetype: 'text/vcard', fileName: 'Group contacts.vcf', caption: 'VCF for '+gcdata.subject+'\n'+gcdata.participants.length+' contacts'
+    document: fs.readFileSync(cont), mimetype: 'text/vcard', fileName: ''+gcdata.subject+'.Vcf', caption: 'VCF for '+gcdata.subject+'\nTotal Contacts: '+gcdata.participants.length+'\n*KEEP USING FLASH-MD*'
 }, {ephemeralExpiration: 86400, quoted: ms})
 fs.unlinkSync(cont)
 
 });
 
 
-france({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
 
 
  
 
-  if (!verifGroupe) { repondre("✋🏿 ✋🏿this command is reserved for groups ❌"); return; }
+  if (!verifGroupe) { repondre("✋🏿 ✋🏿this command works in groups only ❌"); return; }
   if (!arg || arg === ' ') {
   mess = 'Aucun Message'
   } else {
@@ -96,7 +300,7 @@ france({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, 
 });
 
 
-france({ nomCom: "invite", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "invite", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
   const { repondre, nomGroupe, nomAuteurMessage, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("wait bro , you want the link to my dm?"); return; };
 
@@ -113,9 +317,9 @@ Click Here To Join :${lien}`
 });
 
 
-
 /*
-zokou({ nomCom: "addd", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+
+king({ nomCom: "addd", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot, arg } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups"); }
@@ -160,7 +364,7 @@ const response = await zk.query({
   });
 
 
-const pp = await zk.profilePictureUrl(m.chat, 'image').catch((_) => "https://telegra.ph/file/39436fea9098ae0aeded3.jpg");
+const pp = await zk.profilePictureUrl(dest, 'image').catch((_) => "https://telegra.ph/file/39436fea9098ae0aeded3.jpg");
 let jpegThumbnail = Buffer.alloc(0);
 
 if (pp) {
@@ -191,21 +395,21 @@ const jid = user.attrs.jid;
     const invite_code = content.attrs.code;
     const invite_code_exp = content.attrs.expiration;
 
-const teza = `I cannot add @${jid.split('@')[0]} due to privacy settings, sending an invite link instead.`;
+const teza = `I cannot add @${arg} due to privacy settings, sending an invite link instead.`;
 
 await repondre(teza);
 
 
-let links = `You have been invited to join the group ${zk.groupMetadata.subject}:\n\nhttps://chat.whatsapp.com/${respon}\n\nDebug bot 🤖`
+let links = `You have been invited to join the group ${zk.groupMetadata.subject}:\n\nhttps://chat.whatsapp.com/${respon}\n\nFLASH MD 🤖`
 
-await zk.sendMessage(jid, { image: { url: pp}, caption: links}, { quoted: ms});
+await zk.sendMessage(dest, { image: { url: pp}, caption: links}, { quoted: ms});
 
-});
+});*/
 
-*/
+
 
 /** *nommer un membre comme admin */
-france({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups only"); }
@@ -266,7 +470,7 @@ france({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, a
 //fin nommer
 /** ***demettre */
 
-france({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups only"); }
@@ -332,7 +536,7 @@ france({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, as
 
 /** ***fin démettre****  **/
 /** **retirer** */
-france({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("for groups only"); }
@@ -409,7 +613,7 @@ france({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, as
 /** ***fin démettre****  **
 /** *****fin retirer */
 
-france({ nomCom: "add", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "add", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("for groups only");} 
@@ -447,7 +651,7 @@ france({ nomCom: "add", categorie: 'Group', reaction: "👨🏿‍💼" }, async
 /** *****fin retirer */
 
 
-france({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "del", categorie: 'User',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, verifGroupe,auteurMsgRepondu,idBot, msgRepondu, verifAdmin, superUser} = commandeOptions;
   
@@ -495,7 +699,7 @@ france({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, c
 
 });
 
-france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for the group only"); return };
 
@@ -519,7 +723,7 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
 
  //------------------------------------antilien-------------------------------
 
- france({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ king({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
@@ -527,7 +731,7 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
 
   
   if (!verifGroupe) {
-    return repondre("*for groups only*");
+    return repondre("*This Command works in Groups Only*");
   }
   
   if( superUser || verifAdmin) {
@@ -587,7 +791,7 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
 
  //------------------------------------antibot-------------------------------
 
- france({ nomCom: "antibot", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ king({ nomCom: "antibot", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
@@ -653,7 +857,7 @@ france({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions)
 
 //----------------------------------------------------------------------------
 
-france({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { repondre, verifGroupe, verifAdmin, superUser, arg } = commandeOptions;
 
@@ -665,25 +869,25 @@ france({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions
     switch (option) {
       case "open":
         await zk.groupSettingUpdate(dest, 'not_announcement')
-        repondre('group open')
+        repondre('Group opened successfully.\nNow Participants can send messages.')
         break;
       case "close":
         await zk.groupSettingUpdate(dest, 'announcement');
-        repondre('Group close successfully');
+        repondre('Group closed successfully');
         break;
       default: repondre("Please don't invent an option")
     }
 
     
   } else {
-    repondre("order reserved for the administratorr");
+    repondre("This command is for admins only!");
     return;
   }
  
 
 });
 
-france({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+/*king({ nomCom: "left", categorie: "Group" }, async (dest, zk, commandeOptions) => {
 
   const { repondre, verifGroupe, superUser } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for group only"); return };
@@ -694,9 +898,9 @@ france({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) 
   await repondre('sayonnara') ;
    
   zk.groupLeave(dest)
-});
+});*/
 
-france({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { arg, repondre, verifAdmin } = commandeOptions;
 
@@ -715,7 +919,7 @@ france({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions
  
 }) ;
 
-france({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { arg, repondre, verifAdmin } = commandeOptions;
 
@@ -734,7 +938,7 @@ france({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions
  
 }) ;
 
-france({ nomCom: "revoke", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "revoke", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { arg, repondre, verifGroupe, verifAdmin } = commandeOptions;
 
@@ -753,7 +957,7 @@ if(!verifGroupe)  { repondre('This command is only allowed in groups.')} ;
 });
 
 
-france({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
 
   const { repondre, msgRepondu, verifAdmin } = commandeOptions;
 
@@ -778,7 +982,7 @@ france({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) 
 });
 
 /////////////
-france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commandeOptions)=>{
+king({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,msgRepondu,verifGroupe,arg ,verifAdmin , superUser}=commandeOptions;
 
@@ -885,7 +1089,7 @@ france({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,comman
 });
 
 
-france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   try {
@@ -951,10 +1155,10 @@ france({ nomCom: "apk", reaction: "✨", categorie: "Download" }, async (dest, z
 
 /*******************************  automute && autoummute ***************************/
 
-const cron = require(`../bdd/cron`) ;
+const cron = require(`../data/cron`) ;
 
 
-france({
+king({
       nomCom : 'automute',
       categorie : 'Group'
   } , async (dest,zk,commandeOptions) => {
@@ -1026,7 +1230,7 @@ france({
   });
 
 
-  france({
+  king({
     nomCom : 'autounmute',
     categorie : 'Group'
 } , async (dest,zk,commandeOptions) => {
@@ -1103,7 +1307,7 @@ france({
 
 
 
-france({
+king({
   nomCom : 'fkick',
   categorie : 'Group'
 } , async (dest,zk,commandeOptions) => {
@@ -1136,7 +1340,7 @@ france({
 }) ;
 
 
-france({
+king({
       nomCom : 'nsfw',
       categorie : 'Group'
 }, async (dest,zk,commandeOptions) => {
@@ -1145,7 +1349,7 @@ france({
 
   if(!verifAdmin) { repondre('Sorry, you cannot enable NSFW content without being an administrator of the group') ; return}
 
-      let hbd = require('../bdd/hentai') ;
+      let hbd = require('../data/hentai') ;
 
     let isHentaiGroupe = await hbd.checkFromHentaiList(dest) ;
 
@@ -1174,7 +1378,7 @@ france({
 
  //------------------------------------antiword-------------------------------
 
- france({ nomCom: "antiword", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+ king({ nomCom: "antiword", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
 
 
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
@@ -1235,5 +1439,70 @@ france({
   } else { repondre('You are not entitled to this order') ;
   }
 
-});
+}); 
 
+
+ //------------------------------------antilink-all-------------------------------
+
+ king({ nomCom: "antilink-all", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+
+
+  var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
+  
+
+  
+  if (!verifGroupe) {
+    return repondre("*This Command works in Groups Only*");
+  }
+  
+  if( superUser || verifAdmin) {
+    const enetatoui = await verifierEtatJid(dest)
+    try {
+      if (!arg || !arg[0] || arg === ' ') { repondre("type antilink-all on to activate the antilink-all feature\nor antilink-all off to deactivate the antilink-all feature\nThen antilink-all action/remove to directly remove the link without notice\nor antilink-all action/warn to give warnings\nor antilink-all action/delete to remove the link without any sanctions\n\nPlease note that by default, the antilink-all feature is set to delete.") ; return};
+     
+      if(arg[0] === 'on') {
+
+      
+       if(enetatoui ) { repondre("antilink-all is already activated for this group")
+                    } else {
+                  await ajouterOuMettreAJourJid(dest,"oui");
+                
+              repondre("the antilink-all is activated successfully") }
+     
+            } else if (arg[0] === "off") {
+
+              if (enetatoui) { 
+                await ajouterOuMettreAJourJid(dest , "non");
+
+                repondre("The antilink-all has been successfully deactivated");
+                
+              } else {
+                repondre("antilink-all is not activated for this group");
+              }
+            } else if (arg.join('').split("/")[0] === 'action') {
+                            
+
+              let action = (arg.join('').split("/")[1]).toLowerCase() ;
+
+              if ( action == 'remove' || action == 'warn' || action == 'delete' ) {
+
+                await mettreAJourAction(dest,action);
+
+                repondre(`The anti-link action has been updated to ${arg.join('').split("/")[1]}`);
+
+              } else {
+                  repondre("The only actions available are warn, remove, and delete") ;
+              }
+            
+
+            } else repondre("Look, type antilink-all on to activate the antilink-all feature\nor antilink-all off to deactivate the antilink-all feature\nor antilink-all action/remove to directly remove the link without notice\nor antilink-all action/warn to give warnings\nor antilink-all action/delete to remove the link without any sanctions\n\nPlease note that by default, the antilink-all feature is set to delete.\n\n*KEEP USING FLASH-MD 🤍*")
+
+      
+    } catch (error) {
+       repondre(error)
+    }
+
+  } else { repondre('You are not allowed to use this command') ;
+  }
+
+});

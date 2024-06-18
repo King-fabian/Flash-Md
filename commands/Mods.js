@@ -844,7 +844,7 @@ To stop the mention, use mention stop`;
 });
 
 
-king({
+/*king({
   nomCom: 'archive',
   categorie: 'Mods',
 }, async (dest, zk, commandeOptions) => {
@@ -866,3 +866,4 @@ king({
   repondre("the discussion has been archived");
 
 });
+*/

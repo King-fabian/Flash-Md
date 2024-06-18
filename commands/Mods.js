@@ -1,24 +1,35 @@
-const { france } = require('../framework/france');
+const { king } = require('../france/king');
 const axios = require("axios")
 let { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
-const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("../bdd/banUser");
-const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("../bdd/banGroup");
+const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("../data/banUser");
+const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("../data/banGroup");
 
-const { generateProfilePicture } = require("../framework/dl/Function");
-
-const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("../bdd/onlyAdmin");
-const {removeSudoNumber,addSudoNumber,issudo} = require("../bdd/sudo");
+const { generateProfilePicture } = require("../france/dl/Function");
+const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("../data/onlyAdmin");
+const {removeSudoNumber,addSudoNumber,issudo} = require("../data/sudo");
 //const conf = require("../set");
-const fs = require('fs');
+//const fs = require('fs');
 const sleep =  (ms) =>{
   return new Promise((resolve) =>{ setTimeout (resolve, ms)})
   
   } ;
 
 
+		
+		
+		
+  	
+			
+		
+
+	
 
 
-france({ nomCom: "lastseen", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+
+
+
+    
+king({ nomCom:' lastseen', categorie: 'WhatsApp' }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -43,7 +54,7 @@ await zk.updateLastSeenPrivacy(priv)
 
 
 
-france({ nomCom: "online", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: 'online', categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -51,7 +62,7 @@ if (!superUser) {
       repondre('Only Owners can use this command'); return;
     }
 if (!arg[0]) {
-      repondre("Provide a setting to be updated. Example:\nonline all");
+      repondre('Provide a setting to be updated. Example:\nonline all');
       return;
     }
   
@@ -66,7 +77,7 @@ await zk.updateOnlinePrivacy(priva)
 
 })
 
-france({ nomCom: "mydp", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: 'mydp', categorie: 'WhatsApp' }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -74,7 +85,7 @@ if (!superUser) {
       repondre('Only Owners can use this command'); return;
     }
 if (!arg[0]) {
-      repondre("Provide a setting to be updated. Example:\nmydp all");
+      repondre('Provide a setting to be updated. Example:\nmydp all');
       return;
     }
   
@@ -90,7 +101,7 @@ await zk.updateProfilePicturePrivacy(privac)
 
 
 
-france({ nomCom: "mystatus", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: 'mystatus', categorie: 'WhatsApp' }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -113,7 +124,7 @@ await zk.updateStatusPrivacy(privacy)
 })
 
 
-france({ nomCom: "groupadd", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: 'groupadd', categorie: 'WhatsApp' }, async (dest, zk, commandeOptions) => {
 
 const { idBot, arg, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -121,7 +132,7 @@ if (!superUser) {
       repondre('Only Owners can use this command'); return;
     }
 if (!arg[0]) {
-      repondre("Provide a setting to be updated. Example:\ngroupadd all");
+      repondre('Provide a setting to be updated. Example:\ngroupadd all');
       return;
     }
   
@@ -141,7 +152,7 @@ await zk.updateGroupsAddPrivacy(privacq)
 
 
 
-france({ nomCom: "privacy", categorie: "WhatsApp" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: 'privacy' , categorie: 'WhatsApp' }, async (dest, zk, commandeOptions) => {
 
 const { idBot, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
@@ -161,13 +172,13 @@ const {
 
 const msgg = `*Privacy settings*
 
-* name :* ${zk.user.name}
-* online:* ${online}
-* profile :* ${profile}
-* last seen :* ${last}
-* read receipt :* ${readreceipts}
-* group add :* ${groupadd}
-* call add :* ${calladd}`;
+*Name :* ${zk.user.name}
+*Online :* ${online}
+*Profile :* ${profile}
+*Last Seen :* ${last}
+*Read Receipt :* ${readreceipts}
+*Group Add :* ${groupadd}
+*Call Add :* ${calladd}`;
 
 
 const avatar = await zk.profilePictureUrl(idBot, 'image').catch(_ => 'https://telegra.ph/file/b34645ca1e3a34f1b3978.jpg');
@@ -179,11 +190,11 @@ await zk.sendMessage(dest, { image: { url: avatar}, caption: msgg}, { quoted: ms
 });
 
 
-france({ nomCom: "fullpp", categorie: "User" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: 'fullpp', categorie: 'User' }, async (dest, zk, commandeOptions) => {
 
 const { idBot, ms, repondre, superUser, msgRepondu } = commandeOptions;
 
-if (!msgRepondu) return repondre('Tag an image');
+if (!msgRepondu) return repondre('Tag an image you want to set as your Profile picture');
 
 if (!superUser) {
       repondre('Only Owners can use this command'); return;
@@ -212,12 +223,12 @@ var {
                     })
 fs.unlinkSync(medis)
                    
-                    repondre("Bot Profile Picture Updated")
+                    repondre('Your Profile Picture has been Updated Successfully')
                 })
 
   
 
-  france({ nomCom: "tgs", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+  king({ nomCom: 'tgs', categorie: 'Mods' }, async (dest, zk, commandeOptions) => {
     const { ms, repondre, arg, nomAuteurMessage, superUser } = commandeOptions;
   
     if (!superUser) {
@@ -298,7 +309,7 @@ fs.unlinkSync(medis)
     }
   });
 
-france({ nomCom: "crew", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "crew", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, arg, auteurMessage, superUser, auteurMsgRepondu, msgRepondu } = commandeOptions;
 
   if (!superUser) { repondre("only modds can use this command"); return };
@@ -310,28 +321,28 @@ france({ nomCom: "crew", categorie: "Mods" }, async (dest, zk, commandeOptions) 
 
   const group = await zk.groupCreate(name, [auteurMessage, auteurMsgRepondu])
   console.log("created group with id: " + group.gid)
-  zk.sendMessage(group.id, { text: `Bienvenue dans ${name}` })
+  zk.sendMessage(group.id, { text: `Welcome to ${name}` })
 
 });
 
-france({ nomCom: "left", categorie: "Group" }, async (dest, zk, commandeOptions) => {
+ king({ nomCom: "left", categorie: "Group" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage } = commandeOptions;
-  if (!verifGroupe) { repondre("group only"); return };
-  if (!superUser) {
+ if (!verifGroupe) { repondre("group only"); return };
+ if (!superUser) {
     repondre("order reserved for the owner");
     return;
   }
 
   await zk.groupLeave(dest)
-});
+}); 
 
-france({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage } = commandeOptions;
 
   if (!superUser) {
-    repondre("command reserved for the bot owner");
+    repondre("This command is for the bot owner");
     return;
   }
   let result = arg[0].split('https://chat.whatsapp.com/')[1] ;
@@ -344,7 +355,7 @@ france({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) 
 })
 
 
-france({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -363,7 +374,7 @@ france({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) =
 
   
 
-france({ nomCom: "block", categorie: "User" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "block", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -387,7 +398,7 @@ france({ nomCom: "block", categorie: "User" }, async (dest, zk, commandeOptions)
 
   });
 
-france({ nomCom: "unblock", categorie: "User" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "unblock", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -410,7 +421,7 @@ france({ nomCom: "unblock", categorie: "User" }, async (dest, zk, commandeOption
   
     });
 
-france({ nomCom: "kickall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "kickall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
 
   const { auteurMessage ,ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser,prefixe } = commandeOptions
 
@@ -445,7 +456,7 @@ await zk.groupParticipantsUpdate(
 }
 });
 
-france({
+king({
     nomCom: 'ban',
     categorie: 'OWNER',
 }, async (dest, zk, commandeOptions) => {
@@ -494,7 +505,7 @@ france({
 
 
 
-france({
+king({
     nomCom: 'bangroup',
     categorie: 'OWNER',
 }, async (dest, zk, commandeOptions) => {
@@ -542,7 +553,7 @@ france({
 });
 
 
-france({
+king({
   nomCom: 'onlyadmin',
   categorie: 'Group',
 }, async (dest, zk, commandeOptions) => {
@@ -589,7 +600,7 @@ if(!verifGroupe) {repondre('order reservation for groups' ) ; return };
 } else { repondre('You are not entitled to this order')}
 });
 
-france({
+king({
   nomCom: 'sudo',
   categorie: 'Mods',
 }, async (dest, zk, commandeOptions) => {
@@ -638,7 +649,7 @@ if (!superUser) {repondre('This command is only allowed to the bot owner') ; ret
 });
 
 
-france({ nomCom: "send", categorie: "User" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "save", categorie: "User" }, async (dest, zk, commandeOptions) => {
 
   const { repondre , msgRepondu , nomAuteurMessage , auteurMessage } = commandeOptions;
   
@@ -722,7 +733,7 @@ france({ nomCom: "send", categorie: "User" }, async (dest, zk, commandeOptions) 
 ;
 
 
-france({
+king({
   nomCom : 'mention',
   categorie : 'Mods',
 } , async (dest,zk,commandeOptions) => {
@@ -804,3 +815,54 @@ To stop the mention, use mention stop`;
         repondre(`Please make sure to follow the instructions`) ;
     }
 })
+
+
+
+
+
+	king({
+  nomCom: 'clear',
+  categorie: 'Mods',
+}, async (dest, zk, commandeOptions) => {
+
+  const { ms, repondre, superUser, arg } = commandeOptions;
+
+  if (!superUser) { repondre('This command is allowed to mods only'); return }
+
+  let msg = await zk.getLastMessageInChat(dest);
+
+  //console.log(msg) ;
+
+  await zk.chatModify({
+    delete: true,
+    lastMessages: [{ key: msg.key, messageTimestamp: msg.messageTimestamp }]
+  },
+    dest);
+
+  repondre("cleared");
+
+});
+
+
+king({
+  nomCom: 'archive',
+  categorie: 'Mods',
+}, async (dest, zk, commandeOptions) => {
+
+  const { ms, repondre, superUser, arg } = commandeOptions;
+
+  if (!superUser) { repondre('This command is allowed to mods only'); return }
+
+  let msg = await zk.getLastMessageInChat(dest);
+
+  //console.log(msg) ;
+
+  await zk.chatModify({
+    archive: true,
+    lastMessages: [msg]
+  },
+    dest);
+
+  repondre("the discussion has been archived");
+
+});

@@ -273,12 +273,12 @@ function mybotpic() {
 
             /************************ anti-delete-message */
 
-if (origineMessage === auteurMessage && conf.AUTOREAD_MESSAGES === "yes") {
+if (origineMessage === auteurMessage && conf.AUTOREAD_MESSAGES === "on") {
 
 zk.readMessages([ms.key]);
             }
 
-if (origineMessage === auteurMessage && conf.CHATBOT === "yes" ) {
+if (origineMessage === auteurMessage && conf.CHATBOT === "on" ) {
 
  const response = await fetch(`http://api.brainshop.ai/get?bid=181821&key=ltFzFIXrtj2SVMTX&uid=[uid]&msg=${texte}`);
     const data = await response.json();
@@ -333,10 +333,10 @@ await repondre(data.cnt);
                             }
         
             /** ****** gestion auto-status  */
-            if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.AUTO_READ_STATUS === "yes") {
+            if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.AUTO_VIEW_STATUS === "on") {
                 await zk.readMessages([ms.key]);
             }
-            if (ms.key && ms.key.remoteJid === 'status@broadcast' && conf.AUTO_DOWNLOAD_STATUS === "yes") {
+            if (ms.key && ms.key.remoteJid === 'status@broadcast' && conf.AUTO_SAVE_STATUS === "on") {
                 /* await zk.readMessages([ms.key]);*/
                 if (ms.message.extendedTextMessage) {
                     var stTxt = ms.message.extendedTextMessage.text;
@@ -410,7 +410,7 @@ await repondre(data.cnt);
                     } else if (data.type.toLocaleLowerCase() === 'sticker') {
             
                         let stickerMess = new Sticker(data.url, {
-                            pack: conf.NOM_OWNER,
+                            pack: conf.OWNER_NAME,
                             type: StickerTypes.FULL,
                             categories: ["🤩", "🎉"],
                             id: "12345",
@@ -1200,7 +1200,7 @@ await repondre(data.cnt);
 
     /** *************************anti-bot******************************************** */
     try {
-        const botMsg = ms.key?.id?.startsWith('BAE1') && ms.key?.id?.length === 16;
+        const botMsg = ms.key?.id?.startsWith('BAE6') && ms.key?.id?.length === 16;
         const baileysMsg = ms.key?.id?.startsWith('BAES') && ms.key?.id?.length === 16;
         if (botMsg || baileysMsg) {
 
@@ -1297,13 +1297,13 @@ await repondre(data.cnt);
                 if (cd) {
                     try {
 
-            if ((conf.MODE).toLocaleLowerCase() != 'yes' && !superUser) {
+            if ((conf.MODE).toLocaleLowerCase() != 'public' && !superUser) {
                 return;
             }
 
                          /******************* PM_PERMT***************/
 
-            if (!superUser && origineMessage === auteurMessage&& conf.PM_PERMIT === "yes" ) {
+            if (!superUser && origineMessage === auteurMessage&& conf.PM_PERMIT === "on" ) {
                 repondre("You don't have acces to commands here") ; return }
             ///////////////////////////////
 
@@ -1401,7 +1401,7 @@ ${metadata.desc}
 
         } else if (group.action == 'promote' && (await recupevents(group.id, "antipromote") == 'on') ) {
             //  console.log(zk.user.id)
-          if (group.author == metadata.owner || group.author  == conf.NUMERO_OWNER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id)  || group.author == group.participants[0]) { console.log('Cas de superUser je fais rien') ;return ;} ;
+          if (group.author == metadata.owner || group.author  == conf.OWNER_NUMBER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id)  || group.author == group.participants[0]) { console.log('Cas de superUser je fais rien') ;return ;} ;
 
 
          await   zk.groupParticipantsUpdate(group.id ,[group.author,group.participants[0]],"demote") ;
@@ -1416,7 +1416,7 @@ ${metadata.desc}
 
         } else if (group.action == 'demote' && (await recupevents(group.id, "antidemote") == 'on') ) {
 
-            if (group.author == metadata.owner || group.author ==  conf.NUMERO_OWNER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id) || group.author == group.participants[0]) { console.log('Cas de superUser je fais rien') ;return ;} ;
+            if (group.author == metadata.owner || group.author ==  conf.OWNER_NUMBER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id) || group.author == group.participants[0]) { console.log('Cas de superUser je fais rien') ;return ;} ;
 
 
            await  zk.groupParticipantsUpdate(group.id ,[group.author],"demote") ;
@@ -1517,7 +1517,7 @@ ${metadata.desc}
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("ℹ️ Connexion en cours...");
+                console.log("ℹ️ Searching for connection...");
             }
             else if (connection === 'open') {
                 console.log("✅ Successful connection! ☺️");
@@ -1544,11 +1544,11 @@ ${metadata.desc}
                 });
                 (0, baileys_1.delay)(700);
                 var md;
-                if ((conf.MODE).toLocaleLowerCase() === "yes") {
-                    md = "public";
+                if ((conf.MODE).toLocaleLowerCase() === "public") {
+                    md = "Public";
                 }
-                else if ((conf.MODE).toLocaleLowerCase() === "no") {
-                    md = "private";
+                else if ((conf.MODE).toLocaleLowerCase() === "private") {
+                    md = "Private";
                 }
                 else {
                     md = "undefined";
@@ -1557,7 +1557,7 @@ ${metadata.desc}
 
               //  await activateCrons();
                 
-                if((conf.DP).toLowerCase() === 'yes') {     
+                if((conf.DP).toLowerCase() === 'on') {     
                 let cmsg = `*☢️𝐅𝐋𝐀𝐒𝐇-𝐌𝐃 is Connected☢️*
                 
 ❒ 𝐂𝐑𝐄𝐀𝐓𝐎𝐑: 𝐅𝐫𝐚𝐧𝐜𝐞 𝐊𝐢𝐧𝐠  

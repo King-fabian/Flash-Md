@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const { france } = require("../framework/france");
-france({ nomCom: "wagroup", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
+const { king } = require("../france/king");
+king({ nomCom: "wagroup", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
     console.log("Commande saisie !!!s");
     let z = 'Hello 👋\n\nClick The link below to Join the OFFICIAL *FLASH-MD* WhatsApp Group\n\n';
     let d = 'https://chat.whatsapp.com/IH4xWuVTGpf7ibfzC3h6LM';
@@ -12,7 +12,7 @@ france({ nomCom: "wagroup", reaction: "😌", nomFichier: __filename }, async (d
 });
 console.log("mon test");
 
-france({ nomCom: "channel", reaction: "🤍", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "channel", reaction: "🤍", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
     console.log("Commande saisie !!!s");
     let z = 'Hello 👋\n\nClick The link below to Join the OFFICIAL *FLASH-MD* WhatsApp Channel.\n\n';
     let d = 'https://whatsapp.com/channel/0029VaTbb3p84Om9LRX1jg0P';

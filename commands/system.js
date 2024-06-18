@@ -1,4 +1,4 @@
-const {france}=require("../framework/france")
+const {king}=require("../france/king")
 
 
 
@@ -6,7 +6,7 @@ const {france}=require("../framework/france")
 
 
 
-france({nomCom:"reboot",categorie:"Mods",reaction:"👨🏿‍💼"},async(dest,z,com)=>{
+king({nomCom:"reboot",categorie:"User",reaction:"👨🏿‍💼"},async(dest,z,com)=>{
 
 
   
@@ -14,7 +14,7 @@ const{repondre,ms,dev,superUser}=com;
 
   if(!superUser)
   {
-    return repondre("This command is for owner only");
+    return repondre("This command is for my owner only");
   }
 
   const {exec}=require("child_process")

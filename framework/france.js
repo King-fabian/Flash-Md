@@ -13,4 +13,4 @@ function france(obj, fonctions) {
     // console.log('chargement...')
     return infoComs;
 }
-module.exports = { france, Module: france, cm };
+module.exports = { king, Module: king, cm };

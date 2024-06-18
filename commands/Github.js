@@ -1,9 +1,9 @@
 const axios = require('axios');
 const fs = require('fs');
-const {france} = require('../framework/france');
-const { writeFile } = require('fs/promises')
+const {king} = require('../france/king');
+const { writeFile } = require('fs/promises');
 
-france({ nomCom: "github",
+king({ nomCom: "github",
         reaction: "📃",
         categorie: "Search" }, async (dest, zk, commandeOptions) => {
 
@@ -46,3 +46,4 @@ const following = data.following;
 
 
 });
+

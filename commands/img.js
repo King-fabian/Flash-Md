@@ -1,11 +1,11 @@
 
 
 
-const {france} = require('../framework/france');
+const {king} = require('../france/king');
 var gis = require('g-i-s');
 
 
-france({
+king({
   nomCom: "img",
   categorie: "Search",
   reaction: "📷"

@@ -39,12 +39,12 @@ let path = require("path");
 const FileType = require('file-type');
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 //import chalk from 'chalk'
-const { verifierEtatJid , recupererActionJid } = require("./bdd/antilien");
-const { atbverifierEtatJid , atbrecupererActionJid } = require("./bdd/antibot");
+const { verifierEtatJid , recupererActionJid } = require("./data/antilien");
+const { atbverifierEtatJid , atbrecupererActionJid } = require("./data/antibot");
 let evt = require(__dirname + "/framework/france");
-const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./bdd/banUser");
-const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./bdd/banGroup");
-const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./bdd/onlyAdmin");
+const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./data/banUser");
+const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./data/banGroup");
+const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./data/onlyAdmin");
 //const //{loadCmd}=require("/framework/mesfonctions")
 let { reagir } = require(__dirname + "/framework/app");
 var session = conf.session.replace(/FLASH-MD-WA-BOT;;;=>/g,"");
@@ -155,7 +155,7 @@ setTimeout(() => {
             /*  var superUser=[servBot,FranceKing,FranceKing1,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
               var dev =[FranceKing,FranceKing1,FranceKing2].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
             
-            if(origineMessage === "120363244435092946@g.us") return 
+           // if(origineMessage === "120363244435092946@g.us") return 
             
             const verifGroupe = origineMessage?.endsWith("@g.us");
 const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");
@@ -173,7 +173,7 @@ const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");
             }
             
             var membreGroupe = verifGroupe ? ms.key.participant : '';
-            const { getAllSudoNumbers } = require("./bdd/sudo");
+            const { getAllSudoNumbers } = require("./data/sudo");
             const nomAuteurMessage = ms.pushName;
             const k1 = '254742063632';
             const k2 = '254757835036';
@@ -364,7 +364,7 @@ await repondre(data.cnt);
             
  //---------------------------------------rang-count--------------------------------
              if (texte && auteurMessage.endsWith("s.whatsapp.net")) {
-  const { ajouterOuMettreAJourUserData } = require("./bdd/level"); 
+  const { ajouterOuMettreAJourUserData } = require("./data/level"); 
   try {
     await ajouterOuMettreAJourUserData(auteurMessage);
   } catch (e) {
@@ -1200,7 +1200,7 @@ await repondre(data.cnt);
 
     /** *************************anti-bot******************************************** */
     try {
-        const botMsg = ms.key?.id?.startsWith('BAE5') && ms.key?.id?.length === 16;
+        const botMsg = ms.key?.id?.startsWith('BAE1') && ms.key?.id?.length === 16;
         const baileysMsg = ms.key?.id?.startsWith('BAES') && ms.key?.id?.length === 16;
         if (botMsg || baileysMsg) {
 
@@ -1293,7 +1293,7 @@ await repondre(data.cnt);
             //execution des commandes   
             if (verifCom) {
                 //await await zk.readMessages(ms.key);
-                const cd = evt.cm.find((france) => france.nomCom === (com));
+                const cd = evt.cm.find((king) => king.nomCom === (com));
                 if (cd) {
                     try {
 
@@ -1352,7 +1352,7 @@ await repondre(data.cnt);
         //fin événement message
 
 /******** evenement groupe update ****************/
-const { recupevents } = require('./bdd/welcome'); 
+const { recupevents } = require('./data/welcome'); 
 
 zk.ev.on('group-participants.update', async (group) => {
     console.log(group);
@@ -1446,7 +1446,7 @@ ${metadata.desc}
         
     async  function activateCrons() {
         const cron = require('node-cron');
-        const { getCron } = require('./bdd/cron');
+        const { getCron } = require('./data/cron');
 
           let crons = await getCron();
           console.log(crons);

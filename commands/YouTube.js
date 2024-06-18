@@ -1,13 +1,13 @@
-const { france } = require("../framework/france");
+const { king } = require("../france/king");
 const yts = require('yt-search');
 const ytdl = require('ytdl-core');
 const fs = require('fs');
-const yt=require("../framework/dl/ytdl-core.js")
+const yt=require("../france/dl/ytdl-core.js")
 const ffmpeg = require("fluent-ffmpeg");
 const yts1 = require("youtube-yts");
 //var fs =require("fs-extra")
 
-france({
+king({
   nomCom: "play",
   categorie: "Search",
   reaction: "💿"
@@ -29,14 +29,19 @@ france({
           
        let infoMess = {
           image: {url : videos[0]. thumbnail},
-         caption : `*FLASH-MD SONG DOWNLOADER*\n\n*Title:* ${videos[0].title}
-         
-*Duration:* ${videos[0].timestamp}
-*Song Url:* ${videos[0].url}
+         caption : `*FLASH-MD SONG DOWNLOADER*\n
+╭───────────────◆
+│⿻ *Title:* ${videos[0].title}
+│⿻ *Duration:* ${videos[0].timestamp}
+│⿻ *Viewers:* ${videos[0].views}
+│⿻ *Uploaded:* ${videos[0].ago}
+│⿻ *Author:* ${videos[0].author.name}
+╰────────────────◆
+⦿ *Direct Link:* ${videos[0].url}
 
-
-
-*_Powered by ©France King._*`
+╭────────────────◆
+│ *_Powered by ©France King._*
+╰─────────────────◆`
        }
 
       
@@ -59,29 +64,29 @@ france({
         // Envoi du fichier audio en utilisant l'URL du fichier local
       
 
-     zk.sendMessage(origineMessage, { audio: { url:"audio.mp3"},mimetype:'audio/mp4' }, { quoted: ms,ptt: false });
-        console.log("Envoi du fichier audio terminé !");
+     zk.sendMessage(origineMessage, { document: { url:"audio.mp3"},mimetype:'audio/mp3' }, { quoted: ms,ptt: false });
+        console.log("Sending audio file completed !");
 
      
       });
 
       fileStream.on('error', (error) => {
-        console.error('Erreur lors de l\'écriture du fichier audio :', error);
-        repondre('Une erreur est survenue lors de l\'écriture du fichier audio.');
+        console.error('Error Occurred while writing audio file :', error);
+        repondre('An error occurred while writing the audio file.');
       });
     } else {
-      repondre('Aucune vidéo trouvée.');
+      repondre('No videos found.');
     }
   } catch (error) {
-    console.error('Erreur lors de la recherche ou du téléchargement de la vidéo :', error);
+    console.error('Error while searching or downloading video :', error);
     
-    repondre('Une erreur est survenue lors de la recherche ou du téléchargement de la vidéo.');
+    repondre('An error occurred while searching or downloading the video.');
   }
 });
 
   
 
-france({
+king({
   nomCom: "video",
   categorie: "Search",
   reaction: "🎥"
@@ -103,10 +108,19 @@ france({
 
       let InfoMess = {
         image: { url: videos[0].thumbnail },
-        caption: `*Video name :* _${Element.title}_
-*Time :* _${Element.timestamp}_
-*Url :* _${Element.url}_
-_*DOWNLOADING...*_\n\n`
+        caption: `*FLASH-MD VIDEO DOWNLOADER*\n
+╭───────────────◆
+│⿻ *Title:* ${Element.title}
+│⿻ *Duration:* ${Element.timestamp}
+│⿻ *Viewers:* ${Element.views}
+│⿻ *Uploaded:* ${Element.ago}
+│⿻ *Author:* ${Element.author.name}
+╰────────────────◆
+⦿ *Direct Link:* ${Element.url}
+
+╭───────────────◆
+│ *_Powered by ©France King._*
+╰────────────────◆ `
       };
 
       zk.sendMessage(origineMessage, InfoMess, { quoted: ms });
@@ -127,18 +141,52 @@ _*DOWNLOADING...*_\n\n`
 
       fileStream.on('finish', () => {
         // Envoi du fichier vidéo en utilisant l'URL du fichier local
-        zk.sendMessage(origineMessage, { video: { url :"./video.mp4"} , caption: "*FLASH-MD*", gifPlayback: false }, { quoted: ms });
+        zk.sendMessage(origineMessage, { video: { url :"./video.mp4"} , caption:
+          "╭───────────────◆\n│ *FLASH-MD DOWNLOADER*\n╰────────────────◆", gifPlayback: false }, { quoted: ms });
       });
 
+
       fileStream.on('error', (error) => {
-        console.error('Erreur lors de l\'écriture du fichier vidéo :', error);
-        repondre('Une erreur est survenue lors de l\'écriture du fichier vidéo.');
+        console.error('Error while writing video file :', error);
+        repondre('An error occurred while writing the video file.');
       });
     } else {
       repondre('No video found');
     }
   } catch (error) {
-    console.error('Erreur lors de la recherche ou du téléchargement de la vidéo :', error);
-    repondre('Une erreur est survenue lors de la recherche ou du téléchargement de la vidéo.');
+    console.error('Error searching or downloading video :', error);
+    repondre('An error occurred while searching or downloading the video.');
   }
 });
+
+
+king({
+  nomCom: "mygroups",
+  categorie: "User",
+  reaction: "💿"
+}, async (senn, zk, commandeOptions) => {
+  const { ms, repondre, arg } = commandeOptions;
+     
+let getGroupzs = await zk.groupFetchAllParticipating();
+            let groupzs = Object.entries(getGroupzs)
+                .slice(0)
+                .map((entry) => entry[1]);
+            let anaa = groupzs.map((v) => v.id);
+            let jackhuh = `*GROUPS AM IN*\n\n`
+            repondre(`You are Currently in ${anaa.length} groups, Flash MD will send that list in a moment. . .`)
+            for (let i of anaa) {
+                let metadat = await zk.groupMetadata(i);
+               
+                jackhuh += `*GROUP NAME:*- ${metadat.subject}\n`
+                jackhuh += `*MEMBERS:*- ${metadat.participants.length}\n`
+                jackhuh += `*GROUP ID:*- ${i}\n\n`
+
+            }
+          await repondre(jackhuh)
+
+}
+);
+
+
+
+

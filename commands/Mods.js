@@ -833,7 +833,7 @@ To stop the mention, use mention stop`;
 
   //console.log(msg) ;
 
-  await zk.chatModify({
+  await zk.clearChat({
     delete: true,
     lastMessages: [{ key: msg.key, messageTimestamp: msg.messageTimestamp }]
   },
@@ -844,7 +844,7 @@ To stop the mention, use mention stop`;
 });
 
 
-/*king({
+king({
   nomCom: 'archive',
   categorie: 'Mods',
 }, async (dest, zk, commandeOptions) => {

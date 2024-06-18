@@ -1,8 +1,8 @@
 const {
-  france
-} = require('../framework/france');
+  king
+} = require('../france/king');
 var mumaker = require("mumaker");
-france({
+king({
   'nomCom': "hacker",
   'categorie': "Logo",
   'reaction': "👨🏿‍💻"
@@ -32,7 +32,7 @@ france({
     _0x7fa6fd("🥵🥵 " + _0x1cc018);
   }
 });
-france({
+king({
   'nomCom': "sand",
   'categorie': 'Logo',
   'reaction': '⌛'
@@ -62,7 +62,7 @@ france({
     _0x796190("🚫🚫 " + _0x3ef129);
   }
 });
-france({
+king({
   'nomCom': "dragonball",
   'categorie': "Logo",
   'reaction': '🐉'
@@ -97,7 +97,7 @@ france({
     _0x28a782("🥵🥵 " + _0x194dd3);
   }
 });
-france({
+king({
   'nomCom': "naruto",
   'categorie': "Logo",
   'reaction': '⛩'
@@ -127,7 +127,7 @@ france({
     _0x48a3d9("🥵🥵 " + _0x2d1bcb);
   }
 });
-france({
+king({
   'nomCom': "didong",
   'categorie': 'Logo',
   'reaction': '📱'
@@ -149,7 +149,7 @@ france({
     _0x248cc8("🥵🥵 " + _0x18f72d);
   }
 });
-france({
+king({
   'nomCom': "night",
   'categorie': 'Logo',
   'reaction': '🌃'
@@ -176,7 +176,7 @@ france({
     });
   })["catch"](console.log);
 });
-france({
+king({
   'nomCom': "sunset",
   'categorie': "Logo",
   'reaction': '🌞'
@@ -203,7 +203,7 @@ france({
     });
   })["catch"](console.error);
 });
-france({
+king({
   'nomCom': "chocolate",
   'categorie': "Logo",
   'reaction': '🍫'
@@ -232,7 +232,7 @@ france({
     _0x151171("🥵🥵 " + _0x28c5ba);
   }
 });
-france({
+king({
   'nomCom': "mechanical",
   'categorie': 'Logo',
   'reaction': '🏢'
@@ -259,7 +259,7 @@ france({
     });
   })["catch"](console.error);
 });
-france({
+king({
   'nomCom': 'rain',
   'categorie': "Logo",
   'reaction': "☔"
@@ -286,7 +286,7 @@ france({
     });
   })["catch"](console.error);
 });
-france({
+king({
   'nomCom': "cloth",
   'categorie': "Logo",
   'reaction': '🦺'
@@ -312,7 +312,7 @@ france({
     });
   })['catch'](console.error);
 });
-france({
+king({
   'nomCom': 'avenger',
   'categorie': 'Logo',
   'reaction': '💥'
@@ -335,7 +335,7 @@ france({
     _0x3f898a("🥵🥵 " + _0x589367);
   }
 });
-france({
+king({
   'nomCom': "water",
   'categorie': 'Logo',
   'reaction': '💦'
@@ -362,7 +362,7 @@ france({
     });
   })["catch"](console.log);
 });
-france({
+king({
   'nomCom': "1917",
   'categorie': "Logo",
   'reaction': '😤'
@@ -391,7 +391,7 @@ france({
     console.error("An error occurred :", _0x4e86df);
   });
 });
-france({
+king({
   'nomCom': "graffiti",
   'categorie': "Logo",
   'reaction': "💥"
@@ -421,7 +421,7 @@ france({
     _0x7fa6fd("🥵🥵 " + _0x1cc018);
   }
 });
-france({
+king({
   'nomCom': 'thunder',
   'categorie': "Logo",
   'reaction': '⚡'
@@ -450,7 +450,7 @@ france({
     console.error("Une erreur s'est produite :", _0x5a2d77);
   });
 });
-france({
+king({
   'nomCom': "boom",
   'categorie': 'Logo',
   'reaction': '💥'
@@ -479,7 +479,7 @@ france({
     console.error("Une erreur s'est produite :", _0x5b9c8d);
   });
 });
-france({
+king({
   'nomCom': 'cat',
   'categorie': "Logo",
   'reaction': '🪟'
@@ -507,7 +507,7 @@ france({
     console.error("Une erreur s'est produite :", _0x31d1ea);
   });
 });
-france({
+king({
   'nomCom': "whitegold",
   'categorie': "Logo",
   'reaction': '💫'
@@ -536,7 +536,7 @@ france({
     console.error("Une erreur s'est produite :", _0x27bc86);
   });
 });
-france({
+king({
   'nomCom': "lightglow",
   'categorie': "Logo",
   'reaction': '🌟'
@@ -565,7 +565,7 @@ france({
     console.error("Une erreur s'est produite :", _0x22fa33);
   });
 });
-france({
+king({
   'nomCom': "thor",
   'categorie': "Logo",
   'reaction': '🔨'
@@ -594,7 +594,7 @@ france({
     console.error("Une erreur s'est produite :", _0x3969fd);
   });
 });
-france({
+king({
   'nomCom': "neon",
   'categorie': "Logo",
   'reaction': '💡'
@@ -623,7 +623,7 @@ france({
     console.error("Une erreur s'est produite :", _0x4df764);
   });
 });
-france({
+king({
   'nomCom': "purple",
   'categorie': "Logo",
   'reaction': '🧳'
@@ -645,7 +645,7 @@ france({
     _0x249bc6(_0x2f040f);
   }
 });
-france({
+king({
   'nomCom': "gold",
   'categorie': "Logo",
   'reaction': "🧚🏿‍♀️"
@@ -675,7 +675,7 @@ france({
     _0x22ece3(_0x3202a4);
   }
 });
-france({
+king({
   'nomCom': "arena",
   'categorie': 'Logo',
   'reaction': '🥵'
@@ -705,7 +705,7 @@ france({
     _0x13017b(_0x359f34);
   }
 });
-france({
+king({
   'nomCom': "incandescent",
   'categorie': "Logo",
   'reaction': '😋'
@@ -735,7 +735,7 @@ france({
     _0x32974c(_0x136ab8);
   }
 });
-france({
+king({
   'nomCom': 'child',
   'categorie': "Logo",
   'reaction': '😇'
@@ -765,7 +765,7 @@ france({
     _0x2cb5e0(_0x59350b);
   }
 });
-france({
+king({
   'nomCom': 'typo',
   'categorie': "Logo",
   'reaction': '😇'
@@ -795,7 +795,7 @@ france({
     _0x1f7fb2(_0x34838d);
   }
 });
-france({
+king({
   'nomCom': 'light',
   'categorie': "Logo",
   'reaction': '🌠'
@@ -825,7 +825,7 @@ france({
     _0x3542ba(_0x4ada63);
   }
 });
-france({
+king({
   'nomCom': "steel",
   'categorie': 'Logo',
   'reaction': '🌠'
@@ -855,7 +855,7 @@ france({
     _0x5a2777(_0x5cb7d1);
   }
 });
-france({
+king({
   'nomCom': 'sunlight',
   'categorie': "Logo",
   'reaction': '🌠'
@@ -885,7 +885,7 @@ france({
     _0x1f13a0(_0x561db3);
   }
 });
-france({
+king({
   'nomCom': "frozen",
   'categorie': "Logo",
   'reaction': '❄'
@@ -914,7 +914,7 @@ france({
     console.error("Une erreur s'est produite :", _0x312944);
   });
 });
-france({
+king({
   'nomCom': "magma",
   'categorie': "Logo",
   'reaction': '♨️'
@@ -943,7 +943,7 @@ france({
     console.error("Une erreur s'est produite :", _0x59b90a);
   });
 });
-france({
+king({
   'nomCom': "leaves",
   'categorie': 'Logo',
   'reaction': '☘️'

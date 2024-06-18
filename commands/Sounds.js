@@ -1,11 +1,11 @@
-const {france} = require('../framework/france');
+const {king} = require('../france/king');
 const fs = require("fs");
 const { exec } = require("child_process");
 
 
 const filename = `${Math.random().toString(36)}`;
 
-france (
+king (
     {
         nomCom : 'deep',
         categorie : 'Audio-Edit',
@@ -50,7 +50,7 @@ france (
     }
 );
 
-france (
+king (
     {
         nomCom : 'bass',
         categorie : 'Audio-Edit',
@@ -95,7 +95,7 @@ france (
     }
 );
 
-france(
+king(
     {
       nomCom: 'reverse',
       categorie: 'Audio-Edit',
@@ -131,7 +131,7 @@ france(
     }
   );
   
-  france(
+  king(
     {
       nomCom: 'slow',
       categorie: 'Audio-Edit',
@@ -168,7 +168,7 @@ france(
   );
 
 // Cas pour l'effet "smooth"
-france(
+king(
     {
       nomCom: 'smooth',
       categorie: 'Audio-Edit',
@@ -205,7 +205,7 @@ france(
   );
   
   // Cas pour l'effet "tempo"
-  france(
+  king(
     {
       nomCom: 'tempo',
       categorie: 'Audio-Edit',
@@ -242,7 +242,7 @@ france(
   );
   
   // Cas pour l'effet "nightcore"
-  france(
+  king(
     {
       nomCom: 'nightcore',
       categorie: 'Audio-Edit',

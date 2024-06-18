@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const { france } = require("../framework/france");
-france({ nomCom: "repo", reaction: "🤍", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
+const { king } = require("../france/king");
+king({ nomCom: "repo", reaction: "🤍", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
 
 
 const githubRepo = 'https://api.github.com/repos/franceking1/Flash-Md';
-const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
+const img = 'https://telegra.ph/file/ee2916cd24336231d8194.jpg';
 
 
     const response = await fetch(githubRepo); 
@@ -15,12 +15,12 @@ const img = 'https://telegra.ph/file/6fcaf547aebbf7d08d8d1.jpg';
             const repoInfo = {
                 stars: data.stargazers_count,
                 forks: data.forks_count,
-                lastUpdate: data.updated_at,
+                 update : data.updated_at, 
                 owner: data.owner.login,
                
             };
 const releaseDate = new Date(data.created_at).toLocaleDateString('en-GB');
-            const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
+         const updateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
 const gitdata = `Hello 👋 
 This is *FLASH-MD.*\n The Following is it's *REPO*
@@ -29,7 +29,7 @@ This is *FLASH-MD.*\n The Following is it's *REPO*
 ✨ *STARS:* ${repoInfo.stars}
 🧧 *FORKS:* ${repoInfo.forks}
 📅 *RELEASE DATE:* ${releaseDate}
-🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
+🕐 *LAST UPDATE:* ${updateDate}
 👨‍💻 *OWNER:* *France King*
 __________________________________
             *Made With* 🤍`;

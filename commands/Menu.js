@@ -1,7 +1,7 @@
 const util = require('util');
 const fs = require('fs-extra');
-const { france } = require(__dirname + "/../framework/france");
-const { format } = require(__dirname + "/../framework/mesfonctions");
+const { king } = require(__dirname + "/../france/king");
+const { format } = require(__dirname + "/../france/mesfonctions");
 const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
@@ -18,9 +18,9 @@ const runtime = function (seconds) {
  return dDisplay + hDisplay + mDisplay + sDisplay; 
  } 
 
-france({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
+king({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
-    let { cm } = require(__dirname + "/../framework//france");
+    let { cm } = require(__dirname + "/../france//king");
     var coms = {};
     var mode = "public";
 

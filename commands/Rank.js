@@ -1,6 +1,6 @@
-const {france} = require("../framework/france");
+const {king} = require("../france/king");
 const conf = require("../set");
-const {getMessagesAndXPByJID,getBottom10Users} = require("../bdd/level");
+const {getMessagesAndXPByJID,getBottom10Users} = require("../data/level");
 
 
 function get_level_exp(xp) {
@@ -82,7 +82,7 @@ module.exports = {
    get_level_exp,
 } ;
 
-france( {
+king( {
   nomCom : "rank",
  categorie : "Fun",
    }, 
@@ -243,7 +243,7 @@ france( {
 
 }) ;
 
-france( {
+king( {
   nomCom : "toprank",
  categorie : "Fun",
    }, 
@@ -263,7 +263,7 @@ france( {
              let role ;
     
          if (data.level < 5) {
-            role = 'Nouveau né(e)'
+            role = 'Baby'
          } else if (data.level >= 5 || data.level < 10) {
             role = 'kid ninja'
          } else if ( data.level >= 10 || data.level < 15 ) {

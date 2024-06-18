@@ -1,8 +1,8 @@
 const axios = require("axios");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
-const {france} = require("../framework/france");
+const {king} = require("../france/king");
 
-france({
+king({
   nomCom: "stickersearch",
   categorie: 'Search',
   reaction: "🍁"
@@ -11,7 +11,7 @@ async (dest, zk, commandeOptions) => {
   const { repondre, ms, arg, nomAuteurMessage } = commandeOptions;
 
   if (!arg[0]) {
-    repondre("where is the request ? !");
+    repondre("insert the type of stickers your want !");
     return;
   }
 

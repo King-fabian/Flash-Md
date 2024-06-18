@@ -128,7 +128,7 @@ king({
     'nom': "PM_PERMIT",
     'choix': ["on", 'off']
   }, {
-    'nom': "MODE",
+    'nom': "BOT_MODE",
     'choix': ["public", 'private']
   }, {
     'nom': 'STARTING_MESSAGE',

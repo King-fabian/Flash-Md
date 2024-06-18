@@ -1,8 +1,8 @@
 const googleTTS = require('google-tts-api');
-const {france} = require("../framework/france");
+const {king} = require("../france/king");
 
 
-france( {
+king( {
   nomCom : "dit",
  categorie : "tts",
   reaction : "👄" },
@@ -25,7 +25,7 @@ console.log(url);
 }
 ) ;
 
-france( {
+king( {
   nomCom : "itta",
  categorie : "tts",
   reaction : "👄" },
@@ -48,7 +48,7 @@ console.log(url);
 }
 ) ;
 
-france( {
+king( {
   nomCom : "say",
  categorie : "tts",
   reaction : "👄" },

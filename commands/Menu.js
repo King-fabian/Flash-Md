@@ -24,7 +24,7 @@ king({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
     var coms = {};
     var mode = "public";
 
-    if ((s.MODE).toLocaleLowerCase() != "on") {
+    if ((s.MODE).toLocaleLowerCase() != "public") {
         mode = "Private";
     }
 

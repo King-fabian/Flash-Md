@@ -1,9 +1,9 @@
-const {france }= require ('../framework/france') ;
-const {addstickcmd, deleteCmd, getCmdById, inStickCmd , getAllStickCmds} = require('../bdd/stickcmd') ;
+const {king }= require ('../france/king') ;
+const {addstickcmd, deleteCmd, getCmdById, inStickCmd , getAllStickCmds} = require('../data/stickcmd') ;
 
 
 
-france(
+king(
     {
         nomCom : 'setcmd',
         categorie : 'stickcmd'
@@ -30,7 +30,7 @@ france(
 
     }) ; 
 
-    france(
+    king(
       {
           nomCom: 'delcmd',
           categorie: 'stickcmd'
@@ -62,7 +62,7 @@ france(
   );
   
 
-  france(
+  king(
     {
         nomCom: 'allcmd',
         categorie: 'stickcmd'

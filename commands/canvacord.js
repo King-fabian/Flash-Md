@@ -1,10 +1,10 @@
-const { france } = require("../framework/france");
+const { king } = require("../france/king");
 const canvacord = require("canvacord");
-const {uploadImageToImgur} = require("../framework/imgur")
+const {uploadImageToImgur} = require("../france/imgur")
 
 // Generic function to create a canvacord order
 function createCanvacordCommand(commandName, canvacordFunction) {
-  france({
+  king({
     nomCom: commandName,
     categorie: "Image-Edit",
     reaction: "🎉"
@@ -55,7 +55,6 @@ createCanvacordCommand("affect", canvacord.Canvacord.affect);
         createCanvacordCommand("facepalm", canvacord.Canvacord.facepalm);
         createCanvacordCommand("greyscale", canvacord.Canvacord.greyscale);
         createCanvacordCommand("joke", canvacord.Canvacord.jokeOverHead);
-
 
 
 

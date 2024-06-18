@@ -3,8 +3,8 @@
 const { king } = require("../framework/king")
 //const { getGroupe } = require("../data/groupe")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
-const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../data/antilien")
-const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../data/antibot")
+const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../bdd/antilien")
+const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
 //const fs = require("fs");
 const { search, download } = require("aptoide-scraper");
 const fs = require("fs-extra");

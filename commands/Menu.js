@@ -1,113 +1,87 @@
-const util = require('util');
-const fs = require('fs-extra');
-const { king } = require(__dirname + "/../france/king");
-const { format } = require(__dirname + "/../france/mesfonctions");
-const os = require("os");
-const moment = require("moment-timezone");
-const s = require(__dirname + "/../set");
-const runtime = function (seconds) { 
- seconds = Number(seconds); 
- var d = Math.floor(seconds / (3600 * 24)); 
- var h = Math.floor((seconds % (3600 * 24)) / 3600); 
- var m = Math.floor((seconds % 3600) / 60); 
- var s = Math.floor(seconds % 60); 
- var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " d, ") : ""; 
- var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " h, ") : ""; 
- var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " m, ") : ""; 
- var sDisplay = s > 0 ? s + (s == 1 ? " second" : " s") : ""; 
- return dDisplay + hDisplay + mDisplay + sDisplay; 
- } 
-
-king({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
-    let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
-    let { cm } = require(__dirname + "/../france//king");
-    var coms = {};
-    var mode = "public";
-
-    if ((s.MODE).toLocaleLowerCase() != "public") {
-        mode = "Private";
-    }
 
 
 
- cm.map(async (com, index) => {
-        if (!coms[com.categorie])
-            coms[com.categorie] = [];
-        coms[com.categorie].push(com.nomCom);
-    });
 
-    moment.tz.setDefault('Africa/Nairobi');
 
-// Create a date and time in EAT
-const temps = moment().format('HH:mm:ss');
-const date = moment().format('DD/MM/YYYY');
 
-  let infoMsg =  `
-╭────✧𝐅𝐋𝐀𝐒𝐇-𝐌𝐃✧────◆
-┃❃╭──────────────
-┃❃│ *User :*  ${s.OWNER_NAME}
-┃❃│ *Prefix :* ${s.PREFIXE} 
-┃❃│ *Time :* ${temps}  
-┃❃│ *Date :* ${date} 
-┃❃│ *Mode :* ${mode}
-┃❃│ *Commands :* ${cm.length}  
-┃❃│ *Ram :* ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())} 
-┃❃│ *Uptime :* ${runtime(process.uptime())} 
-┃❃╰───────────────
-╰─────✧The-GOAT✧─────◆ \n`;
 
-  let menuMsg=`  
 
-*◇ FLASH-MD COMMANDS ◇*\n`;
- 
-  for (const cat in coms) {
-        menuMsg += `
-*╭────❍ ⁠⁠${cat} ❍⊷*`;
-        for (const cmd of coms[cat]) {
-        menuMsg += ` 
-*│❒⁠⁠⁠⁠${cmd}*`;
-        }
-        menuMsg += `
-*╰═════════════⊷*\n`
-    }
 
-    menuMsg += `
-◇ *THE FLASH MULTI DEVICE* ◇
 
-   *Released: 22.2.2024*
-   
- _Thanks For choosing FLASH-MD_
 
-  Created by *France King ©²0²⁴* 
-  
-     *KEEP USING FLASH-MD*
-`;
 
-   var lien = mybotpic();
 
-   if (lien.match(/\.(mp4|gif)$/i)) {
-    try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Zokou-MD*, développé par Djalega++" , gifPlayback : true }, { quoted: ms });
-    }
-    catch (e) {
-        console.log("🥵🥵 Menu erreur " + e);
-        repondre("🥵🥵 Menu erreur " + e);
-    }
-} 
-// Vérification pour .jpeg ou .png
-else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
-    try {
-        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "*📌France King*" }, { quoted: ms });
-    }
-    catch (e) {
-        console.log("🥵🥵 Menu erreur " + e);
-        repondre("🥵🥵 Menu erreur " + e);
-    }
-} 
-else {
 
-    repondre(infoMsg + menuMsg);
 
-}
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const _0x552f37=_0x1037;(function(_0x5d6896,_0x234db9){const _0x349fdc=_0x1037,_0x80c70b=_0x5d6896();while(!![]){try{const _0x609ce=-parseInt(_0x349fdc(0x1d8))/0x1+-parseInt(_0x349fdc(0x1f0))/0x2*(-parseInt(_0x349fdc(0x1dc))/0x3)+parseInt(_0x349fdc(0x1db))/0x4+-parseInt(_0x349fdc(0x1fc))/0x5*(parseInt(_0x349fdc(0x1f1))/0x6)+-parseInt(_0x349fdc(0x1fe))/0x7+-parseInt(_0x349fdc(0x1f3))/0x8*(parseInt(_0x349fdc(0x1d7))/0x9)+-parseInt(_0x349fdc(0x1d5))/0xa*(-parseInt(_0x349fdc(0x1f5))/0xb);if(_0x609ce===_0x234db9)break;else _0x80c70b['push'](_0x80c70b['shift']());}catch(_0x46cba6){_0x80c70b['push'](_0x80c70b['shift']());}}}(_0x292a,0xdca51));const util=require(_0x552f37(0x1ff)),fs=require('fs-extra'),{king}=require(__dirname+'/../france/king'),{format}=require(__dirname+_0x552f37(0x1e8)),os=require('os'),moment=require('moment-timezone'),s=require(__dirname+_0x552f37(0x1f4)),runtime=function(_0x1072f6){const _0x3f7f86=_0x552f37;_0x1072f6=Number(_0x1072f6);var _0x3a6804=Math[_0x3f7f86(0x1ee)](_0x1072f6/(0xe10*0x18)),_0x431a3f=Math['floor'](_0x1072f6%(0xe10*0x18)/0xe10),_0x22ae57=Math[_0x3f7f86(0x1ee)](_0x1072f6%0xe10/0x3c),_0x32116e=Math[_0x3f7f86(0x1ee)](_0x1072f6%0x3c),_0x3f6ea6=_0x3a6804>0x0?_0x3a6804+(_0x3a6804==0x1?'\x20day,\x20':_0x3f7f86(0x1e7)):'',_0x45a960=_0x431a3f>0x0?_0x431a3f+(_0x431a3f==0x1?_0x3f7f86(0x1e9):_0x3f7f86(0x1ed)):'',_0x5a3c50=_0x22ae57>0x0?_0x22ae57+(_0x22ae57==0x1?_0x3f7f86(0x1d3):_0x3f7f86(0x1f7)):'',_0x4523fd=_0x32116e>0x0?_0x32116e+(_0x32116e==0x1?_0x3f7f86(0x1fb):'\x20s'):'';return _0x3f6ea6+_0x45a960+_0x5a3c50+_0x4523fd;};function _0x1037(_0x101741,_0xe85d9a){const _0x292aa0=_0x292a();return _0x1037=function(_0x10378a,_0x1643eb){_0x10378a=_0x10378a-0x1c8;let _0x21ca5a=_0x292aa0[_0x10378a];return _0x21ca5a;},_0x1037(_0x101741,_0xe85d9a);}function _0x292a(){const _0x119523=['push','\x20\x0a*│❒⁠⁠⁠⁠','\x20d,\x20','/../france/mesfonctions','\x20hour,\x20','\x20\x0a┃❃│\x20*Mode\x20:*\x20','\x0a┃❃│\x20*Prefix\x20:*\x20','sendMessage','\x20h,\x20','floor','\x20\x20\x0a┃❃│\x20*Date\x20:*\x20','12GjiQYD','324UcVjZd','\x20\x0a┃❃╰───────────────\x0a╰─────✧The-GOAT✧─────◆\x20\x0a','120iGtxAP','/../set','22qacHul','match','\x20m,\x20','\x20❍⊷*','\x20\x0a┃❃│\x20*Uptime\x20:*\x20','format','\x20second','92620kLFYHe','categorie','12349099fEqwkF','util','Private','\x0a*╰═════════════⊷*\x0a','OWNER_NAME','map','\x20\x20\x0a┃❃│\x20*Ram\x20:*\x20','\x0a╭────✧𝐅𝐋𝐀𝐒𝐇-𝐌𝐃✧────◆\x0a┃❃╭──────────────\x0a┃❃│\x20*User\x20:*\x20\x20','Africa/Nairobi','Je\x20suis\x20*Zokou-MD*,\x20développé\x20par\x20Djalega++','HH:mm:ss','log','public','\x20minute,\x20','PREFIXE','24576950MFgEJC','DD/MM/YYYY','868743dNBYzm','1009842MqUFRX','totalmem','\x0a┃❃│\x20*Commands\x20:*\x20','2544260DOAZOO','287253VEgtBG','setDefault','General','*📌France\x20King*','MODE','\x20\x20\x0a\x0a*◇\x20FLASH-MD\x20COMMANDS\x20◇*\x0a','toLocaleLowerCase','🥵🥵\x20Menu\x20erreur\x20','\x20\x0a┃❃│\x20*Time\x20:*\x20'];_0x292a=function(){return _0x119523;};return _0x292a();}king({'nomCom':'menu','categorie':_0x552f37(0x1de)},async(_0x4c8b00,_0x20a038,_0x5b051b)=>{const _0x1ed5eb=_0x552f37;let {ms:_0x3dbcff,repondre:_0xdb7afa,prefixe:_0x2e9960,nomAuteurMessage:_0x262401,mybotpic:_0x3e8422}=_0x5b051b,{cm:_0x407374}=require(__dirname+'/../france//king');var _0x3079d7={},_0x4df667=_0x1ed5eb(0x1d2);s[_0x1ed5eb(0x1e0)][_0x1ed5eb(0x1e2)]()!=_0x1ed5eb(0x1d2)&&(_0x4df667=_0x1ed5eb(0x1c8));_0x407374[_0x1ed5eb(0x1cb)](async(_0x2aa400,_0x24e12b)=>{const _0x430e0c=_0x1ed5eb;if(!_0x3079d7[_0x2aa400[_0x430e0c(0x1fd)]])_0x3079d7[_0x2aa400['categorie']]=[];_0x3079d7[_0x2aa400[_0x430e0c(0x1fd)]][_0x430e0c(0x1e5)](_0x2aa400['nomCom']);}),moment['tz'][_0x1ed5eb(0x1dd)](_0x1ed5eb(0x1ce));const _0x1a33b1=moment()['format'](_0x1ed5eb(0x1d0)),_0x409642=moment()[_0x1ed5eb(0x1fa)](_0x1ed5eb(0x1d6));let _0x25c0e3=_0x1ed5eb(0x1cd)+s[_0x1ed5eb(0x1ca)]+_0x1ed5eb(0x1eb)+s[_0x1ed5eb(0x1d4)]+_0x1ed5eb(0x1e4)+_0x1a33b1+_0x1ed5eb(0x1ef)+_0x409642+_0x1ed5eb(0x1ea)+_0x4df667+_0x1ed5eb(0x1da)+_0x407374['length']+_0x1ed5eb(0x1cc)+format(os[_0x1ed5eb(0x1d9)]()-os['freemem']())+'/'+format(os[_0x1ed5eb(0x1d9)]())+_0x1ed5eb(0x1f9)+runtime(process['uptime']())+_0x1ed5eb(0x1f2),_0x410235=_0x1ed5eb(0x1e1);for(const _0x4382ad in _0x3079d7){_0x410235+='\x0a*╭────❍\x20⁠⁠'+_0x4382ad+_0x1ed5eb(0x1f8);for(const _0x12340f of _0x3079d7[_0x4382ad]){_0x410235+=_0x1ed5eb(0x1e6)+_0x12340f+'*';}_0x410235+=_0x1ed5eb(0x1c9);}_0x410235+='\x0a◇\x20*THE\x20FLASH\x20MULTI\x20DEVICE*\x20◇\x0a\x0a\x20\x20\x20*Released:\x2022.2.2024*\x0a\x20\x20\x20\x0a\x20_Thanks\x20For\x20choosing\x20FLASH-MD_\x0a\x0a\x20\x20Created\x20by\x20*France\x20King\x20©²0²⁴*\x20\x0a\x20\x20\x0a\x20\x20\x20\x20\x20*KEEP\x20USING\x20FLASH-MD*\x0a';var _0x594d2e=_0x3e8422();if(_0x594d2e[_0x1ed5eb(0x1f6)](/\.(mp4|gif)$/i))try{_0x20a038[_0x1ed5eb(0x1ec)](_0x4c8b00,{'video':{'url':_0x594d2e},'caption':_0x25c0e3+_0x410235,'footer':_0x1ed5eb(0x1cf),'gifPlayback':!![]},{'quoted':_0x3dbcff});}catch(_0x2e2aa0){console[_0x1ed5eb(0x1d1)](_0x1ed5eb(0x1e3)+_0x2e2aa0),_0xdb7afa(_0x1ed5eb(0x1e3)+_0x2e2aa0);}else{if(_0x594d2e[_0x1ed5eb(0x1f6)](/\.(jpeg|png|jpg)$/i))try{_0x20a038[_0x1ed5eb(0x1ec)](_0x4c8b00,{'image':{'url':_0x594d2e},'caption':_0x25c0e3+_0x410235,'footer':_0x1ed5eb(0x1df)},{'quoted':_0x3dbcff});}catch(_0xd1da3){console[_0x1ed5eb(0x1d1)](_0x1ed5eb(0x1e3)+_0xd1da3),_0xdb7afa('🥵🥵\x20Menu\x20erreur\x20'+_0xd1da3);}else _0xdb7afa(_0x25c0e3+_0x410235);}});
+

@@ -120,12 +120,12 @@ setTimeout(() => {
       }
    });
 
-*/
+
 
 
   zk.ev.on('call', async (call) => {
     await zk.rejectCall(call[0].id, call[0].from)
-}) 
+}) */
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
@@ -155,7 +155,7 @@ setTimeout(() => {
             /*  var superUser=[servBot,FranceKing,FranceKing1,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
               var dev =[FranceKing,FranceKing1,FranceKing2].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
             
-           // if(origineMessage === "120363244435092946@g.us") return 
+            if(origineMessage === "120363244435092946@g.us") return 
             
             const verifGroupe = origineMessage?.endsWith("@g.us");
 const MsgInbox = origineMessage?.endsWith("@s.whatsapp.net");

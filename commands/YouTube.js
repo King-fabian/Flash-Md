@@ -1,192 +1,29 @@
-const { king } = require("../france/king");
-const yts = require('yt-search');
-const ytdl = require('ytdl-core');
-const fs = require('fs');
-const yt=require("../france/dl/ytdl-core.js")
-const ffmpeg = require("fluent-ffmpeg");
-const yts1 = require("youtube-yts");
-//var fs =require("fs-extra")
-
-king({
-  nomCom: "play",
-  categorie: "Search",
-  reaction: "💿"
-}, async (origineMessage, zk, commandeOptions) => {
-  const { ms, repondre, arg } = commandeOptions;
-     
-  if (!arg[0]) {
-    repondre("Please insert a song name.");
-    return;
-  }
-
-  try {
-    let topo = arg.join(" ")
-    const search = await yts(topo);
-    const videos = search.videos;
-
-    if (videos && videos.length > 0 && videos[0]) {
-      const urlElement = videos[0].url;
-          
-       let infoMess = {
-          image: {url : videos[0]. thumbnail},
-         caption : `*FLASH-MD SONG DOWNLOADER*\n
-╭───────────────◆
-│⿻ *Title:* ${videos[0].title}
-│⿻ *Duration:* ${videos[0].timestamp}
-│⿻ *Viewers:* ${videos[0].views}
-│⿻ *Uploaded:* ${videos[0].ago}
-│⿻ *Author:* ${videos[0].author.name}
-╰────────────────◆
-⦿ *Direct Link:* ${videos[0].url}
-
-╭────────────────◆
-│ *_Powered by ©France King._*
-╰─────────────────◆`
-       }
-
-      
-
-      
-
-      
-       zk.sendMessage(origineMessage,infoMess,{quoted:ms}) ;
-      // Obtenir le flux audio de la vidéo
-      const audioStream = ytdl(urlElement, { filter: 'audioonly', quality: 'highestaudio' });
-
-      // Nom du fichier local pour sauvegarder le fichier audio
-      const filename = 'audio.mp3';
-
-      // Écrire le flux audio dans un fichier local
-      const fileStream = fs.createWriteStream(filename);
-      audioStream.pipe(fileStream);
-
-      fileStream.on('finish', () => {
-        // Envoi du fichier audio en utilisant l'URL du fichier local
-      
-
-     zk.sendMessage(origineMessage, { document: { url:"audio.mp3"},mimetype:'audio/mp3' }, { quoted: ms,ptt: false });
-        console.log("Sending audio file completed !");
-
-     
-      });
-
-      fileStream.on('error', (error) => {
-        console.error('Error Occurred while writing audio file :', error);
-        repondre('An error occurred while writing the audio file.');
-      });
-    } else {
-      repondre('No videos found.');
-    }
-  } catch (error) {
-    console.error('Error while searching or downloading video :', error);
-    
-    repondre('An error occurred while searching or downloading the video.');
-  }
-});
-
-  
-
-king({
-  nomCom: "video",
-  categorie: "Search",
-  reaction: "🎥"
-}, async (origineMessage, zk, commandeOptions) => {
-  const { arg, ms, repondre } = commandeOptions;
-
-  if (!arg[0]) {
-    repondre("insert video name");
-    return;
-  }
-
-  const topo = arg.join(" ");
-  try {
-    const search = await yts(topo);
-    const videos = search.videos;
-
-    if (videos && videos.length > 0 && videos[0]) {
-      const Element = videos[0];
-
-      let InfoMess = {
-        image: { url: videos[0].thumbnail },
-        caption: `*FLASH-MD VIDEO DOWNLOADER*\n
-╭───────────────◆
-│⿻ *Title:* ${Element.title}
-│⿻ *Duration:* ${Element.timestamp}
-│⿻ *Viewers:* ${Element.views}
-│⿻ *Uploaded:* ${Element.ago}
-│⿻ *Author:* ${Element.author.name}
-╰────────────────◆
-⦿ *Direct Link:* ${Element.url}
-
-╭───────────────◆
-│ *_Powered by ©France King._*
-╰────────────────◆ `
-      };
-
-      zk.sendMessage(origineMessage, InfoMess, { quoted: ms });
-
-      // Obtenir les informations de la vidéo à partir du lien YouTube
-      const videoInfo = await ytdl.getInfo(Element.url);
-      // Format vidéo avec la meilleure qualité disponible
-      const format = ytdl.chooseFormat(videoInfo.formats, { quality: '18' });
-      // Télécharger la vidéo
-      const videoStream = ytdl.downloadFromInfo(videoInfo, { format });
-
-      // Nom du fichier local pour sauvegarder la vidéo
-      const filename = 'video.mp4';
-
-      // Écrire le flux vidéo dans un fichier local
-      const fileStream = fs.createWriteStream(filename);
-      videoStream.pipe(fileStream);
-
-      fileStream.on('finish', () => {
-        // Envoi du fichier vidéo en utilisant l'URL du fichier local
-        zk.sendMessage(origineMessage, { video: { url :"./video.mp4"} , caption:
-          "╭───────────────◆\n│ *FLASH-MD DOWNLOADER*\n╰────────────────◆", gifPlayback: false }, { quoted: ms });
-      });
 
 
-      fileStream.on('error', (error) => {
-        console.error('Error while writing video file :', error);
-        repondre('An error occurred while writing the video file.');
-      });
-    } else {
-      repondre('No video found');
-    }
-  } catch (error) {
-    console.error('Error searching or downloading video :', error);
-    repondre('An error occurred while searching or downloading the video.');
-  }
-});
 
 
-king({
-  nomCom: "mygroups",
-  categorie: "User",
-  reaction: "💿"
-}, async (senn, zk, commandeOptions) => {
-  const { ms, repondre, arg } = commandeOptions;
-     
-let getGroupzs = await zk.groupFetchAllParticipating();
-            let groupzs = Object.entries(getGroupzs)
-                .slice(0)
-                .map((entry) => entry[1]);
-            let anaa = groupzs.map((v) => v.id);
-            let jackhuh = `*GROUPS AM IN*\n\n`
-            repondre(`You are Currently in ${anaa.length} groups, Flash MD will send that list in a moment. . .`)
-            for (let i of anaa) {
-                let metadat = await zk.groupMetadata(i);
-               
-                jackhuh += `*GROUP NAME:*- ${metadat.subject}\n`
-                jackhuh += `*MEMBERS:*- ${metadat.participants.length}\n`
-                jackhuh += `*GROUP ID:*- ${i}\n\n`
-
-            }
-          await repondre(jackhuh)
-
-}
-);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const _0x42c201=_0x1657;function _0x1657(_0x248b65,_0x4d692d){const _0x241edd=_0x241e();return _0x1657=function(_0x165704,_0x43e4d0){_0x165704=_0x165704-0xb7;let _0x26048d=_0x241edd[_0x165704];return _0x26048d;},_0x1657(_0x248b65,_0x4d692d);}(function(_0x5a2267,_0x50a52c){const _0x655ad2=_0x1657,_0x33aaee=_0x5a2267();while(!![]){try{const _0x137c2a=parseInt(_0x655ad2(0xb9))/0x1*(parseInt(_0x655ad2(0xd0))/0x2)+-parseInt(_0x655ad2(0xda))/0x3*(parseInt(_0x655ad2(0xd8))/0x4)+parseInt(_0x655ad2(0xc6))/0x5*(-parseInt(_0x655ad2(0x100))/0x6)+parseInt(_0x655ad2(0xed))/0x7+-parseInt(_0x655ad2(0xbb))/0x8+parseInt(_0x655ad2(0xca))/0x9+parseInt(_0x655ad2(0xfd))/0xa;if(_0x137c2a===_0x50a52c)break;else _0x33aaee['push'](_0x33aaee['shift']());}catch(_0x2bd39f){_0x33aaee['push'](_0x33aaee['shift']());}}}(_0x241e,0x828da));const {king}=require(_0x42c201(0xce)),yts=require(_0x42c201(0xf1)),ytdl=require('ytdl-core'),fs=require('fs'),yt=require(_0x42c201(0xfb)),ffmpeg=require(_0x42c201(0xe4)),yts1=require(_0x42c201(0xe2));king({'nomCom':_0x42c201(0xfc),'categorie':_0x42c201(0xcd),'reaction':'💿'},async(_0x25cd8b,_0x5c5bea,_0x2f4fed)=>{const _0x1e92d9=_0x42c201,{ms:_0x397442,repondre:_0x44cd3,arg:_0x46b033}=_0x2f4fed;if(!_0x46b033[0x0]){_0x44cd3(_0x1e92d9(0xd1));return;}try{let _0x18bc7e=_0x46b033['join']('\x20');const _0x21bc48=await yts(_0x18bc7e),_0x35e6bd=_0x21bc48[_0x1e92d9(0xe1)];if(_0x35e6bd&&_0x35e6bd['length']>0x0&&_0x35e6bd[0x0]){const _0x3639a0=_0x35e6bd[0x0][_0x1e92d9(0xef)];let _0x4f5b62={'image':{'url':_0x35e6bd[0x0][_0x1e92d9(0xdf)]},'caption':_0x1e92d9(0xdd)+_0x35e6bd[0x0][_0x1e92d9(0xfe)]+_0x1e92d9(0xe0)+_0x35e6bd[0x0][_0x1e92d9(0xff)]+_0x1e92d9(0xde)+_0x35e6bd[0x0][_0x1e92d9(0xd4)]+_0x1e92d9(0xc9)+_0x35e6bd[0x0][_0x1e92d9(0xf4)]+'\x0a│⿻\x20*Author:*\x20'+_0x35e6bd[0x0][_0x1e92d9(0xe9)][_0x1e92d9(0xbd)]+_0x1e92d9(0xbc)+_0x35e6bd[0x0]['url']+_0x1e92d9(0xb7)};_0x5c5bea[_0x1e92d9(0xe5)](_0x25cd8b,_0x4f5b62,{'quoted':_0x397442});const _0x284cb2=ytdl(_0x3639a0,{'filter':_0x1e92d9(0xf7),'quality':_0x1e92d9(0xc7)}),_0x4a7df2=_0x1e92d9(0xee),_0x19d1bc=fs['createWriteStream'](_0x4a7df2);_0x284cb2[_0x1e92d9(0xd9)](_0x19d1bc),_0x19d1bc['on'](_0x1e92d9(0xea),()=>{const _0x4691bb=_0x1e92d9;_0x5c5bea['sendMessage'](_0x25cd8b,{'document':{'url':_0x4691bb(0xee)},'mimetype':'audio/mp3'},{'quoted':_0x397442,'ptt':![]}),console['log']('Sending\x20audio\x20file\x20completed\x20!');}),_0x19d1bc['on'](_0x1e92d9(0xd7),_0x10a886=>{const _0x121b87=_0x1e92d9;console[_0x121b87(0xd7)](_0x121b87(0xc0),_0x10a886),_0x44cd3('An\x20error\x20occurred\x20while\x20writing\x20the\x20audio\x20file.');});}else _0x44cd3(_0x1e92d9(0xeb));}catch(_0x4d8168){console[_0x1e92d9(0xd7)]('Error\x20while\x20searching\x20or\x20downloading\x20video\x20:',_0x4d8168),_0x44cd3(_0x1e92d9(0xc4));}}),king({'nomCom':_0x42c201(0xf0),'categorie':_0x42c201(0xcd),'reaction':'🎥'},async(_0x38a15d,_0x53be47,_0x479e7e)=>{const _0x246670=_0x42c201,{arg:_0x126680,ms:_0x52ba28,repondre:_0x5924f5}=_0x479e7e;if(!_0x126680[0x0]){_0x5924f5(_0x246670(0xf2));return;}const _0x4f86da=_0x126680['join']('\x20');try{const _0x51cbfa=await yts(_0x4f86da),_0x19a7d9=_0x51cbfa['videos'];if(_0x19a7d9&&_0x19a7d9[_0x246670(0xc3)]>0x0&&_0x19a7d9[0x0]){const _0x165bc0=_0x19a7d9[0x0];let _0x628b4d={'image':{'url':_0x19a7d9[0x0][_0x246670(0xdf)]},'caption':_0x246670(0xf8)+_0x165bc0[_0x246670(0xfe)]+_0x246670(0xe0)+_0x165bc0[_0x246670(0xff)]+'\x0a│⿻\x20*Viewers:*\x20'+_0x165bc0['views']+_0x246670(0xc9)+_0x165bc0['ago']+_0x246670(0xe6)+_0x165bc0[_0x246670(0xe9)][_0x246670(0xbd)]+_0x246670(0xbc)+_0x165bc0[_0x246670(0xef)]+_0x246670(0xc5)};_0x53be47['sendMessage'](_0x38a15d,_0x628b4d,{'quoted':_0x52ba28});const _0x4a4072=await ytdl[_0x246670(0xbe)](_0x165bc0['url']),_0x4adb8e=ytdl[_0x246670(0xf5)](_0x4a4072[_0x246670(0xbf)],{'quality':'18'}),_0x1c3dcc=ytdl[_0x246670(0xd2)](_0x4a4072,{'format':_0x4adb8e}),_0x374bb7=_0x246670(0xe7),_0x3bbb76=fs[_0x246670(0xdb)](_0x374bb7);_0x1c3dcc[_0x246670(0xd9)](_0x3bbb76),_0x3bbb76['on'](_0x246670(0xea),()=>{const _0x43b4ee=_0x246670;_0x53be47[_0x43b4ee(0xe5)](_0x38a15d,{'video':{'url':_0x43b4ee(0xc1)},'caption':_0x43b4ee(0xd6),'gifPlayback':![]},{'quoted':_0x52ba28});}),_0x3bbb76['on'](_0x246670(0xd7),_0x484cca=>{const _0x26386d=_0x246670;console[_0x26386d(0xd7)](_0x26386d(0xcf),_0x484cca),_0x5924f5(_0x26386d(0xe3));});}else _0x5924f5('No\x20video\x20found');}catch(_0x57b1cc){console[_0x246670(0xd7)](_0x246670(0xc2),_0x57b1cc),_0x5924f5(_0x246670(0xc4));}}),king({'nomCom':'mygroups','categorie':_0x42c201(0xf6),'reaction':'💿'},async(_0x14a410,_0x4661b1,_0x4dda25)=>{const _0x2ca6dd=_0x42c201,{ms:_0x56e3af,repondre:_0x4d3e8b,arg:_0x485be3}=_0x4dda25;let _0x48faa5=await _0x4661b1[_0x2ca6dd(0xf3)](),_0x1586ab=Object[_0x2ca6dd(0xc8)](_0x48faa5)[_0x2ca6dd(0xba)](0x0)[_0x2ca6dd(0xd3)](_0x24acc2=>_0x24acc2[0x1]),_0xe5d956=_0x1586ab['map'](_0x19a31b=>_0x19a31b['id']),_0x269d51=_0x2ca6dd(0xdc);_0x4d3e8b(_0x2ca6dd(0xb8)+_0xe5d956[_0x2ca6dd(0xc3)]+_0x2ca6dd(0xec));for(let _0xc0299e of _0xe5d956){let _0xb5f6df=await _0x4661b1[_0x2ca6dd(0xcb)](_0xc0299e);_0x269d51+=_0x2ca6dd(0xcc)+_0xb5f6df[_0x2ca6dd(0xe8)]+'\x0a',_0x269d51+=_0x2ca6dd(0xf9)+_0xb5f6df[_0x2ca6dd(0xd5)][_0x2ca6dd(0xc3)]+'\x0a',_0x269d51+=_0x2ca6dd(0xfa)+_0xc0299e+'\x0a\x0a';}await _0x4d3e8b(_0x269d51);});function _0x241e(){const _0x44422f=['finish','No\x20videos\x20found.','\x20groups,\x20Flash\x20MD\x20will\x20send\x20that\x20list\x20in\x20a\x20moment.\x20.\x20.','2514701tIMqMk','audio.mp3','url','video','yt-search','insert\x20video\x20name','groupFetchAllParticipating','ago','chooseFormat','User','audioonly','*FLASH-MD\x20VIDEO\x20DOWNLOADER*\x0a\x0a╭───────────────◆\x0a│⿻\x20*Title:*\x20','*MEMBERS:*-\x20','*GROUP\x20ID:*-\x20','../france/dl/ytdl-core.js','play','5487170FlRxby','title','timestamp','12lePxxz','\x0a\x0a╭────────────────◆\x0a│\x20*_Powered\x20by\x20©France\x20King._*\x0a╰─────────────────◆','You\x20are\x20Currently\x20in\x20','2TYOMfn','slice','4734504OaRXMN','\x0a╰────────────────◆\x0a⦿\x20*Direct\x20Link:*\x20','name','getInfo','formats','Error\x20Occurred\x20while\x20writing\x20audio\x20file\x20:','./video.mp4','Error\x20searching\x20or\x20downloading\x20video\x20:','length','An\x20error\x20occurred\x20while\x20searching\x20or\x20downloading\x20the\x20video.','\x0a\x0a╭───────────────◆\x0a│\x20*_Powered\x20by\x20©France\x20King._*\x0a╰────────────────◆\x20','2510105FKuNuc','highestaudio','entries','\x0a│⿻\x20*Uploaded:*\x20','8567082AiIFzz','groupMetadata','*GROUP\x20NAME:*-\x20','Search','../france/king','Error\x20while\x20writing\x20video\x20file\x20:','275320fTPyVh','Please\x20insert\x20a\x20song\x20name.','downloadFromInfo','map','views','participants','╭───────────────◆\x0a│\x20*FLASH-MD\x20DOWNLOADER*\x0a╰────────────────◆','error','796OcnesK','pipe','69tDuitN','createWriteStream','*GROUPS\x20AM\x20IN*\x0a\x0a','*FLASH-MD\x20SONG\x20DOWNLOADER*\x0a\x0a╭───────────────◆\x0a│⿻\x20*Title:*\x20','\x0a│⿻\x20*Viewers:*\x20','thumbnail','\x0a│⿻\x20*Duration:*\x20','videos','youtube-yts','An\x20error\x20occurred\x20while\x20writing\x20the\x20video\x20file.','fluent-ffmpeg','sendMessage','\x0a│⿻\x20*Author:*\x20','video.mp4','subject','author'];_0x241e=function(){return _0x44422f;};return _0x241e();}
 
 

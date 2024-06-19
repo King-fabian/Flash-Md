@@ -39,16 +39,9 @@
       "required":false
     }
     ,
-    "ANTI_DELETE_MESSAGE" : {
-
-      "description":"type on if you want antidelete on or type off if you don't want this feature",
-      "value":"on",
-      "required":false
-
-    } ,
      "BOT_MENU_LINKS" : {
 
-      "description":"add one or many link for your bot menu  ; eg : url1,url2,url3.....",
+      "description":"add one or many link for your bot menu  separate them with a comma ; eg : url1,url2,url3.....",
       "value":"https://telegra.ph/file/dfccbf12397757c321ac4.jpg",
       "required":false
 
@@ -62,7 +55,7 @@
         ,
     "HEROKU_API_KEY": {
     "description": "insert your heroku api-key (this is optionnal)",
-     "required" :false
+     "required" : true 
     },
    "HEROKU_APP_NAME": {
     "description": "insert your heroku APP NAME (this is optionnal)",

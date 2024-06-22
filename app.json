@@ -1,12 +1,17 @@
 {
   "name":"FLASH-MD",
   "description":"An easy and simple WhatsApp bot developed by France King",
-  "keywords":["bot","node","baileys","whatsapp"],
+  "keywords":[
+    "bot",
+    "node",
+    "baileys",
+    "whatsapp"
+  ],
   "logo":"https://telegra.ph/file/dfccbf12397757c321ac4.jpg",
-  "repository":"https://github.com/franceking1/Flash-Md",
+  "repository":"https://github.com/France-King1/Flash-Md",
   "succes_url":"/",
-"stack":"heroku-22",
-
+"stack":"container",
+  
 "env":{
     "PREFIX":
     {
@@ -108,7 +113,7 @@
   }  
   },
 
-  "buildpacks": [
+    "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
@@ -120,17 +125,15 @@
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
     }
   ],
-
   "formation": {
-                "worker": {
-                        "quantity": 1,
-                        "size": "basic"
-                }
-        },
-
-  "addons":[
+    "worker": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  },
+  "addons": [
     {
-      "plan":"heroku-postgresql"
+      "plan": "heroku-postgresql:essential-0"
     }
   ]
 }

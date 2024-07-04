@@ -21,4 +21,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "flash.js"]
+CMD ["npm", "run" , "franceking"]

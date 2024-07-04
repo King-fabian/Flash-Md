@@ -4,7 +4,7 @@
   "description": "",
   "main": "flash.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node flash.js",
     "s": "node flash.js",
     "flash": "pm2 start flash.js --attach",
     "franceking": "pm2 start franceking.js --attach",
